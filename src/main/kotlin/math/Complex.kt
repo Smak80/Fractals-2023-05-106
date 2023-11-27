@@ -36,7 +36,8 @@ class Complex(var re: Double = 0.0, var im: Double = 0.0) {
     }
 
     override fun toString() = buildString {
-        if(re!=0.0 || im!=0.0) append(re)
+        if(re==0.0 && im==0.0) append("0")
+        if(re!=0.0) append(re)
         if(im!=0.0){
             append(if(im<0.0) "-" else if(re!=0.0) "+" else "")
             if(abs(im)!=1.0) append(abs(im))
