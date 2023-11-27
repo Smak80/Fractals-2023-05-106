@@ -1,0 +1,317 @@
+Index: src/main/kotlin/drawing/Plane.kt
+===================================================================
+diff --git a/src/main/kotlin/drawing/Plane.kt b/src/main/kotlin/drawing/Plane.kt
+deleted file mode 100644
+--- a/src/main/kotlin/drawing/Plane.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ /dev/null	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
+@@ -1,16 +0,0 @@
+-package drawing
+-
+-data class Plane (
+-    var xMin: Double,
+-    var xMax: Double,
+-    var yMin: Double,
+-    var yMax: Double,
+-    var width: Int,
+-    var height: Int
+-){
+-    val xDen: Double
+-        get() = width/(xMax-xMin)
+-
+-    val yDen: Double
+-        get() = height/(yMax-yMin)
+-}
+\ No newline at end of file
+Index: src/main/kotlin/drawing/Converter.kt
+===================================================================
+diff --git a/src/main/kotlin/drawing/Converter.kt b/src/main/kotlin/drawing/Converter.kt
+deleted file mode 100644
+--- a/src/main/kotlin/drawing/Converter.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ /dev/null	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
+@@ -1,10 +0,0 @@
+-package drawing
+-
+-object Converter {
+-
+-    fun xCrt2Scr(x: Double, p: Plane): Int = (p.xDen * (x - p.xMin)).coerceIn(-p.width.toDouble(),2 * p.width.toDouble()).toInt()
+-    fun yCrt2Scr(y: Double, p: Plane): Int = (p.yDen * (p.yMax - y)).coerceIn(-p.height.toDouble(),2 * p.height.toDouble()).toInt()
+-
+-    fun xScr2Crt(x: Int, p: Plane): Double = x.toDouble() / p.xDen + p.xMin
+-    fun yScr2Crt(y: Int, p: Plane): Double = p.yMax - y.toDouble() / p.yDen
+-}
+\ No newline at end of file
+Index: src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport drawing.Plane\nimport math.Mandelbrot\nimport java.awt.Color\nimport java.awt.Component\nimport java.awt.Dimension\nimport java.awt.Graphics\nimport java.awt.event.ComponentAdapter\nimport java.awt.event.ComponentEvent\nimport java.awt.event.ComponentListener\nimport javax.swing.GroupLayout\nimport javax.swing.JFrame\nimport javax.swing.JPanel\nimport kotlin.math.*\n\nclass Window : JFrame() {\n\n    private val mainPanel: JPanel\n    private val fp: FractalPainter\n\n    init{\n        fp = FractalPainter(Mandelbrot)\n        defaultCloseOperation = EXIT_ON_CLOSE\n        minimumSize = Dimension(600, 550)\n        mainPanel = DrawingPanel(fp)\n\n\n        mainPanel.addComponentListener(object : ComponentAdapter(){\n            override fun componentResized(e: ComponentEvent?) {\n                fp.plane?.width = mainPanel.width\n                fp.plane?.height = mainPanel.height\n                mainPanel.repaint()\n            }\n\n\n\n        })\n        mainPanel.background = Color.WHITE\n        layout = GroupLayout(contentPane).apply {\n            setVerticalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n            setHorizontalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n        }\n        pack()\n        fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)\n        fp.pointColor = {\n            if (it == 1f) Color.BLACK else\n            Color(\n                0.5f*(1-cos(16f*it*it)).absoluteValue,\n                sin(5f*it).absoluteValue,\n                log10(1f + 5*it).absoluteValue\n            )\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(date 1700049153255)
+@@ -1,6 +1,7 @@
+ package ru.gr106.fractal.gui
+ 
+-import drawing.Plane
++import ru.smak.drawing.Converter
++import ru.smak.drawing.Plane
+ import math.Mandelbrot
+ import java.awt.Color
+ import java.awt.Component
+@@ -16,7 +17,7 @@
+ 
+ class Window : JFrame() {
+ 
+-    private val mainPanel: JPanel
++    private val mainPanel: DrawingPanel
+     private val fp: FractalPainter
+ 
+     init{
+@@ -25,17 +26,26 @@
+         minimumSize = Dimension(600, 550)
+         mainPanel = DrawingPanel(fp)
+ 
+-
+         mainPanel.addComponentListener(object : ComponentAdapter(){
+             override fun componentResized(e: ComponentEvent?) {
+                 fp.plane?.width = mainPanel.width
+                 fp.plane?.height = mainPanel.height
+                 mainPanel.repaint()
+             }
+-
+-
+-
+-        })
++        })
++        mainPanel.addSelectedListener {rect ->
++            fp.plane?.let {
++                val xMin = Converter.xScr2Crt(rect.x, it)
++                val yMax = Converter.yScr2Crt(rect.y, it)
++                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)
++                val yMin = Converter.yScr2Crt(rect.y + rect.height, it)
++                it.xMin = xMin
++                it.yMin = yMin
++                it.xMax = xMax
++                it.yMax = yMax
++                mainPanel.repaint()
++            }
++        }
+         mainPanel.background = Color.WHITE
+         layout = GroupLayout(contentPane).apply {
+             setVerticalGroup(
+Index: src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport math.AlgebraicFractal\nimport math.Complex\nimport java.awt.Graphics\nimport drawing.Converter\nimport drawing.Plane\nimport math.Mandelbrot\nimport java.awt.Color\n\nclass FractalPainter (val fractal: AlgebraicFractal) : Painter{\n\n    var plane: Plane? = null\n    override val width: Int\n        get() = plane?.width?:0\n    override val height: Int\n        get() = plane?.height?:0\n    var pointColor: (Float) -> Color = {if (it < 1f) Color.WHITE else Color.BLACK }\n\n\n    override fun paint(g: Graphics) {\n        //как рисовать фрактал\n        plane?.let{plane ->\n            for(x in 0..width){\n                for (y in 0..height){\n                    val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))\n                    g.color = pointColor(Mandelbrot.isInSet(z))\n                    g.fillRect(x, y, 1, 1)\n                }\n            }\n        }\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt b/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt	(date 1700747612960)
+@@ -3,10 +3,11 @@
+ import math.AlgebraicFractal
+ import math.Complex
+ import java.awt.Graphics
+-import drawing.Converter
+-import drawing.Plane
+-import math.Mandelbrot
++import ru.smak.drawing.Converter
++import ru.smak.drawing.Plane
+ import java.awt.Color
++import java.awt.image.BufferedImage
++import kotlin.concurrent.thread
+ 
+ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
+ 
+@@ -20,15 +21,18 @@
+ 
+     override fun paint(g: Graphics) {
+         //как рисовать фрактал
+-        plane?.let{plane ->
+-            for(x in 0..width){
+-                for (y in 0..height){
+-                    val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))
+-                    g.color = pointColor(Mandelbrot.isInSet(z))
+-                    g.fillRect(x, y, 1, 1)
+-                }
+-            }
++        val img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
++        plane?.let{ plane ->
++            Array(procCount){ thread {
++                for (x in it..< width step procCount) {
++                    for (y in 0..< height) {
++                        val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))
++                        img.setRGB(x, y, pointColor(fractal.isInSet(z)).rgb)
++                    }
++                }
++            }}.forEach { it.join() }
+         }
++        g.drawImage(img, 0, 0, null)
+ 
+     }
+ 
+Index: src/main/kotlin/ru/gr106/fractal/Main.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal\n\nimport math.Complex\nimport ru.gr106.fractal.gui.Window\n\nfun main() {\n    Window().apply { isVisible = true }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/Main.kt b/src/main/kotlin/ru/gr106/fractal/Main.kt
+--- a/src/main/kotlin/ru/gr106/fractal/Main.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/src/main/kotlin/ru/gr106/fractal/Main.kt	(date 1700049153251)
+@@ -2,6 +2,7 @@
+ 
+ import math.Complex
+ import ru.gr106.fractal.gui.Window
++import org.jcodec.*
+ 
+ fun main() {
+     Window().apply { isVisible = true }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/.idea/misc.xml	(date 1700747485428)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+Index: src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport java.awt.Color\nimport java.awt.Graphics\nimport java.awt.event.MouseAdapter\nimport java.awt.event.MouseEvent\nimport java.awt.event.MouseListener\nimport java.awt.event.MouseMotionAdapter\nimport java.awt.event.MouseMotionListener\nimport javax.swing.JPanel\n\nclass DrawingPanel(val fp:FractalPainter) : JPanel() {\n    private var rect = SelectionRect()\n    init {\n\n        this.addMouseListener(object : MouseAdapter(){\n            override fun mousePressed(e: MouseEvent?) {\n                e?.let {\n                    rect = SelectionRect().apply {\n                        addPoint(it.x, it.y)\n                        graphics.apply {\n                            setXORMode(Color.WHITE)\n                            drawRect(-10, -10, 1, 1)\n                            setPaintMode()\n                        }\n                    }\n                }\n\n            }\n\n            override fun mouseReleased(e: MouseEvent?) {\n                e?.let {\n                    if (rect.isCreated) drawRect()\n                    rect.addPoint(it.x, it.y)\n                }\n            }\n\n        })\n        this.addMouseMotionListener(object : MouseMotionAdapter(){\n            override fun mouseDragged(e: MouseEvent?) {\n                e?.let {\n                    if (rect.isCreated)\n                        drawRect()\n                    rect.addPoint(it.x, it.y)\n                    drawRect()\n                }\n            }\n\n        })\n    }\n\n    private fun drawRect() {\n        graphics.apply{\n            setXORMode(Color.WHITE)\n            color = Color.BLACK\n            drawRect(rect.x, rect.y, rect.width, rect.height)\n            setPaintMode()\n        }\n    }\n\n    override fun paint(g: Graphics?) {\n        super.paint(g)\n        g?.let{ fp.paint(it) }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(date 1700049153251)
+@@ -4,13 +4,21 @@
+ import java.awt.Graphics
+ import java.awt.event.MouseAdapter
+ import java.awt.event.MouseEvent
+-import java.awt.event.MouseListener
+ import java.awt.event.MouseMotionAdapter
+-import java.awt.event.MouseMotionListener
+ import javax.swing.JPanel
+ 
+-class DrawingPanel(val fp:FractalPainter) : JPanel() {
++class DrawingPanel(val p:Painter) : JPanel() {
+     private var rect = SelectionRect()
++    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()
++
++    fun addSelectedListener(l: (SelectionRect)->Unit) {
++        selectedListener.add(l)
++    }
++
++    fun removeSelectedListener(l: (SelectionRect)->Unit) {
++        selectedListener.remove(l)
++    }
++
+     init {
+ 
+         this.addMouseListener(object : MouseAdapter(){
+@@ -32,6 +40,7 @@
+                 e?.let {
+                     if (rect.isCreated) drawRect()
+                     rect.addPoint(it.x, it.y)
++                    selectedListener.forEach { it(rect) }
+                 }
+             }
+ 
+@@ -60,6 +69,6 @@
+ 
+     override fun paint(g: Graphics?) {
+         super.paint(g)
+-        g?.let{ fp.paint(it) }
++        g?.let{ p.paint(it) }
+     }
+ }
+\ No newline at end of file
+Index: Fractals-2023.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\n    <exclude-output />\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/kotlin\" isTestSource=\"false\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/kotlin\" isTestSource=\"true\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/resources\" type=\"java-test-resource\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n    <orderEntry type=\"library\" name=\"KotlinJavaRuntime\" level=\"project\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Fractals-2023.iml b/Fractals-2023.iml
+--- a/Fractals-2023.iml	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/Fractals-2023.iml	(date 1700049153231)
+@@ -11,5 +11,7 @@
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
++    <orderEntry type="library" name="jcodec" level="project" />
++    <orderEntry type="library" name="Converter" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"Фракталы. Начало\">\n      <change afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/Main.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/Main.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractal-2022Kotlin&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Фракталы. Начало\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"kotlin-line\">\n          <url>file://$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt</url>\n          <line>43</line>\n          <option name=\"timeStamp\" value=\"3\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 253e57c00ad5d3017b3bfd2052d9c472f192deeb)
++++ b/.idea/workspace.xml	(date 1700747498252)
+@@ -4,11 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Фракталы. Начало">
+-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt" afterDir="false" />
++    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Рисование выделительной рамки">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/Main.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -84,22 +82,20 @@
+       <option name="project" value="LOCAL" />
+       <updated>1698841559932</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Рисование выделительной рамки">
++      <option name="closed" value="true" />
++      <created>1699427217411</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1699427217411</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Фракталы. Начало" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Фракталы. Начало" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="kotlin-line">
+-          <url>file://$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt</url>
+-          <line>43</line>
+-          <option name="timeStamp" value="3" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="Рисование выделительной рамки" />
++    <option name="LAST_COMMIT_MESSAGE" value="Рисование выделительной рамки" />
+   </component>
+ </project>
+\ No newline at end of file
