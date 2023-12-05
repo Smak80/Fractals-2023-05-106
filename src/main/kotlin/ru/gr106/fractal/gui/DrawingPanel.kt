@@ -25,7 +25,6 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
         this.addMouseListener(object : MouseAdapter(){
             override fun mousePressed(e: MouseEvent?) {
-                print(e?.button)
                 if(e?.button==1) {
                     mouseButtonPressed = 1
                     e.let {
@@ -52,11 +51,13 @@ class DrawingPanel(val p:Painter) : JPanel() {
                         rect.addPoint(it.x, it.y)
                         selectedListener.forEach { it(rect) }
 
+                        rect.resetPoints() //обнуляем координаты точек, тк они не обнуляются
                         mouseButtonPressed = -1
                     }
                 } else if (e?.button == 3){
                     mouseButtonStartPointEndPoint.add(e.x to e.y)
                     rect.addPoint(width,height)
+                    println("width=$width height=$height")
 
                     rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)
                     rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)

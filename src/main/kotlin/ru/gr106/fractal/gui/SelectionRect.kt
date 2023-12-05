@@ -62,4 +62,10 @@ class SelectionRect {
         p1 = x1 to y1
         p2 = x2 to y2
     }
+
+    //обнуление координат нажатия мыши
+    fun resetPoints(){
+        p1 = 0 to 0
+        p2 = 0 to 0
+    }
 }
