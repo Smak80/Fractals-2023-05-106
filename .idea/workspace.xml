@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="функции+цветовые схемы+жюлиа" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/math/Julia.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SchemeChooser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +22,6 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -120,23 +126,11 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Фракталы. Начало" />
     <MESSAGE value="Рисование выделительной рамки" />
     <MESSAGE value="масштабирование фракткала" />
-    <MESSAGE value="функции+цветовые схемы+жюлиа" />
-    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+    <option name="LAST_COMMIT_MESSAGE" value="масштабирование фракткала" />
   </component>
 </project>
