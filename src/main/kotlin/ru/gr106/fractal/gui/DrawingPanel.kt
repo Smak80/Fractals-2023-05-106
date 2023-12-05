@@ -1,5 +1,6 @@
 package ru.gr106.fractal.gui
 
+import java.awt.Button
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.event.MouseAdapter
@@ -10,6 +11,7 @@ import javax.swing.JPanel
 class DrawingPanel(val p:Painter) : JPanel() {
     private var rect = SelectionRect()
     private val selectedListener = mutableListOf<(SelectionRect)->Unit>()
+    private var mouseButtonPressed = -1
 
     fun addSelectedListener(l: (SelectionRect)->Unit) {
         selectedListener.add(l)
@@ -23,38 +25,44 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
         this.addMouseListener(object : MouseAdapter(){
             override fun mousePressed(e: MouseEvent?) {
-                e?.let {
-                    rect = SelectionRect().apply {
-                        addPoint(it.x, it.y)
-                        graphics.apply {
-                            setXORMode(Color.WHITE)
-                            drawRect(-10, -10, 1, 1)
-                            setPaintMode()
+                print(e?.button)
+                if(e?.button==1) {
+                    mouseButtonPressed = 1
+                    e.let { e ->
+                        rect = SelectionRect().apply {
+                            addPoint(e.x, e.y)
+                            graphics.apply {
+                                setXORMode(Color.WHITE)
+                                drawRect(-10, -10, 1, 1)
+                                setPaintMode()
+                            }
                         }
                     }
                 }
-
             }
 
             override fun mouseReleased(e: MouseEvent?) {
-                e?.let {
-                    if (rect.isCreated) drawRect()
-                    rect.addPoint(it.x, it.y)
-                    selectedListener.forEach { it(rect) }
+                if (e?.button == 1) {
+                    e?.let {
+                        mouseButtonPressed = -1
+                        if (rect.isCreated) drawRect()
+                        rect.addPoint(it.x, it.y)
+                        selectedListener.forEach { it(rect) }
+                    }
                 }
             }
-
         })
         this.addMouseMotionListener(object : MouseMotionAdapter(){
             override fun mouseDragged(e: MouseEvent?) {
-                e?.let {
-                    if (rect.isCreated)
+                if (mouseButtonPressed == 1) {
+                    e?.let {
+                        if (rect.isCreated)
+                            drawRect()
+                        rect.addPoint(it.x, it.y)
                         drawRect()
-                    rect.addPoint(it.x, it.y)
-                    drawRect()
+                    }
                 }
             }
-
         })
     }
 
