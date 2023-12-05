@@ -6,6 +6,10 @@ import kotlin.math.min
 class SelectionRect {
     private var p1: Pair<Int,Int>? = null
     private var p2: Pair<Int,Int>? = null
+
+    var difX: Int = 0
+    var difY: Int = 0
+
     val isCreated: Boolean
         get() = p2 != null
     val x: Int
@@ -51,5 +55,11 @@ class SelectionRect {
         } ?: run {
             p1 = x to y
         }
+    }
+
+    //данная перегрузка создавалась для двигания фрактала, но в итоге не понадобилась
+    fun addPoint(x1: Int, y1: Int, x2: Int, y2: Int){
+        p1 = x1 to y1
+        p2 = x2 to y2
     }
 }
