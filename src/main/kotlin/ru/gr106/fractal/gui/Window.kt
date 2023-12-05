@@ -69,9 +69,28 @@ class Window : JFrame(){
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  eMenuItem = JMenuItem("Сохранить")
-        file.add(eMenuItem) // добавление новой ячейки в меню
+        val  aMenuItem = JMenuItem("Сохранить")
+        file.add(aMenuItem) // добавление новой ячейки в меню
+        val  bMenuItem = JMenuItem("Отменить действие")
+        file.add(bMenuItem)
         menubar.add(file)
         jMenuBar = menubar
+
+        val file_color= JMenu("Выбор цветовой схемы")
+        val  cMenuItem = JMenuItem("1")
+        file_color.add(cMenuItem)
+        val  dMenuItem = JMenuItem("2")
+        file_color.add(dMenuItem)
+        val  eMenuItem = JMenuItem("3")
+        file_color.add(eMenuItem)
+        menubar.add(file_color)
+        jMenuBar = menubar
+
+        val file_ecs = JMenu("Экскурсия по фракталу")
+        val  fMenuItem = JMenuItem("начать")
+        file_ecs.add(fMenuItem)
+        menubar.add(file_ecs)
+        jMenuBar = menubar
+
     }
 }
