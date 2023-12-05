@@ -7,8 +7,7 @@ import java.awt.Color
 import java.awt.Dimension
 import java.awt.event.ComponentAdapter
 import java.awt.event.ComponentEvent
-import javax.swing.GroupLayout
-import javax.swing.JFrame
+import javax.swing.*
 
 class Window : JFrame(){
 
@@ -25,6 +24,7 @@ class Window : JFrame(){
         defaultCloseOperation = EXIT_ON_CLOSE
         minimumSize = Dimension(600, 550)
         mainPanel = DrawingPanel(fp)
+        createMenuBar() // создание меню
 
         mainPanel.addComponentListener(object : ComponentAdapter(){
             override fun componentResized(e: ComponentEvent?) {
@@ -64,5 +64,14 @@ class Window : JFrame(){
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3
+    }
+    private fun createMenuBar() {
+
+        val menubar = JMenuBar()
+        val file = JMenu("Файл")
+        val  eMenuItem = JMenuItem("Сохранить")
+        file.add(eMenuItem) // добавление новой ячейки в меню
+        menubar.add(file)
+        jMenuBar = menubar
     }
 }
