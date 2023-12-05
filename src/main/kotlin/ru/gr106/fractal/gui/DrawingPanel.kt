@@ -1,6 +1,5 @@
 package ru.gr106.fractal.gui
 
-import java.awt.Button
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.event.MouseAdapter
@@ -11,7 +10,8 @@ import javax.swing.JPanel
 class DrawingPanel(val p:Painter) : JPanel() {
     private var rect = SelectionRect()
     private val selectedListener = mutableListOf<(SelectionRect)->Unit>()
-    private var mouseButtonPressed = -1
+    private var mouseButtonPressed = -1 //показывает какая кнопка мыши сейчас нажата: -1 - никакая, 1 - левая, 3 - правая; данная переменная была добавлена потому что в mousedragged e.button обнуляется.
+    private var mouseButtonStartPointEndPoint = mutableListOf<Pair<Int, Int>>() //данный список хранит координаты нажатия и отпускания мыши(применяется при двигании фрактала)
 
     fun addSelectedListener(l: (SelectionRect)->Unit) {
         selectedListener.add(l)
@@ -38,17 +38,34 @@ class DrawingPanel(val p:Painter) : JPanel() {
                             }
                         }
                     }
+                } else if(e?.button==3){
+                    mouseButtonPressed = 3                              
+                    mouseButtonStartPointEndPoint.add(e.x to e.y)
+                    rect.addPoint(0, 0)
                 }
             }
 
             override fun mouseReleased(e: MouseEvent?) {
                 if (e?.button == 1) {
-                    e?.let {
+                    e.let {
                         mouseButtonPressed = -1
                         if (rect.isCreated) drawRect()
                         rect.addPoint(it.x, it.y)
                         selectedListener.forEach { it(rect) }
                     }
+                } else if (e?.button == 3){
+                    mouseButtonStartPointEndPoint.add(e.x to e.y)
+                    rect.addPoint(width,height)
+
+                    rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)
+                    rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)
+
+                    selectedListener.forEach { it(rect) } //двигаем сам экран
+
+                    mouseButtonPressed = -1
+
+                    mouseButtonStartPointEndPoint.removeAt(1) //чистим наш список, чтобы при следующем двигании у нас был новый вектор движения экрана
+                    mouseButtonStartPointEndPoint.removeAt(0)
                 }
             }
         })
