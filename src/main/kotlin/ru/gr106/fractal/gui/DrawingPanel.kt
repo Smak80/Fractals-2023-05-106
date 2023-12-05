@@ -28,9 +28,9 @@ class DrawingPanel(val p:Painter) : JPanel() {
                 print(e?.button)
                 if(e?.button==1) {
                     mouseButtonPressed = 1
-                    e.let { e ->
+                    e.let {
                         rect = SelectionRect().apply {
-                            addPoint(e.x, e.y)
+                            addPoint(it.x, it.y)
                             graphics.apply {
                                 setXORMode(Color.WHITE)
                                 drawRect(-10, -10, 1, 1)
