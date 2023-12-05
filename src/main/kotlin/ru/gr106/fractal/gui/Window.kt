@@ -35,10 +35,10 @@ class Window : JFrame(){
         })
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-                val xMin = Converter.xScr2Crt(rect.x, it)
-                val yMax = Converter.yScr2Crt(rect.y, it)
-                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)
-                val yMin = Converter.yScr2Crt(rect.y + rect.height, it)
+                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+                val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
+                val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
+                val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
                 it.xMin = xMin
                 it.yMin = yMin
                 it.xMax = xMax
