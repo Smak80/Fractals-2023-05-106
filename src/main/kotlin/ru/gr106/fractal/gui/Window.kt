@@ -44,6 +44,7 @@ class Window : JFrame() {
                 mainPanel.repaint()
             }
         }
+        //some
         mainPanel.background = Color.WHITE
         layout = GroupLayout(contentPane).apply {
             setVerticalGroup(
