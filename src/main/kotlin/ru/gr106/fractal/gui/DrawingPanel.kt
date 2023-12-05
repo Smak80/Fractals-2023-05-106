@@ -48,10 +48,11 @@ class DrawingPanel(val p:Painter) : JPanel() {
             override fun mouseReleased(e: MouseEvent?) {
                 if (e?.button == 1) {
                     e.let {
-                        mouseButtonPressed = -1
                         if (rect.isCreated) drawRect()
                         rect.addPoint(it.x, it.y)
                         selectedListener.forEach { it(rect) }
+
+                        mouseButtonPressed = -1
                     }
                 } else if (e?.button == 3){
                     mouseButtonStartPointEndPoint.add(e.x to e.y)
