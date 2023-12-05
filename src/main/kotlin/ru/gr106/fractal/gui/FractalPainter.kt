@@ -3,10 +3,11 @@ package ru.gr106.fractal.gui
 import math.AlgebraicFractal
 import math.Complex
 import java.awt.Graphics
-import drawing.Converter
-import drawing.Plane
-import math.Mandelbrot
+import ru.smak.drawing.Converter
+import ru.smak.drawing.Plane
 import java.awt.Color
+import java.awt.image.BufferedImage
+import kotlin.concurrent.thread
 
 class FractalPainter (val fractal: AlgebraicFractal) : Painter{
 
@@ -19,16 +20,20 @@ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
 
 
     override fun paint(g: Graphics) {
+        val procCount = Runtime.getRuntime().availableProcessors()
         //как рисовать фрактал
-        plane?.let{plane ->
-            for(x in 0..width){
-                for (y in 0..height){
-                    val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))
-                    g.color = pointColor(Mandelbrot.isInSet(z))
-                    g.fillRect(x, y, 1, 1)
+        val img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
+        plane?.let{ plane ->
+            Array(procCount){ thread {
+                for (x in it..< width step procCount) {
+                    for (y in 0..< height) {
+                        val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))
+                        img.setRGB(x, y, pointColor(fractal.isInSet(z)).rgb)
+                    }
                 }
-            }
+            }}.forEach { it.join() }
         }
+        g.drawImage(img, 0, 0, null)
 
     }
 

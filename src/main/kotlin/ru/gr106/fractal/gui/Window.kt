@@ -1,18 +1,14 @@
 package ru.gr106.fractal.gui
 
-import drawing.Converter
-import drawing.Plane
+import ru.smak.drawing.Converter
+import ru.smak.drawing.Plane
 import math.Mandelbrot
 import java.awt.Color
-import java.awt.Component
 import java.awt.Dimension
-import java.awt.Graphics
 import java.awt.event.ComponentAdapter
 import java.awt.event.ComponentEvent
-import java.awt.event.ComponentListener
 import javax.swing.GroupLayout
 import javax.swing.JFrame
-import javax.swing.JPanel
 import kotlin.math.*
 
 class Window : JFrame() {
@@ -35,10 +31,12 @@ class Window : JFrame() {
         })
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-                val xMin = Converter.xScr2Crt(rect.x, it)
-                val yMin = Converter.yScr2Crt(rect.y, it)
-                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)
-                val yMax = Converter.yScr2Crt(rect.y + rect.height, it)
+                
+                val xMin = Converter.xScr2Crt(rect.x-rect.difX, it)
+                val yMax = Converter.yScr2Crt(rect.y-rect.difY, it)
+                val xMax = Converter.xScr2Crt(rect.x + rect.width - rect.difX, it)
+                val yMin = Converter.yScr2Crt(rect.y + rect.height - rect.difY, it)
+                println("xMin=$xMin xMax=$xMax yMin=$yMin yMax=$yMax")
                 it.xMin = xMin
                 it.yMin = yMin
                 it.xMax = xMax
