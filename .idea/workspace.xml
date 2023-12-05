@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="начало реализации меню">
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
@@ -155,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701809217821</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;">
+      <option name="closed" value="true" />
+      <created>1701811494697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701811494697</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +188,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="функции+цветовые схемы+жюлиа" />
     <MESSAGE value="начало реализации меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="начало реализации меню" />
+    <MESSAGE value="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;" />
   </component>
 </project>

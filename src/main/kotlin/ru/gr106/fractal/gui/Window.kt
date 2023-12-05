@@ -5,9 +5,12 @@ import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.Dimension
+import java.awt.event.ActionEvent
+import java.awt.event.ActionListener
 import java.awt.event.ComponentAdapter
 import java.awt.event.ComponentEvent
 import javax.swing.*
+
 
 class Window : JFrame(){
 
@@ -15,7 +18,7 @@ class Window : JFrame(){
     private val fp: FractalPainter
 
     init{
-        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
 
         Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
 
@@ -63,7 +66,7 @@ class Window : JFrame(){
         }
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
-        fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3
+        fp.pointColor = SchemeChooser(2)    //выбор цветовой схемы - всего 3
     }
     private fun createMenuBar() {
 
@@ -79,18 +82,21 @@ class Window : JFrame(){
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
         file_color.add(cMenuItem)
+        cMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(1)}
         val  dMenuItem = JMenuItem("2")
+        dMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(2)}
         file_color.add(dMenuItem)
         val  eMenuItem = JMenuItem("3")
+        eMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(3)}
         file_color.add(eMenuItem)
         menubar.add(file_color)
         jMenuBar = menubar
 
         val file_ecs = JMenu("Экскурсия по фракталу")
-        val  fMenuItem = JMenuItem("начать")
-        file_ecs.add(fMenuItem)
         menubar.add(file_ecs)
         jMenuBar = menubar
+
+
 
     }
 }
