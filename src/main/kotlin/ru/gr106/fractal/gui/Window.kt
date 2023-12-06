@@ -62,12 +62,6 @@ class Window : JFrame(){
         })
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-
-                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
-                stateList.add(someState)//добавление состояния в список состояний
-
-                println(i++)
-
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
@@ -80,17 +74,10 @@ class Window : JFrame(){
             }
         }
 
-        mainPanel.addSelectedListener {rect ->
-            fp.plane?.let {
-                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
-                val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
-                val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
-                val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
-                it.xMin = xMin
-                it.yMin = yMin
-                it.xMax = xMax
-                it.yMax = yMax
-                mainPanel.repaint()
+        mainPanel.addSelectedListener{rect->
+            fp.plane?.let{
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
             }
         }
 
