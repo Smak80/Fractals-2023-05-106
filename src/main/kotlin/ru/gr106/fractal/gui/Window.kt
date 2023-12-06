@@ -18,7 +18,7 @@ class Window : JFrame(){
     private val fp: FractalPainter
 
     init{
-        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+        Mandelbrot.funcNum = 0//выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
 
         Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
 
@@ -80,13 +80,13 @@ class Window : JFrame(){
         jMenuBar = menubar
 
         val file_color= JMenu("Выбор цветовой схемы")
-        val  cMenuItem = JMenuItem("1")
+        val  cMenuItem = JMenuItem("Синяя тема")
         file_color.add(cMenuItem)
         cMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(1)}
-        val  dMenuItem = JMenuItem("2")
+        val  dMenuItem = JMenuItem("Зеленая тема")
         dMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(2)}
         file_color.add(dMenuItem)
-        val  eMenuItem = JMenuItem("3")
+        val  eMenuItem = JMenuItem("Розовая тема")
         eMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(3)}
         file_color.add(eMenuItem)
         menubar.add(file_color)
@@ -95,6 +95,15 @@ class Window : JFrame(){
         val file_ecs = JMenu("Экскурсия по фракталу")
         menubar.add(file_ecs)
         jMenuBar = menubar
+
+        val file_j = JMenu("Запустить Жулиа")
+        menubar.add(file_j)
+        val  rectMenuItem = JMenuItem("Начать")
+        file_j.add(rectMenuItem)
+        rectMenuItem.addActionListener{ _:ActionEvent -> Mandelbrot.funcNum = -1  }
+        rectMenuItem.addActionListener{ _:ActionEvent ->  Julia.c = Complex(-1.0, 0.0)}
+        jMenuBar = menubar
+
 
 
 
