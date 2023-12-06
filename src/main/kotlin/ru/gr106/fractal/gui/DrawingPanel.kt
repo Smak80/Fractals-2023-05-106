@@ -9,7 +9,7 @@ import javax.swing.JPanel
 
 class DrawingPanel(val p:Painter) : JPanel() {
     private var rect = SelectionRect()
-    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()
+    val selectedListener = mutableListOf<(SelectionRect)->Unit>()
     private var mouseButtonPressed = -1 //показывает какая кнопка мыши сейчас нажата: -1 - никакая, 1 - левая, 3 - правая; данная переменная была добавлена потому что в mousedragged e.button обнуляется.
     private var mouseButtonStartPointEndPoint = mutableListOf<Pair<Int, Int>>() //данный список хранит координаты нажатия и отпускания мыши(применяется при двигании фрактала)
 
@@ -25,7 +25,6 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
         this.addMouseListener(object : MouseAdapter(){
             override fun mousePressed(e: MouseEvent?) {
-                print(e?.button)
                 if(e?.button==1) {
                     mouseButtonPressed = 1
                     e.let {
@@ -48,12 +47,13 @@ class DrawingPanel(val p:Painter) : JPanel() {
             override fun mouseReleased(e: MouseEvent?) {
                 if (e?.button == 1) {
                     e.let {
+                        mouseButtonPressed = -1
                         if (rect.isCreated) drawRect()
                         rect.addPoint(it.x, it.y)
                         selectedListener.forEach { it(rect) }
 
+                        rect.resetPoints() //обнуляем координаты точек, тк они не обнуляются
                         mouseButtonPressed = -1
-                        rect.resetPoints()
                     }
                 } else if (e?.button == 3){
                     mouseButtonStartPointEndPoint.add(e.x to e.y)
