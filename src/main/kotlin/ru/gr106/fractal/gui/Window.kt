@@ -19,7 +19,7 @@ class Window : JFrame(){
     private var colorScheme = 1 //хранит в себе цветовую схему
 
     init{
-        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
 
         Julia.c = Complex(-0.5,0.75)// выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
 
@@ -44,16 +44,17 @@ class Window : JFrame(){
             override fun keyReleased(e: KeyEvent?) {
                 if (e != null) {
                     if (e.isControlDown){
-                        colorScheme=2
-                        fp.pointColor = SchemeChooser(colorScheme)
 
                         fp.plane?.let {
-                            it.xMin = stateList.last.xMin
-                            it.yMin = stateList.last.yMin
-                            it.xMax = stateList.last.xMax
-                            it.yMax = stateList.last.yMax
-                            stateList.removeAt(stateList.lastIndex)
-                            mainPanel.repaint()
+                            if(stateList.size != 0){
+                                fp.pointColor = SchemeChooser(stateList.last.colorScheme)
+                                it.xMin = stateList.last.xMin
+                                it.yMin = stateList.last.yMin
+                                it.xMax = stateList.last.xMax
+                                it.yMax = stateList.last.yMax
+                                stateList.removeAt(stateList.lastIndex)
+                                mainPanel.repaint()
+                            }
                         }
 
                     }
@@ -101,10 +102,29 @@ class Window : JFrame(){
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  eMenuItem = JMenuItem("Сохранить")
-        file.add(eMenuItem) // добавление новой ячейки в меню
+        val  aMenuItem = JMenuItem("Сохранить")
+        file.add(aMenuItem) // добавление новой ячейки в меню
+        val  bMenuItem = JMenuItem("Отменить действие")
+        file.add(bMenuItem)
         menubar.add(file)
         jMenuBar = menubar
+
+        val file_color= JMenu("Выбор цветовой схемы")
+        val  cMenuItem = JMenuItem("1")
+        file_color.add(cMenuItem)
+        val  dMenuItem = JMenuItem("2")
+        file_color.add(dMenuItem)
+        val  eMenuItem = JMenuItem("3")
+        file_color.add(eMenuItem)
+        menubar.add(file_color)
+        jMenuBar = menubar
+
+        val file_ecs = JMenu("Экскурсия по фракталу")
+        val  fMenuItem = JMenuItem("начать")
+        file_ecs.add(fMenuItem)
+        menubar.add(file_ecs)
+        jMenuBar = menubar
+
     }
 
     fun addState(state: State){

@@ -47,12 +47,13 @@ class DrawingPanel(val p:Painter) : JPanel() {
             override fun mouseReleased(e: MouseEvent?) {
                 if (e?.button == 1) {
                     e.let {
+                        mouseButtonPressed = -1
                         if (rect.isCreated) drawRect()
                         rect.addPoint(it.x, it.y)
                         selectedListener.forEach { it(rect) }
 
+                        rect.resetPoints() //обнуляем координаты точек, тк они не обнуляются
                         mouseButtonPressed = -1
-                        rect.resetPoints()
                     }
                 } else if (e?.button == 3){
                     mouseButtonStartPointEndPoint.add(e.x to e.y)
