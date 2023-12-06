@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="сделал отмену сдвига и масштабирования">
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="сделал плавный сдвиг, но сломал отмену сдвигов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701854516266</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="сделал плавный сдвиг, но сломал отмену сдвигов">
+      <option name="closed" value="true" />
+      <created>1701865148332</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865148332</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,6 +206,7 @@
     <MESSAGE value=".поправлен баг при сдвиге" />
     <MESSAGE value="ДОбавил data class хранящий состояния панели" />
     <MESSAGE value="сделал отмену сдвига и масштабирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал отмену сдвига и масштабирования" />
+    <MESSAGE value="сделал плавный сдвиг, но сломал отмену сдвигов" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал плавный сдвиг, но сломал отмену сдвигов" />
   </component>
 </project>
