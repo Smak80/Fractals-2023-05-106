@@ -30,43 +30,8 @@ class Window : JFrame(){
         mainPanel = DrawingPanel(fp)
         createMenuBar() // создание меню
 
-        /*val rollback: Action = object : Action {
-            override fun actionPerformed(e: ActionEvent?) {
-                println("some")
-                val rect = SelectionRect()
-                rect.addPoint(stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt())
-
-                mainPanel.selectedListener.forEach{it(rect)}
-            }
-
-            override fun getValue(key: String?): Any {
-                TODO("Not yet implemented")
-            }
-
-            override fun putValue(key: String?, value: Any?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun setEnabled(b: Boolean) {
-                TODO("Not yet implemented")
-            }
-
-            override fun isEnabled(): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun addPropertyChangeListener(listener: PropertyChangeListener?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun removePropertyChangeListener(listener: PropertyChangeListener?) {
-                TODO("Not yet implemented")
-            }
-        }*/
 
         mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
-
-        //mainPanel.actionMap.put("pressed", rollback)
 
         mainPanel.addComponentListener(object : ComponentAdapter(){
             override fun componentResized(e: ComponentEvent?) {
@@ -78,13 +43,7 @@ class Window : JFrame(){
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
                 if (e != null) {
-                    println("e is not null")
                     if (e.isControlDown){
-                        println("control is down")
-                        /*val rect = SelectionRect()
-                        rect.addPoint(stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt())
-
-                        mainPanel.selectedListener.forEach{it(rect)}*/
                         colorScheme=2
                         fp.pointColor = SchemeChooser(colorScheme)
 
