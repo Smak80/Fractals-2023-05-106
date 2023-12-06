@@ -17,6 +17,7 @@ class Window : JFrame(){
 
     private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
     private var colorScheme = 1 //хранит в себе цветовую схему
+    private var i = 0
 
     init{
         Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
@@ -42,21 +43,19 @@ class Window : JFrame(){
         })
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
-                if (e != null) {
-                    if (e.isControlDown){
-
-                        fp.plane?.let {
-                            if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last.colorScheme)
-                                it.xMin = stateList.last.xMin
-                                it.yMin = stateList.last.yMin
-                                it.xMax = stateList.last.xMax
-                                it.yMax = stateList.last.yMax
-                                stateList.removeAt(stateList.lastIndex)
-                                mainPanel.repaint()
-                            }
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        print("some")
+                        if(stateList.size != 0){
+                            print("some1")
+                            fp.pointColor = SchemeChooser(stateList.last.colorScheme)
+                            it.xMin = stateList.last.xMin
+                            it.yMin = stateList.last.yMin
+                            it.xMax = stateList.last.xMax
+                            it.yMax = stateList.last.yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
                         }
-
                     }
                 }
             }
@@ -67,6 +66,22 @@ class Window : JFrame(){
                 val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
                 stateList.add(someState)//добавление состояния в список состояний
 
+                println(i++)
+
+                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+                val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
+                val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
+                val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
+                it.xMin = xMin
+                it.yMin = yMin
+                it.xMax = xMax
+                it.yMax = yMax
+                mainPanel.repaint()
+            }
+        }
+
+        mainPanel.addSelectedListener {rect ->
+            fp.plane?.let {
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
