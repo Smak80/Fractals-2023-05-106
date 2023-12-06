@@ -5,8 +5,7 @@ import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.Dimension
-import java.awt.event.ComponentAdapter
-import java.awt.event.ComponentEvent
+import java.awt.event.*
 import javax.swing.*
 
 class Window : JFrame(){
@@ -14,10 +13,13 @@ class Window : JFrame(){
     private val mainPanel: DrawingPanel
     private val fp: FractalPainter
 
+    private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
+    private var colorScheme = 1 //хранит в себе цветовую схему
+
     init{
         Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
 
-        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+        Julia.c = Complex(-0.5,0.75)// выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
 
         fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)
 
@@ -33,8 +35,22 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         })
+        mainPanel.addKeyListener(object : KeyAdapter(){
+            override fun keyReleased(e: KeyEvent?) {
+                print("3")
+                if (e != null) {
+                    if (e.isControlDown && e.keyCode == 54){
+                        print("3")
+                    }
+                }
+            }
+        })
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
+
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
+
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
@@ -46,6 +62,7 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         }
+
         mainPanel.background = Color.WHITE
         layout = GroupLayout(contentPane).apply {
             setVerticalGroup(
@@ -63,7 +80,7 @@ class Window : JFrame(){
         }
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
-        fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3
+        fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
     }
     private fun createMenuBar() {
 
@@ -74,4 +91,11 @@ class Window : JFrame(){
         menubar.add(file)
         jMenuBar = menubar
     }
+
+    fun addState(state: State){
+        stateList.add(state)
+    }
+}
+
+data class State(val fractal: Int, val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double, val colorScheme: Int, val pointJulia: Complex?) {
 }

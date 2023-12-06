@@ -25,7 +25,6 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
         this.addMouseListener(object : MouseAdapter(){
             override fun mousePressed(e: MouseEvent?) {
-                print(e?.button)
                 if(e?.button==1) {
                     mouseButtonPressed = 1
                     e.let {
