@@ -68,4 +68,8 @@ class SelectionRect {
         p1 = 0 to 0
         p2 = 0 to 0
     }
+
+    fun resetSecondPoint(){
+        p2 = null
+    }
 }
