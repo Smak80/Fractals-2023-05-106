@@ -85,12 +85,15 @@ class Window : JFrame(){
                         rect.addPoint(stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt(), stateList.last.xMin.toInt())
 
                         mainPanel.selectedListener.forEach{it(rect)}*/
+                        colorScheme=2
+                        fp.pointColor = SchemeChooser(colorScheme)
 
                         fp.plane?.let {
                             it.xMin = stateList.last.xMin
                             it.yMin = stateList.last.yMin
                             it.xMax = stateList.last.xMax
                             it.yMax = stateList.last.yMax
+                            stateList.removeAt(stateList.lastIndex)
                             mainPanel.repaint()
                         }
 
