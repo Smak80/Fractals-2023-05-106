@@ -17,7 +17,6 @@ class Window : JFrame(){
 
     private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
     private var colorScheme = 1 //хранит в себе цветовую схему
-    private var i = 0
 
     init{
         Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
@@ -31,9 +30,6 @@ class Window : JFrame(){
         mainPanel = DrawingPanel(fp)
         createMenuBar() // создание меню
 
-
-        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
-
         mainPanel.addComponentListener(object : ComponentAdapter(){
             override fun componentResized(e: ComponentEvent?) {
                 fp.plane?.width = mainPanel.width
@@ -41,13 +37,15 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         })
+
+        //отмена действия
+        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
                 if (e != null && e.isControlDown) {
                     fp.plane?.let {
-                        print("some")
                         if(stateList.size != 0){
-                            print("some1")
                             fp.pointColor = SchemeChooser(stateList.last.colorScheme)
                             it.xMin = stateList.last.xMin
                             it.yMin = stateList.last.yMin
@@ -60,6 +58,8 @@ class Window : JFrame(){
                 }
             }
         })
+
+        //данная функция отрисовывает фрактал заново при сдвиге и масштабировании
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
@@ -74,6 +74,7 @@ class Window : JFrame(){
             }
         }
 
+        //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
         mainPanel.addSelectedListener{rect->
             fp.plane?.let{
                 val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
