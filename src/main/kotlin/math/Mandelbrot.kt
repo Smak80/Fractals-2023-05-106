@@ -4,7 +4,7 @@ import kotlin.math.exp
 
 object Mandelbrot : AlgebraicFractal {
     val r = 2.0
-    val r2 = r * r * r
+    val r2 = r * r
     override var maxIterations: Int = 300
 
     override fun isInSet(z: Complex): Float {

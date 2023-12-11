@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Проверка на &quot;дурака&quot; в сохранении фрактала">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="-Проверка на &quot;дурака&quot; в сохранении фрактала&#10;-Сохранение фрактала">
+      <change afterPath="$PROJECT_DIR$/hs_err_pid18212.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid31152.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/replay_pid18212.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/replay_pid31152.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701786943883</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="-Проверка на &quot;дурака&quot; в сохранении фрактала&#10;-Сохранение фрактала">
+      <option name="closed" value="true" />
+      <created>1702327718129</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702327718129</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,7 +217,8 @@
     <MESSAGE value="Сохранение в .jpg не финал" />
     <MESSAGE value="Сохранение и загрузка фрактала в формате txt" />
     <MESSAGE value="Проверка на &quot;дурака&quot; в сохранении фрактала" />
-    <option name="LAST_COMMIT_MESSAGE" value="Проверка на &quot;дурака&quot; в сохранении фрактала" />
+    <MESSAGE value="-Проверка на &quot;дурака&quot; в сохранении фрактала&#10;-Сохранение фрактала" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Проверка на &quot;дурака&quot; в сохранении фрактала&#10;-Сохранение фрактала" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
