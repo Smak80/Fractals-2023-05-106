@@ -131,10 +131,11 @@ class Window : JFrame(){
         jMenuBar = menubar
 
         val file_ecs = JMenu("Экскурсия по фракталу")
+        val openMenuItem = JMenuItem("Открыть новое окно")
+        openMenuItem.addActionListener{FractalExcursionMenu()}
+        file_ecs.add(openMenuItem)
         menubar.add(file_ecs)
         jMenuBar = menubar
-
-
 
 
 
