@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="edited Nael`s part">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcodec_javase.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jcodec-0.2.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jcodec-javase-0.2.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38__Changes_.xml" beforeDir="false" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="add fractal excursion part (not finished)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fractals-2023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Fractals-2023.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +44,7 @@
     </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
+        <option name="accountId" value="62138ef1-d7d2-42d2-be6b-6d5b93b9f082" />
         <option name="url" value="https://github.com/hunnimor/Fractals-2023-05-106.git" />
       </UrlAndAccount>
     </option>
@@ -82,7 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/rinarmirzagitov/IdeaProjects/Fractaaaalllllssss/src/main/kotlin/ru/gr106/fractal/gui",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.48081535",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -214,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702404519666</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add fractal excursion part (not finished)">
+      <option name="closed" value="true" />
+      <created>1702405333689</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702405333689</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +230,7 @@
     <MESSAGE value="сделал отмену сдвига и масштабирования" />
     <MESSAGE value="сделал плавный сдвиг, но сломал отмену сдвигов" />
     <MESSAGE value="edited Nael`s part" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited Nael`s part" />
+    <MESSAGE value="add fractal excursion part (not finished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fractal excursion part (not finished)" />
   </component>
 </project>
