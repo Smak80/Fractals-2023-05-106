@@ -5,10 +5,15 @@ import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.Dimension
+import java.awt.event.ActionEvent
+import java.awt.event.ActionListener
+import java.awt.event.ComponentAdapter
+import java.awt.event.ComponentEvent
 import java.awt.Toolkit
 import java.awt.event.*
 import java.beans.PropertyChangeListener
 import javax.swing.*
+
 
 class Window : JFrame(){
 
@@ -99,7 +104,7 @@ class Window : JFrame(){
         }
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
-        fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
+        fp.pointColor = SchemeChooser(2)    //выбор цветовой схемы - всего 3
     }
     private fun createMenuBar() {
 
@@ -113,20 +118,25 @@ class Window : JFrame(){
         jMenuBar = menubar
 
         val file_color= JMenu("Выбор цветовой схемы")
-        val  cMenuItem = JMenuItem("1")
+        val  cMenuItem = JMenuItem("Синяя тема")
         file_color.add(cMenuItem)
-        val  dMenuItem = JMenuItem("2")
+        cMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(1)}
+        val  dMenuItem = JMenuItem("Зеленая тема")
+        dMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(2)}
         file_color.add(dMenuItem)
-        val  eMenuItem = JMenuItem("3")
+        val  eMenuItem = JMenuItem("Розовая тема")
+        eMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(3)}
         file_color.add(eMenuItem)
         menubar.add(file_color)
         jMenuBar = menubar
 
         val file_ecs = JMenu("Экскурсия по фракталу")
-        val  fMenuItem = JMenuItem("начать")
-        file_ecs.add(fMenuItem)
         menubar.add(file_ecs)
         jMenuBar = menubar
+
+
+
+
 
     }
 
