@@ -43,8 +43,8 @@
     </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="9782cf15-e68f-429a-8968-b2abd7fbe6bf" />
-        <option name="url" value="https://github.com/beetlewie/Fractals-2023-05-106" />
+        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
+        <option name="url" value="https://github.com/hunnimor/Fractals-2023-05-106.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -184,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701854516266</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="сделал плавный сдвиг, но сломал отмену сдвигов">
+      <option name="closed" value="true" />
+      <created>1701865148332</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865148332</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -197,6 +205,7 @@
     <MESSAGE value=".поправлен баг при сдвиге" />
     <MESSAGE value="ДОбавил data class хранящий состояния панели" />
     <MESSAGE value="сделал отмену сдвига и масштабирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал отмену сдвига и масштабирования" />
+    <MESSAGE value="сделал плавный сдвиг, но сломал отмену сдвигов" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал плавный сдвиг, но сломал отмену сдвигов" />
   </component>
 </project>

@@ -30,9 +30,6 @@ class Window : JFrame(){
         mainPanel = DrawingPanel(fp)
         createMenuBar() // создание меню
 
-
-        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
-
         mainPanel.addComponentListener(object : ComponentAdapter(){
             override fun componentResized(e: ComponentEvent?) {
                 fp.plane?.width = mainPanel.width
@@ -40,33 +37,31 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         })
+
+        //отмена действия
+        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
-                if (e != null) {
-                    if (e.isControlDown){
-
-                        fp.plane?.let {
-                            if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)
-                                it.xMin = stateList.last().xMin
-                                it.yMin = stateList.last().yMin
-                                it.xMax = stateList.last().xMax
-                                it.yMax = stateList.last().yMax
-                                stateList.removeAt(stateList.lastIndex)
-                                mainPanel.repaint()
-                            }
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        if(stateList.size != 0){
+                            fp.pointColor = SchemeChooser(stateList.last.colorScheme)
+                            it.xMin = stateList.last.xMin
+                            it.yMin = stateList.last.yMin
+                            it.xMax = stateList.last.xMax
+                            it.yMax = stateList.last.yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
                         }
-
                     }
                 }
             }
         })
+
+        //данная функция отрисовывает фрактал заново при сдвиге и масштабировании
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-
-                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
-                stateList.add(someState)//добавление состояния в список состояний
-
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
@@ -76,6 +71,14 @@ class Window : JFrame(){
                 it.xMax = xMax
                 it.yMax = yMax
                 mainPanel.repaint()
+            }
+        }
+
+        //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
+        mainPanel.addSelectedListener{rect->
+            fp.plane?.let{
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
             }
         }
 
