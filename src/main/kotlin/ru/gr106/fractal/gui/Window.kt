@@ -96,13 +96,6 @@ class Window : JFrame(){
         menubar.add(file_ecs)
         jMenuBar = menubar
 
-        val file_j = JMenu("Запустить Жулиа")
-        menubar.add(file_j)
-        val  rectMenuItem = JMenuItem("Начать")
-        file_j.add(rectMenuItem)
-        rectMenuItem.addActionListener{ _:ActionEvent -> Mandelbrot.funcNum = -1  }
-        rectMenuItem.addActionListener{ _:ActionEvent ->  Julia.c = Complex(-1.0, 0.0)}
-        jMenuBar = menubar
 
 
 
