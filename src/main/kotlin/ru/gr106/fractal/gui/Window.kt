@@ -194,7 +194,6 @@ class Window : JFrame(){
                                         juliaPanel.repaint()
                                     }
                                 }
-
                             }
                         }
                     }

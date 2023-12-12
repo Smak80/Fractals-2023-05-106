@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="back 17 jdk" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702405333689</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="back 17 jdk">
+      <option name="closed" value="true" />
+      <created>1702407184819</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702407184819</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -191,6 +199,7 @@
     <MESSAGE value="сделал плавный сдвиг, но сломал отмену сдвигов" />
     <MESSAGE value="edited Nael`s part" />
     <MESSAGE value="add fractal excursion part (not finished)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fractal excursion part (not finished)" />
+    <MESSAGE value="back 17 jdk" />
+    <option name="LAST_COMMIT_MESSAGE" value="back 17 jdk" />
   </component>
 </project>
