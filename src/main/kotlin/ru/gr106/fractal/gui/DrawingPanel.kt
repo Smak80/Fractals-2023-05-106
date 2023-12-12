@@ -30,7 +30,7 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
                     rect.addPoint(0, 0)
                     rect.addPoint(width, height)
-                    selectedListener.get(1).let{it(rect)}//запоминает состояние фрактала
+                    selectedListener.get(0).let{it(rect)}//запоминает состояние фрактала
 
                     mouseButtonPressed = 1
 
@@ -51,7 +51,7 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
                     rect.addPoint(0, 0)
                     rect.addPoint(width, height)
-                    selectedListener.get(1).let{it(rect)}//запоминает состояние фрактала
+                    selectedListener.get(0).let{it(rect)}//запоминает состояние фрактала
                 }
             }
 
@@ -71,9 +71,9 @@ class DrawingPanel(val p:Painter) : JPanel() {
                         mouseButtonStartPointEndPoint.add(e.x to e.y)
 
                         rect.difX =
-                            mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)
+                            mouseButtonStartPointEndPoint.get(0).first.minus(mouseButtonStartPointEndPoint.get(0).first)
                         rect.difY =
-                            mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)
+                            mouseButtonStartPointEndPoint.get(0).second.minus(mouseButtonStartPointEndPoint.get(0).second)
 
                         selectedListener.get(0).let{it(rect)}//двигаем экран
 
