@@ -47,11 +47,11 @@ class Window : JFrame(){
 
                         fp.plane?.let {
                             if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last.colorScheme)
-                                it.xMin = stateList.last.xMin
-                                it.yMin = stateList.last.yMin
-                                it.xMax = stateList.last.xMax
-                                it.yMax = stateList.last.yMax
+                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                                it.xMin = stateList.last().xMin
+                                it.yMin = stateList.last().yMin
+                                it.xMax = stateList.last().xMax
+                                it.yMax = stateList.last().yMax
                                 stateList.removeAt(stateList.lastIndex)
                                 mainPanel.repaint()
                             }
