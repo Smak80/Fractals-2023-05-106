@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="выборка цветовой схемы (не совсем корректно)">
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="сделал отмену сдвига и масштабирования">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023__22_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023__22_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023__22_07__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023__22_07__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023__22_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023__22_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="e-Khakimov" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -35,9 +35,15 @@
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="greebo63" />
+        <option name="repository" value="Fractals-2023-05-106" />
+      </RepoCoordinatesHolder>
+    </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="84283596-d139-4dcb-95c8-b4313f498800" />
+        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
         <option name="url" value="https://github.com/hunnimor/Fractals-2023-05-106.git" />
       </UrlAndAccount>
     </option>
@@ -66,18 +72,12 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -155,46 +155,48 @@
       <option name="project" value="LOCAL" />
       <updated>1701798447047</updated>
     </task>
-    <task id="LOCAL-00006" summary="начало реализации меню">
+    <task id="LOCAL-00006" summary=".поправлен баг при сдвиге">
       <option name="closed" value="true" />
-      <created>1701809217821</created>
+      <created>1701803489421</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1701809217821</updated>
+      <updated>1701803489421</updated>
     </task>
-    <task id="LOCAL-00007" summary="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;">
+    <task id="LOCAL-00007" summary=".поправлен баг при сдвиге">
       <option name="closed" value="true" />
-      <created>1701811494697</created>
+      <created>1701803493826</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1701811494697</updated>
+      <updated>1701803493826</updated>
     </task>
-    <task id="LOCAL-00008" summary="выборка цветовой схемы (не совсем корректно)">
+    <task id="LOCAL-00008" summary="ДОбавил data class хранящий состояния панели">
       <option name="closed" value="true" />
-      <created>1701814840135</created>
+      <created>1701851729714</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1701814840135</updated>
+      <updated>1701851729714</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="сделал отмену сдвига и масштабирования">
+      <option name="closed" value="true" />
+      <created>1701854516266</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701854516266</updated>
+    </task>
+    <task id="LOCAL-00010" summary="сделал плавный сдвиг, но сломал отмену сдвигов">
+      <option name="closed" value="true" />
+      <created>1701865148332</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865148332</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -203,9 +205,10 @@
     <MESSAGE value="масштабирование фракткала" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="функции+цветовые схемы+жюлиа" />
-    <MESSAGE value="начало реализации меню" />
-    <MESSAGE value="кнопки выбора цветовой схемы и &quot;экскурсия по фракталу&quot;" />
-    <MESSAGE value="выборка цветовой схемы (не совсем корректно)" />
-    <option name="LAST_COMMIT_MESSAGE" value="выборка цветовой схемы (не совсем корректно)" />
+    <MESSAGE value=".поправлен баг при сдвиге" />
+    <MESSAGE value="ДОбавил data class хранящий состояния панели" />
+    <MESSAGE value="сделал отмену сдвига и масштабирования" />
+    <MESSAGE value="сделал плавный сдвиг, но сломал отмену сдвигов" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал плавный сдвиг, но сломал отмену сдвигов" />
   </component>
 </project>

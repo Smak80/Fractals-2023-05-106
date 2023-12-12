@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.awt.event.ComponentAdapter
 import java.awt.event.ComponentEvent
+import java.awt.Toolkit
+import java.awt.event.*
+import java.beans.PropertyChangeListener
 import javax.swing.*
 
 
@@ -17,10 +20,13 @@ class Window : JFrame(){
     private val mainPanel: DrawingPanel
     private val fp: FractalPainter
 
-    init{
-        Mandelbrot.funcNum = 0//выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+    private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
+    private var colorScheme = 1 //хранит в себе цветовую схему
 
-        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+    init{
+        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+
+        Julia.c = Complex(-0.5,0.75)// выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
 
         fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)
 
@@ -36,6 +42,29 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         })
+
+        //отмена действия
+        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
+        mainPanel.addKeyListener(object : KeyAdapter(){
+            override fun keyReleased(e: KeyEvent?) {
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        if(stateList.size != 0){
+                            fp.pointColor = SchemeChooser(stateList.last.colorScheme)
+                            it.xMin = stateList.last.xMin
+                            it.yMin = stateList.last.yMin
+                            it.xMax = stateList.last.xMax
+                            it.yMax = stateList.last.yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
+                        }
+                    }
+                }
+            }
+        })
+
+        //данная функция отрисовывает фрактал заново при сдвиге и масштабировании
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
@@ -49,6 +78,15 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         }
+
+        //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
+        mainPanel.addSelectedListener{rect->
+            fp.plane?.let{
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
+            }
+        }
+
         mainPanel.background = Color.WHITE
         layout = GroupLayout(contentPane).apply {
             setVerticalGroup(
@@ -101,4 +139,11 @@ class Window : JFrame(){
 
 
     }
+
+    fun addState(state: State){
+        stateList.add(state)
+    }
+}
+
+data class State(val fractal: Int, val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double, val colorScheme: Int, val pointJulia: Complex?) {
 }
