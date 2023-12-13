@@ -56,7 +56,7 @@ class Window(f: AlgebraicFractal) : JFrame() {
         funcs = mapOf(
             "square" to {value:Complex -> value*value},
             "qubic" to {value:Complex -> value*value*value},
-            "plus" to {value:Complex -> value+value}
+            "plus" to {value:Complex -> value}
         )
 
         themes = mapOf(
@@ -298,6 +298,7 @@ class Window(f: AlgebraicFractal) : JFrame() {
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = themes["green"]!!
+        Mandelbrot.function = funcs["plus"]!!
         MovieMaker.fpp = fp
     }
     private fun createMenuBar(): JMenuBar {
@@ -452,6 +453,14 @@ class Window(f: AlgebraicFractal) : JFrame() {
                 JOptionPane.ERROR_MESSAGE);
         }
         if (ok==0) {
+            cancelAction.clear()
+            fp.plane?.let {
+                val map = mutableMapOf<Pair<Double , Double> , Pair<Double , Double>>()
+                val pX = Pair(it.xMin , it.xMax)
+                val pY = Pair(it.yMin , it.yMax)
+                map.put(pX, pY)
+                cancelAction.push(map)
+            }
             val path: String? = fileChooser.selectedFile.toString()
             if(path!!.length > 6 && path.toString().slice((path.length-4)..<(path.length)).equals(".txt")){
                 try {
@@ -589,7 +598,6 @@ class Window(f: AlgebraicFractal) : JFrame() {
         val ok = fileChooser.showSaveDialog(null)
         if (ok==0) {
             var path: String? = fileChooser.selectedFile.toString()
-            print(path)
             if(path!!.length > 6){
                 if(!path.toString().slice((path.length-4)..<(path.length)).equals(".txt")){
                     if(path[path.length-1] == '.') path += "txt"
