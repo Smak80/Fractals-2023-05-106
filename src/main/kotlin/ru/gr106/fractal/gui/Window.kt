@@ -12,6 +12,9 @@ import java.awt.event.ComponentEvent
 import java.awt.Toolkit
 import java.awt.event.*
 import java.beans.PropertyChangeListener
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.swing.*
 
 
@@ -51,11 +54,11 @@ class Window : JFrame(){
                 if (e != null && e.isControlDown) {
                     fp.plane?.let {
                         if(stateList.size != 0){
-                            fp.pointColor = SchemeChooser(stateList.last.colorScheme)
-                            it.xMin = stateList.last.xMin
-                            it.yMin = stateList.last.yMin
-                            it.xMax = stateList.last.xMax
-                            it.yMax = stateList.last.yMax
+                            fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                            it.xMin = stateList.last().xMin
+                            it.yMin = stateList.last().yMin
+                            it.xMax = stateList.last().xMax
+                            it.yMax = stateList.last().yMax
                             stateList.removeAt(stateList.lastIndex)
                             mainPanel.repaint()
                         }
@@ -106,16 +109,24 @@ class Window : JFrame(){
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(2)    //выбор цветовой схемы - всего 3
     }
-    private fun createMenuBar() {
+
+
+
+    private fun createMenuBar() { // функция, реализующая меню
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  aMenuItem = JMenuItem("Сохранить")
+        val  aMenuItem = JMenuItem("Сохранить картинку")
         file.add(aMenuItem) // добавление новой ячейки в меню
+        aMenuItem.addActionListener{ _: ActionEvent -> } // сохранение картинки
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
         menubar.add(file)
-        jMenuBar = menubar
+
+        val  fMenuItem = JMenuItem("Сохранить файл")
+        file.add(fMenuItem)
+        fMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
+
 
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("Синяя тема")
@@ -128,7 +139,7 @@ class Window : JFrame(){
         eMenuItem.addActionListener{ _: ActionEvent -> fp.pointColor = SchemeChooser(3)}
         file_color.add(eMenuItem)
         menubar.add(file_color)
-        jMenuBar = menubar
+
 
         val file_ecs = JMenu("Экскурсия по фракталу")
         menubar.add(file_ecs)
@@ -139,7 +150,32 @@ class Window : JFrame(){
 
 
     }
+    // реализация функции сохранения файла
+    private fun save() {
+        //val fileName = "имя_файла.расширение"
+        var file: SimpleDateFormat? = null
 
+        val fc = JFileChooser()
+        fc.setDialogTitle("Сохранить файл")
+
+
+        val frame = null
+        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+                file = SimpleDateFormat()
+                val path = fc.selectedFile.path
+                val name = fc.selectedFile.name
+                val date = file!!.format(Date())
+                val fullPath = "$path/$name$date"
+
+                println("Файл сохранен по адресу $fullPath")
+            } catch (e: IOException) { // обработка исключений
+                e.printStackTrace()
+            }
+        } else {
+            println("Сохранение отменено")
+        }
+    }
     fun addState(state: State){
         stateList.add(state)
     }
