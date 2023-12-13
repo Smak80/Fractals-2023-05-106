@@ -1,0 +1,74 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"back 17 jdk\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"9782cf15-e68f-429a-8968-b2abd7fbe6bf\" />\n        <option name=\"url\" value=\"https://github.com/beetlewie/Fractals-2023-05-106\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"Downloaded.Files.Path.Enabled\": \"false\",\n    \"Repository.Attach.Annotations\": \"false\",\n    \"Repository.Attach.JavaDocs\": \"false\",\n    \"Repository.Attach.Sources\": \"false\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"git-widget-placeholder\": \"master\",\n    \"last_opened_file_path\": \"C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar\",\n    \"project.structure.last.edited\": \"Project\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.48081535\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"функции+цветовые схемы+жюлиа\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701798447047</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701798447047</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"жюлиа\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1702405541263</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1702405541263</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"сделал отмену сдвига и масштабирования\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701854516266</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701854516266</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"сделал плавный сдвиг, но сломал отмену сдвигов\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701865148332</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865148332</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"edited Nael`s part\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1702404519666</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1702404519666</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"add fractal excursion part (not finished)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1702405333689</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1702405333689</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"back 17 jdk\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1702407184819</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1702407184819</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"back 17 jdk\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1702407559702</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1702407559702</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"15\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\n    <MESSAGE value=\"функции+цветовые схемы+жюлиа\" />\n    <MESSAGE value=\".поправлен баг при сдвиге\" />\n    <MESSAGE value=\"ДОбавил data class хранящий состояния панели\" />\n    <MESSAGE value=\"сделал отмену сдвига и масштабирования\" />\n    <MESSAGE value=\"сделал плавный сдвиг, но сломал отмену сдвигов\" />\n    <MESSAGE value=\"edited Nael`s part\" />\n    <MESSAGE value=\"add fractal excursion part (not finished)\" />\n    <MESSAGE value=\"back 17 jdk\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"back 17 jdk\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,9 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="back 17 jdk">
++    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="fixed conflicts">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/apache_commons_math3.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/lib/commons-collections4-4.4.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/lib/commons-math3-3.6.1.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/output_video.mp4" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Fractals-2023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Fractals-2023.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -55,7 +62,7 @@
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Downloaded.Files.Path.Enabled": "false",
++    "Downloaded.Files.Path.Enabled": "true",
+     "Repository.Attach.Annotations": "false",
+     "Repository.Attach.JavaDocs": "false",
+     "Repository.Attach.Sources": "false",
+@@ -64,7 +71,7 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "master",
+     "last_opened_file_path": "C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar",
+-    "project.structure.last.edited": "Project",
++    "project.structure.last.edited": "Libraries",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.48081535"
+   }
+@@ -196,7 +203,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1702407559702</updated>
+     </task>
+-    <option name="localTasksCounter" value="15" />
++    <task id="LOCAL-00015" summary="fixed conflicts">
++      <option name="closed" value="true" />
++      <created>1702408943332</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1702408943333</updated>
++    </task>
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -212,6 +227,7 @@
+     <MESSAGE value="edited Nael`s part" />
+     <MESSAGE value="add fractal excursion part (not finished)" />
+     <MESSAGE value="back 17 jdk" />
+-    <option name="LAST_COMMIT_MESSAGE" value="back 17 jdk" />
++    <MESSAGE value="fixed conflicts" />
++    <option name="LAST_COMMIT_MESSAGE" value="fixed conflicts" />
+   </component>
+ </project>
+\ No newline at end of file

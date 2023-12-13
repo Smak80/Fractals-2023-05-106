@@ -8,6 +8,7 @@ import drawing.Plane
 import java.awt.Color
 import java.awt.image.BufferedImage
 import kotlin.concurrent.thread
+import kotlin.math.ln
 
 class FractalPainter (val fractal: AlgebraicFractal) : Painter{
 
@@ -17,6 +18,9 @@ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
     override val height: Int
         get() = plane?.height?:0
     var pointColor: (Float) -> Color = {if (it < 1f) Color.WHITE else Color.BLACK }
+    var maxIteration: Int
+        get() = fractal.maxIterations
+        set(value) {fractal.maxIterations = value}
 
 
     override fun paint(g: Graphics) {
@@ -24,6 +28,13 @@ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
         //как рисовать фрактал
         val img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
         plane?.let{ plane ->
+            val k: Double = ((plane.xMax - plane.xMin) * (plane.yMax - plane.yMin))
+            val m: Double = 1.0 / k
+            //if(dynamicItOn){
+            if (k > 0.0001) maxIteration = 500
+            if (k > 0.00000001 && k < 0.0001) maxIteration = ln(m / 100).toInt() * 200
+            if (k < 0.00000001) maxIteration = ln(m / 1000000).toInt() * 200
+            //  }
             Array(procCount){ thread {
                 for (x in it..< width step procCount) {
                     for (y in 0..< height) {

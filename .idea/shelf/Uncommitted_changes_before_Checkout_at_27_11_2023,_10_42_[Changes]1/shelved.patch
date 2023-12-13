@@ -1,0 +1,88 @@
+Index: src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport java.awt.Color\nimport java.awt.Graphics\nimport java.awt.event.MouseAdapter\nimport java.awt.event.MouseEvent\nimport java.awt.event.MouseMotionAdapter\nimport javax.swing.JPanel\n\nclass DrawingPanel(val p:Painter) : JPanel() {\n    private var rect = SelectionRect()\n    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()\n\n    fun addSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.add(l)\n    }\n\n    fun removeSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.remove(l)\n    }\n\n    init {\n\n        this.addMouseListener(object : MouseAdapter(){\n            override fun mousePressed(e: MouseEvent?) {\n                e?.let {\n                    rect = SelectionRect().apply {\n                        addPoint(it.x, it.y)\n                        graphics.apply {\n                            setXORMode(Color.WHITE)\n                            drawRect(-10, -10, 1, 1)\n                            setPaintMode()\n                        }\n                    }\n                }\n\n            }\n\n            override fun mouseReleased(e: MouseEvent?) {\n                e?.let {\n                    if (rect.isCreated) drawRect()\n                    rect.addPoint(it.x, it.y)\n                    selectedListener.forEach { it(rect) }\n                }\n            }\n\n        })\n        this.addMouseMotionListener(object : MouseMotionAdapter(){\n            override fun mouseDragged(e: MouseEvent?) {\n                e?.let {\n                    if (rect.isCreated)\n                        drawRect()\n                    rect.addPoint(it.x, it.y)\n                    drawRect()\n                }\n            }\n\n        })\n    }\n\n    private fun drawRect() {\n        graphics.apply{\n            setXORMode(Color.WHITE)\n            color = Color.BLACK\n            drawRect(rect.x, rect.y, rect.width, rect.height)\n            setPaintMode()\n        }\n    }\n\n    override fun paint(g: Graphics?) {\n        super.paint(g)\n        g?.let{ p.paint(it) }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	
++++ b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	
+@@ -7,21 +7,20 @@
+ import java.awt.event.MouseMotionAdapter
+ import javax.swing.JPanel
+ 
+-class DrawingPanel(val p:Painter) : JPanel() {
++class DrawingPanel(val p: Painter) : JPanel() {
+     private var rect = SelectionRect()
+-    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()
++    private val selectedListener = mutableListOf<(SelectionRect) -> Unit>()
+ 
+-    fun addSelectedListener(l: (SelectionRect)->Unit) {
++    fun addSelectedListener(l: (SelectionRect) -> Unit) {
+         selectedListener.add(l)
+     }
+ 
+-    fun removeSelectedListener(l: (SelectionRect)->Unit) {
++    fun removeSelectedListener(l: (SelectionRect) -> Unit) {
+         selectedListener.remove(l)
+     }
+ 
+     init {
+-
+-        this.addMouseListener(object : MouseAdapter(){
++        this.addMouseListener(object : MouseAdapter() {
+             override fun mousePressed(e: MouseEvent?) {
+                 e?.let {
+                     rect = SelectionRect().apply {
+@@ -45,11 +44,10 @@
+             }
+ 
+         })
+-        this.addMouseMotionListener(object : MouseMotionAdapter(){
++        this.addMouseMotionListener(object : MouseMotionAdapter() {
+             override fun mouseDragged(e: MouseEvent?) {
+                 e?.let {
+-                    if (rect.isCreated)
+-                        drawRect()
++                    if (rect.isCreated) drawRect()
+                     rect.addPoint(it.x, it.y)
+                     drawRect()
+                 }
+@@ -59,7 +57,7 @@
+     }
+ 
+     private fun drawRect() {
+-        graphics.apply{
++        graphics.apply {
+             setXORMode(Color.WHITE)
+             color = Color.BLACK
+             drawRect(rect.x, rect.y, rect.width, rect.height)
+@@ -69,6 +67,6 @@
+ 
+     override fun paint(g: Graphics?) {
+         super.paint(g)
+-        g?.let{ p.paint(it) }
++        g?.let { p.paint(it) }
+     }
+ }
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,6 +1,5 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
