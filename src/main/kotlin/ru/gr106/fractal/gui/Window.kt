@@ -1,16 +1,13 @@
 package ru.gr106.fractal.gui
 
-import math.*
+import math.Complex
+import math.Julia
+import math.Mandelbrot
 import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.Dimension
-import java.awt.Toolkit
 import java.awt.event.*
-import java.beans.PropertyChangeListener
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
 import javax.swing.*
 
 
@@ -25,14 +22,6 @@ class Window : JFrame(){
 
     private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
     private var colorScheme = 1 //хранит в себе цветовую схему
-    private var newWidth: Int = 0
-    private var newHeight: Int = 0
-    private var dx: Double = 0.0
-    private var dy: Double = 0.0
-    private var yMin = -1.0
-    private var yMax = 1.0
-    private var xMin = -2.0
-    private var xMax = 1.0
 
     init{
         Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
@@ -49,52 +38,6 @@ class Window : JFrame(){
 
         mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
 
-        mainPanel.addComponentListener(object : ComponentAdapter(){
-            override fun componentResized(e: ComponentEvent?) {
-                fp.plane?.width = mainPanel.width
-                fp.plane?.height = mainPanel.height
-                newHeight = mainPanel.height
-                newWidth = mainPanel.width
-
-                val OXlength = xMax - xMin
-                val OYlength = yMax - yMin
-
-                var newXMax = xMax
-                var newXMin = xMin
-                var newYMax = yMax
-                var newYMin = yMin
-
-                val relationOXY = OXlength * 1.0 / OYlength
-
-                val relationWidthHeight = newWidth * 1.0 / newHeight
-
-                if (Math.abs(relationOXY - relationWidthHeight) > 1E-5){
-                    if (relationOXY < relationWidthHeight){
-                        dx = relationWidthHeight - relationOXY
-                        newXMin -= dx
-                        newXMax += dx
-                    }
-                    if (relationOXY > relationWidthHeight){
-                        dy = relationOXY - relationWidthHeight
-                        newYMin -= dy
-                        newYMax += dy
-                    }
-                }
-                val xPair = Pair(newXMin, newXMax)
-                val yPair = Pair(newYMin, newYMax)
-                val mapOfCoord = mutableMapOf<Pair<Double, Double>, Pair<Double, Double>>()
-                mapOfCoord.put(xPair, yPair)
-                fp.plane?.xMax = newXMax
-                fp.plane?.xMin = newXMin
-                fp.plane?.yMin = newYMin
-                fp.plane?.yMax = newYMax
-                fp.plane?.height = mainPanel.height
-                fp.plane?.width = mainPanel.width
-
-                //fp.previousImage = null
-                mainPanel.repaint()
-            }
-        })
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
                 if (e != null && e.isControlDown) {
@@ -108,17 +51,22 @@ class Window : JFrame(){
                             stateList.removeAt(stateList.lastIndex)
                             mainPanel.repaint()
                         }
-
                     }
                 }
             }
         })
+
+        mainPanel.addComponentListener(object : ComponentAdapter(){
+            override fun componentResized(e: ComponentEvent?) {
+                fp.plane?.width = mainPanel.width
+                fp.plane?.height = mainPanel.height
+                mainPanel.repaint()
+            }
+        })
+
+        //данная функция отрисовывает фрактал заново при сдвиге и масштабировании
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-
-                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
-                stateList.add(someState)//добавление состояния в список состояний
-
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
@@ -131,13 +79,13 @@ class Window : JFrame(){
             }
         }
 
+        //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
         mainPanel.addSelectedListener{rect->
             fp.plane?.let{
                 val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
                 stateList.add(someState)//добавление состояния в список состояний
             }
         }
-
 
         mainPanel.background = Color.WHITE
         layout = GroupLayout(contentPane).apply {
@@ -157,39 +105,20 @@ class Window : JFrame(){
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
+
     }
-
-
-
-    private fun createMenuBar() { // функция, реализующая меню
+    private fun createMenuBar() {
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  aMenuItem = JMenuItem("Сохранить картинку")
+        val  aMenuItem = JMenuItem("Сохранить")
         file.add(aMenuItem) // добавление новой ячейки в меню
-        aMenuItem.addActionListener{ _: ActionEvent -> } // сохранение картинки
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
-        bMenuItem.addActionListener{
-            fp.plane?.let {
-                if(stateList.size != 0){
-                    fp.pointColor = SchemeChooser(stateList.last().colorScheme)
-                    it.xMin = stateList.last().xMin
-                    it.yMin = stateList.last().yMin
-                    it.xMax = stateList.last().xMax
-                    it.yMax = stateList.last().yMax
-                    stateList.removeAt(stateList.lastIndex)
-                    mainPanel.repaint()
-                }
-            }
-        }
         menubar.add(file)
-
         val  kMenuItem = JMenuItem("Сохранить файл")
         file.add(kMenuItem)
         kMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
-
-
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
         file_color.add(cMenuItem)
@@ -198,10 +127,15 @@ class Window : JFrame(){
         val  eMenuItem = JMenuItem("3")
         file_color.add(eMenuItem)
         menubar.add(file_color)
-
+        jMenuBar = menubar
 
         val file_ecs = JMenu("Экскурсия по фракталу")
         val  fMenuItem = JMenuItem("начать")
+
+        val openMenuItem = JMenuItem("Открыть новое окно")
+        openMenuItem.addActionListener { FractalExcursion(fp) }
+        file_ecs.add(openMenuItem)
+        file_ecs.addActionListener { FractalExcursion(fp) }
         file_ecs.add(fMenuItem)
         menubar.add(file_ecs)
         jMenuBar = menubar
@@ -215,6 +149,8 @@ class Window : JFrame(){
         coordy.add(fMenuItem)
         menubar.add(coordy)
         jMenuBar=menubar
+
+
 
         var re: Double
         var im: Double
@@ -247,7 +183,7 @@ class Window : JFrame(){
                 ju = FractalPainter(Julia)
                 juliaPanel = DrawingPanel(ju)
 
-                juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
 
                 juliaPanel.addComponentListener(object : ComponentAdapter(){
                     override fun componentResized(e: ComponentEvent?) {
@@ -256,11 +192,32 @@ class Window : JFrame(){
                         newWindow.repaint()
                     }
                 })
+
+                juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
                 juliaPanel.addKeyListener(object : KeyAdapter(){
+                    override fun keyReleased(e: KeyEvent?) {
+                        if (e != null && e.isControlDown) {
+                            ju.plane?.let {
+                                if(stateList.size != 0){
+                                    fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                                    it.xMin = stateList.last().xMin
+                                    it.yMin = stateList.last().yMin
+                                    it.xMax = stateList.last().xMax
+                                    it.yMax = stateList.last().yMax
+                                    stateList.removeAt(stateList.lastIndex)
+                                    juliaPanel.repaint()
+                                }
+                            }
+                        }
+                    }
+                })
+
+
+                /*juliaPanel.addKeyListener(object : KeyAdapter(){
                     override fun keyReleased(e: KeyEvent?) {
                         if (e != null) {
                             if (e.isControlDown){
-
                                 ju.plane?.let {
                                     if(stateList.size != 0){
                                         ju.pointColor = SchemeChooser(stateList.last().colorScheme)
@@ -272,12 +229,11 @@ class Window : JFrame(){
                                         juliaPanel.repaint()
                                     }
                                 }
-
                             }
                         }
                     }
-                })
-                juliaPanel.addSelectedListener {rect ->
+                })*/
+                /*juliaPanel.addSelectedListener {rect ->
                     ju.plane?.let {
 
                         val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
@@ -292,6 +248,28 @@ class Window : JFrame(){
                         it.xMax = xMax
                         it.yMax = yMax
                         juliaPanel.repaint()
+                    }
+                }*/
+
+                juliaPanel.addSelectedListener {rect ->
+                    ju.plane?.let {
+                        val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+                        val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
+                        val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
+                        val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
+                        it.xMin = xMin
+                        it.yMin = yMin
+                        it.xMax = xMax
+                        it.yMax = yMax
+                        juliaPanel.repaint()
+                    }
+                }
+
+                //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
+                juliaPanel.addSelectedListener{rect->
+                    fp.plane?.let{
+                        val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                        stateList.add(someState)//добавление состояния в список состояний
                     }
                 }
 
@@ -315,6 +293,7 @@ class Window : JFrame(){
                 ju.plane = Plane(-2.0, 1.0, -1.0, 1.0, juliaPanel.width, juliaPanel.height)
                 ju.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
                 newWindow.add(juliaPanel)
+
             }
         })
         menubar.add(button)
@@ -322,32 +301,7 @@ class Window : JFrame(){
 
 
     }
-    // реализация функции сохранения файла
-    private fun save() {
-        //val fileName = "имя_файла.расширение"
-        var file: SimpleDateFormat? = null
 
-        val fc = JFileChooser()
-        fc.setDialogTitle("Сохранить файл")
-
-
-        val frame = null
-        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
-            try {
-                file = SimpleDateFormat()
-                val path = fc.selectedFile.path
-                val name = fc.selectedFile.name
-                val date = file!!.format(Date())
-                val fullPath = "$path/$name$date"
-
-                println("Файл сохранен по адресу $fullPath")
-            } catch (e: IOException) { // обработка исключений
-                e.printStackTrace()
-            }
-        } else {
-            println("Сохранение отменено")
-        }
-    }
     fun addState(state: State){
         stateList.add(state)
     }

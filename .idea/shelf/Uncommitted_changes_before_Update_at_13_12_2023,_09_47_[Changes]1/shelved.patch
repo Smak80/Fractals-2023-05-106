@@ -1,0 +1,457 @@
+Index: src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport org.jcodec.api.awt.AWTSequenceEncoder\nimport java.awt.Image\nimport java.awt.Rectangle\nimport java.awt.Robot\nimport java.awt.Toolkit\nimport java.awt.image.BufferedImage\nimport java.io.File\n\nclass FractalExcursion(private val framesPerSecond: Int = 30) {\n\n    fun createVideo(fragments: Array<Rectangle>, outputFile: File) {\n        val robot = Robot()\n        val screenSize = Toolkit.getDefaultToolkit().screenSize\n        val screenRect = Rectangle(screenSize)\n\n        // Создаем объект кодировщика видео\n        val encoder = AWTSequenceEncoder.createSequenceEncoder(outputFile, framesPerSecond)\n\n        for (fragment in fragments) {\n            for (i in 0 until framesPerSecond * 3) { // Пример: плавное перемещение в течение 3 секунд\n                val progress = i.toDouble() / (framesPerSecond * 3 - 1)\n                val x = (fragment.x + progress * 100).toInt() // Пример: перемещение по оси X\n                val y = (fragment.y + progress * 100).toInt() // Пример: перемещение по оси Y\n\n                val screenCapture = robot.createScreenCapture(Rectangle(screenRect.x + x, screenRect.y + y, fragment.width, fragment.height))\n                val bufferedImage = BufferedImage(screenCapture.width, screenCapture.height, BufferedImage.TYPE_INT_RGB)\n                bufferedImage.graphics.drawImage(screenCapture, 0, 0, null)\n\n                encoder.encodeImage(bufferedImage)\n            }\n        }\n\n        // Завершаем процесс кодирования и закрываем кодировщик\n        encoder.finish()\n    }\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt b/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt	
++++ b/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursion.kt	
+@@ -1,40 +1,194 @@
+ package ru.gr106.fractal.gui
+ 
++import java.awt.*
++import java.awt.event.ActionEvent
++import java.awt.event.ActionListener
++import javax.swing.*
++import org.apache.commons.math3.analysis.interpolation.SplineInterpolator
+ import org.jcodec.api.awt.AWTSequenceEncoder
+-import java.awt.Image
+-import java.awt.Rectangle
+-import java.awt.Robot
+-import java.awt.Toolkit
++import org.jcodec.common.model.Size
++import ru.smak.drawing.Plane
+ import java.awt.image.BufferedImage
+ import java.io.File
++import javax.swing.text.AttributeSet
++import javax.swing.text.DocumentFilter
++import javax.swing.text.PlainDocument
++
++class FractalExcursion(val fp: FractalPainter) : JFrame("Экскурсия по фракталу") {
++    private val frameListModel = DefaultListModel<DataPoint>()
++    private val frameList = JList(frameListModel)
++    private val addFrameButton = JButton("Добавить кадр")
++    private val deleteFrameButton = JButton("Удалить кадр")
++    private val makeVideoButton = JButton("Сделать видео")
++    private val videoLengthInput = JTextField("5", 10)
++
++
++    init {
++        (videoLengthInput.document as PlainDocument).documentFilter = PositiveNumberFilter()
++        defaultCloseOperation = JFrame.DISPOSE_ON_CLOSE
++        setSize(700, 200)
++        minimumSize = Dimension(700, 200)
++        isVisible = true
+ 
+-class FractalExcursion(private val framesPerSecond: Int = 30) {
++        layout = BorderLayout()
+ 
+-    fun createVideo(fragments: Array<Rectangle>, outputFile: File) {
+-        val robot = Robot()
+-        val screenSize = Toolkit.getDefaultToolkit().screenSize
+-        val screenRect = Rectangle(screenSize)
++        frameList.cellRenderer = FrameListCellRenderer()
++        add(JScrollPane(frameList), BorderLayout.CENTER)
+ 
+-        // Создаем объект кодировщика видео
+-        val encoder = AWTSequenceEncoder.createSequenceEncoder(outputFile, framesPerSecond)
++        // кнопки
++        val inputPanel = JPanel()
++        inputPanel.add(JLabel("Длина видео:"))
++        inputPanel.add(videoLengthInput)
++        inputPanel.add(addFrameButton)
++        inputPanel.add(deleteFrameButton)
++        inputPanel.add(makeVideoButton)
+ 
+-        for (fragment in fragments) {
+-            for (i in 0 until framesPerSecond * 3) { // Пример: плавное перемещение в течение 3 секунд
+-                val progress = i.toDouble() / (framesPerSecond * 3 - 1)
+-                val x = (fragment.x + progress * 100).toInt() // Пример: перемещение по оси X
+-                val y = (fragment.y + progress * 100).toInt() // Пример: перемещение по оси Y
++        add(inputPanel, BorderLayout.NORTH)
+ 
+-                val screenCapture = robot.createScreenCapture(Rectangle(screenRect.x + x, screenRect.y + y, fragment.width, fragment.height))
+-                val bufferedImage = BufferedImage(screenCapture.width, screenCapture.height, BufferedImage.TYPE_INT_RGB)
+-                bufferedImage.graphics.drawImage(screenCapture, 0, 0, null)
++        addFrameButton.addActionListener(ButtonClickListener())
++        deleteFrameButton.addActionListener(ButtonClickListener())
++        makeVideoButton.addActionListener(ButtonClickListener())
++    }
+ 
+-                encoder.encodeImage(bufferedImage)
++    inner class ButtonClickListener : ActionListener {
++        override fun actionPerformed(e: ActionEvent) {
++            when (e.source) {
++                addFrameButton -> {
++                    // добавление кадра
++                    val data = fp.plane?.let { DataPoint(1, it.xMin, it.xMax, it.yMin, it.yMax) }
++                    frameListModel.addElement(data)
++                }
++                deleteFrameButton -> {
++                    // удаление кадра
++                    val selectedIndex = frameList.selectedIndex
++                    if (selectedIndex != -1) {
++                        frameListModel.remove(selectedIndex)
++                    }
++                }
++                makeVideoButton -> {
++                    // создание видео
++                    createVideo()
++                    println("Video created successfully.")
++                }
+             }
+         }
++    }
++
++    inner class FrameListCellRenderer : ListCellRenderer<DataPoint> {
++        private val renderer = JPanel(BorderLayout())
++        private val numberLabel = JLabel()
+ 
+-        // Завершаем процесс кодирования и закрываем кодировщик
++        init {
++            val font = numberLabel.font
++            numberLabel.font = font.deriveFont(font.size * 3.5f) // Increase font size
++            numberLabel.horizontalAlignment = SwingConstants.LEFT // Align text to the left
++            renderer.add(numberLabel, BorderLayout.EAST) // Place the numberLabel to the right
++            renderer.border = BorderFactory.createEmptyBorder(5, 5, 5, 5)
++        }
++        override fun getListCellRendererComponent(
++            list: JList<out DataPoint>?,
++            value: DataPoint?,
++            index: Int,
++            isSelected: Boolean,
++            cellHasFocus: Boolean
++        ): Component {
++            numberLabel.text = "Кадр ${index + 1}"
++            if (isSelected) {
++                renderer.background = list?.selectionBackground
++                renderer.foreground = list?.selectionForeground
++            } else {
++                renderer.background = list?.background
++                renderer.foreground = list?.foreground
++            }
++            renderer.isEnabled = list?.isEnabled == true
++            renderer.isOpaque = true
++            return renderer
++        }
++    }
++
++    data class DataPoint(val frameNumber: Int, val x: Double, val y: Double, val z: Double, val t: Double) {}
++
++    private fun createVideo() {
++        val fps = 30
++        val time = videoLengthInput.text.toInt()
++        val framesNumber = fps * time
++        val numberOfPoints = frameListModel.size()
++        println(numberOfPoints)
++        val temp = framesNumber / numberOfPoints
++
++        val data: MutableList<DataPoint> = mutableListOf()
++        for (i in 0 until numberOfPoints) {
++            data.add(DataPoint((temp * i).toInt(), frameListModel[i].x, frameListModel[i].y, frameListModel[i].z, frameListModel[i].t))
++            //if (i != numberOfPoints-1) data.add(DataPoint(((temp * i) + temp/2).toInt(), 2.0, -1.0, 1.0, -1.0))
++            //println(DataPoint((temp * i).toInt(), frameListModel[i].x, frameListModel[i].y, frameListModel[i].z, frameListModel[i].t))
++        }
++
++        // интерполяторы для каждой координаты
++        val xInterpolator = SplineInterpolator().interpolate(
++            data.map { it.frameNumber.toDouble() }.toDoubleArray(),
++            data.map { it.x }.toDoubleArray()
++        )
++        val yInterpolator = SplineInterpolator().interpolate(
++            data.map { it.frameNumber.toDouble() }.toDoubleArray(),
++            data.map { it.y }.toDoubleArray()
++        )
++        val zInterpolator = SplineInterpolator().interpolate(
++            data.map { it.frameNumber.toDouble() }.toDoubleArray(),
++            data.map { it.z }.toDoubleArray()
++        )
++        val tInterpolator = SplineInterpolator().interpolate(
++            data.map { it.frameNumber.toDouble() }.toDoubleArray(),
++            data.map { it.t }.toDoubleArray()
++        )
++
++        val start = data.first().frameNumber
++        val end = data.last().frameNumber
++
++        var InterpolatedData: MutableList<DataPoint> = mutableListOf()
++
++        // запись интерполированных значений
++        for (j in start until end) {
++            val currentFrameNumber = j
++            val interpolatedX = xInterpolator.value(currentFrameNumber.toDouble())
++            val interpolatedY = yInterpolator.value(currentFrameNumber.toDouble())
++            val interpolatedZ = zInterpolator.value(currentFrameNumber.toDouble())
++            val interpolatedT = tInterpolator.value(currentFrameNumber.toDouble())
++            InterpolatedData.add(DataPoint(currentFrameNumber.toInt(), interpolatedX, interpolatedY, interpolatedZ, interpolatedT))
++        }
++
++        val outputFile = File("output_video.mp4")
++        val encoder = AWTSequenceEncoder.createSequenceEncoder(outputFile, fps)
++        for (i in start until end) {
++            println("Procc")
++            fp.plane = Plane(InterpolatedData[i].x, InterpolatedData[i].y, InterpolatedData[i].z, InterpolatedData[i].t, 1920, 1080)
++            val image = panelToImage(fp)
++            encoder.encodeImage(image)
++            println(InterpolatedData[i].toString())
++        }
+         encoder.finish()
+     }
+-}
++
++    // перевод фрактала в изображение
++    fun panelToImage(plane: FractalPainter): BufferedImage {
++        val imageSize = Size(1920, 1080)
++        val image = BufferedImage(imageSize.width, imageSize.height, BufferedImage.TYPE_INT_ARGB)
++        val g = image.createGraphics()
++        DrawingPanel(plane).paint(g)
++        g.dispose()
++        return image
++    }
+ 
+-
++    // фильтр для ввода времени
++    inner class PositiveNumberFilter : DocumentFilter() {
++        override fun insertString(fb: FilterBypass?, offset: Int, text: String?, attr: AttributeSet?) {
++            if (text?.matches(Regex("[0-9]*")) == true) {
++                super.insertString(fb, offset, text, attr)
++            }
++        }
++        override fun replace(fb: FilterBypass?, offset: Int, length: Int, text: String?, attrs: AttributeSet?) {
++            if (text?.matches(Regex("[0-9]*")) == true) {
++                super.replace(fb, offset, length, text, attrs)
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt b/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt
+deleted file mode 100644
+--- a/src/main/kotlin/ru/gr106/fractal/gui/FractalExcursionMenu.kt	
++++ /dev/null	
+@@ -1,104 +0,0 @@
+-package ru.gr106.fractal.gui
+-
+-import java.awt.BorderLayout
+-import java.awt.Component
+-import java.awt.Dimension
+-import java.awt.event.ActionEvent
+-import java.awt.event.ActionListener
+-import javax.swing.*
+-
+-class FractalExcursionMenu : JFrame("Видео Редактор") {
+-    private val frameListModel = DefaultListModel<String>()
+-    private val frameList = JList(frameListModel)
+-    private val addFrameButton = JButton("Добавить кадр")
+-    private val deleteFrameButton = JButton("Удалить кадр")
+-    private val makeVideoButton = JButton("Сделать видео")
+-    private val lengthInput = JTextField(10)
+-    private val videoLengthInput = JTextField(10)
+-
+-    init {
+-        defaultCloseOperation = JFrame.DISPOSE_ON_CLOSE
+-        setSize(700, 200)
+-        minimumSize = Dimension(700, 200)
+-        isVisible = true
+-
+-        // Используем BorderLayout для размещения компонентов
+-        layout = BorderLayout()
+-
+-        // Панель для размещения списка кадров
+-        frameListModel.addElement("Кадр 1")
+-        frameList.cellRenderer = FrameListCellRenderer()
+-        add(JScrollPane(frameList), BorderLayout.CENTER)
+-
+-        // Панель для размещения текстовых полей и кнопок
+-        val inputPanel = JPanel()
+-        inputPanel.add(JLabel("Длина видео:"))
+-        inputPanel.add(videoLengthInput)
+-        inputPanel.add(addFrameButton)
+-        inputPanel.add(deleteFrameButton)
+-        inputPanel.add(makeVideoButton)
+-
+-        // Добавляем компоненты на форму
+-        add(inputPanel, BorderLayout.NORTH)
+-
+-        addFrameButton.addActionListener(ButtonClickListener())
+-        deleteFrameButton.addActionListener(ButtonClickListener())
+-        makeVideoButton.addActionListener(ButtonClickListener())
+-    }
+-
+-    inner class ButtonClickListener : ActionListener {
+-        override fun actionPerformed(e: ActionEvent) {
+-            when (e.source) {
+-                addFrameButton -> {
+-                    // Добавление кадра в список
+-                    val frameNumber = frameListModel.size + 1
+-                    frameListModel.addElement("Кадр $frameNumber")
+-                }
+-                deleteFrameButton -> {
+-                    // Удаление выбранного кадра из списка
+-                    val selectedIndex = frameList.selectedIndex
+-                    if (selectedIndex != -1) {
+-                        frameListModel.remove(selectedIndex)
+-                    }
+-                }
+-                makeVideoButton -> {
+-                    // Обработка кнопки "Сделать видео"
+-                    val length = lengthInput.text
+-                    val videoLength = videoLengthInput.text
+-                    println("Сделать видео с длиной $length секунд и длиной видео $videoLength секунд")
+-                }
+-            }
+-        }
+-    }
+-
+-    inner class FrameListCellRenderer : ListCellRenderer<String> {
+-        private val renderer = JPanel(BorderLayout())
+-        private val textLabel = JLabel()
+-
+-        init {
+-            renderer.add(textLabel, BorderLayout.CENTER)
+-            renderer.border = BorderFactory.createEmptyBorder(5, 5, 5, 5)
+-        }
+-
+-        override fun getListCellRendererComponent(
+-            list: JList<out String>?,
+-            value: String?,
+-            index: Int,
+-            isSelected: Boolean,
+-            cellHasFocus: Boolean
+-        ): Component {
+-            textLabel.text = value
+-            if (isSelected) {
+-                renderer.background = list?.selectionBackground
+-                renderer.foreground = list?.selectionForeground
+-            } else {
+-                renderer.background = list?.background
+-                renderer.foreground = list?.foreground
+-            }
+-            renderer.isEnabled = list?.isEnabled == true
+-            renderer.isOpaque = true
+-            return renderer
+-        }
+-    }
+-}
+-
+Index: src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport math.AlgebraicFractal\nimport math.Complex\nimport java.awt.Graphics\nimport ru.smak.drawing.Converter\nimport ru.smak.drawing.Plane\nimport java.awt.Color\nimport java.awt.image.BufferedImage\nimport kotlin.concurrent.thread\n\nclass FractalPainter (val fractal: AlgebraicFractal) : Painter{\n\n    var plane: Plane? = null\n    override val width: Int\n        get() = plane?.width?:0\n    override val height: Int\n        get() = plane?.height?:0\n    var pointColor: (Float) -> Color = {if (it < 1f) Color.WHITE else Color.BLACK }\n\n\n    override fun paint(g: Graphics) {\n        val procCount = Runtime.getRuntime().availableProcessors()\n        //как рисовать фрактал\n        val img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)\n        plane?.let{ plane ->\n            Array(procCount){ thread {\n                for (x in it..< width step procCount) {\n                    for (y in 0..< height) {\n                        val z = Complex(Converter.xScr2Crt(x, plane), Converter.yScr2Crt(y, plane))\n                        img.setRGB(x, y, pointColor(fractal.isInSet(z)).rgb)\n                    }\n                }\n            }}.forEach { it.join() }\n        }\n        g.drawImage(img, 0, 0, null)\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt b/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt	
++++ b/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt	
+@@ -7,6 +7,7 @@
+ import ru.smak.drawing.Plane
+ import java.awt.Color
+ import java.awt.image.BufferedImage
++import javax.swing.JFrame
+ import kotlin.concurrent.thread
+ 
+ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
+Index: Fractals-2023.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\n    <exclude-output />\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/kotlin\" isTestSource=\"false\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/kotlin\" isTestSource=\"true\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/resources\" type=\"java-test-resource\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n    <orderEntry type=\"library\" name=\"KotlinJavaRuntime\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"jcodec\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Converter\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"jcodec.javase\" level=\"project\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Fractals-2023.iml b/Fractals-2023.iml
+--- a/Fractals-2023.iml	
++++ b/Fractals-2023.iml	
+@@ -14,5 +14,6 @@
+     <orderEntry type="library" name="jcodec" level="project" />
+     <orderEntry type="library" name="Converter" level="project" />
+     <orderEntry type="library" name="jcodec.javase" level="project" />
++    <orderEntry type="library" name="apache.commons.math3" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ru.gr106.fractal.gui\n\nimport math.*\nimport ru.smak.drawing.Converter\nimport ru.smak.drawing.Plane\nimport java.awt.Color\nimport java.awt.Dimension\nimport java.awt.event.*\nimport javax.swing.*\n\n\nclass Window : JFrame(){\n\n    private val mainPanel: DrawingPanel\n    private lateinit var juliaPanel: DrawingPanel\n    private val fp: FractalPainter\n    private lateinit var ju: FractalPainter\n\n\n\n    private var stateList = mutableListOf<State>() //список состояний(для отмены действий)\n    private var colorScheme = 1 //хранит в себе цветовую схему\n\n    init{\n        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции\n\n        Julia.c = Complex(-0.5,0.75)// выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)\n\n        fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)\n\n        defaultCloseOperation = EXIT_ON_CLOSE\n        minimumSize = Dimension(600, 550)\n        mainPanel = DrawingPanel(fp)\n        createMenuBar() // создание меню\n\n\n        mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), \"pressed\")\n\n        mainPanel.addComponentListener(object : ComponentAdapter(){\n            override fun componentResized(e: ComponentEvent?) {\n                fp.plane?.width = mainPanel.width\n                fp.plane?.height = mainPanel.height\n                mainPanel.repaint()\n            }\n        })\n        mainPanel.addKeyListener(object : KeyAdapter(){\n            override fun keyReleased(e: KeyEvent?) {\n                if (e != null) {\n                    if (e.isControlDown){\n\n                        fp.plane?.let {\n                            if(stateList.size != 0){\n                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)\n                                it.xMin = stateList.last().xMin\n                                it.yMin = stateList.last().yMin\n                                it.xMax = stateList.last().xMax\n                                it.yMax = stateList.last().yMax\n                                stateList.removeAt(stateList.lastIndex)\n                                mainPanel.repaint()\n                            }\n                        }\n\n                    }\n                }\n            }\n        })\n        mainPanel.addSelectedListener {rect ->\n            fp.plane?.let {\n\n                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)\n                stateList.add(someState)//добавление состояния в список состояний\n\n                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)\n                val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)\n                val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)\n                val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)\n                it.xMin = xMin\n                it.yMin = yMin\n                it.xMax = xMax\n                it.yMax = yMax\n                mainPanel.repaint()\n            }\n        }\n\n        mainPanel.background = Color.WHITE\n        layout = GroupLayout(contentPane).apply {\n            setVerticalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n            setHorizontalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n        }\n        pack()\n        fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)\n        fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3\n    }\n    private fun createMenuBar() {\n\n        val menubar = JMenuBar()\n        val file = JMenu(\"Файл\")\n        val  aMenuItem = JMenuItem(\"Сохранить\")\n        file.add(aMenuItem) // добавление новой ячейки в меню\n        val  bMenuItem = JMenuItem(\"Отменить действие\")\n        file.add(bMenuItem)\n        menubar.add(file)\n        jMenuBar = menubar\n\n        val file_color= JMenu(\"Выбор цветовой схемы\")\n        val  cMenuItem = JMenuItem(\"1\")\n        file_color.add(cMenuItem)\n        val  dMenuItem = JMenuItem(\"2\")\n        file_color.add(dMenuItem)\n        val  eMenuItem = JMenuItem(\"3\")\n        file_color.add(eMenuItem)\n        menubar.add(file_color)\n        jMenuBar = menubar\n\n        val file_ecs = JMenu(\"Экскурсия по фракталу\")\n        val  fMenuItem = JMenuItem(\"начать\")\n\n        val openMenuItem = JMenuItem(\"Открыть новое окно\")\n        openMenuItem.addActionListener { FractalExcursionMenu() }\n        file_ecs.add(openMenuItem)\n        file_ecs.addActionListener { FractalExcursionMenu() }\n        file_ecs.add(fMenuItem)\n        menubar.add(file_ecs)\n        jMenuBar = menubar\n\n        val coordx = JTextField(\"-0.74543\") //-0.8 //0.285 //-0.0085\n        coordx.add(fMenuItem)\n        menubar.add(coordx)\n        jMenuBar=menubar\n\n        val coordy = JTextField(\"0.11301\") //0.156 //0.01 //0.71\n        coordy.add(fMenuItem)\n        menubar.add(coordy)\n        jMenuBar=menubar\n\n        var re: Double\n        var im: Double\n\n        coordx.addActionListener(ActionListener {\n            var re0 = coordx.toString()\n            re = re0.toDouble()\n        })\n        coordy.addActionListener(ActionListener {\n            var im0 = coordy.toString()\n            im = im0.toDouble()\n\n        })\n\n        val button = JButton(\"Нарисовать\")\n        button.addActionListener(object : ActionListener {\n            override fun actionPerformed(e: ActionEvent) {\n                val newWindow = JFrame(\"Julia\")\n                newWindow.defaultCloseOperation = JFrame.DISPOSE_ON_CLOSE\n                newWindow.setLocationRelativeTo(null)\n                newWindow.isVisible = true\n                newWindow.minimumSize = Dimension(600, 550)\n                val textx = coordx.text.toString()\n                val texty = coordy.text.toString()\n                var re: Double\n                var im: Double\n                re = textx.toDouble()\n                im = texty.toDouble()\n                Julia.c = Complex(re, im)\n                ju = FractalPainter(Julia)\n                juliaPanel = DrawingPanel(ju)\n\n                juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), \"pressed\")\n\n                juliaPanel.addComponentListener(object : ComponentAdapter(){\n                    override fun componentResized(e: ComponentEvent?) {\n                        ju.plane?.width = juliaPanel.width\n                        ju.plane?.height = juliaPanel.height\n                        newWindow.repaint()\n                    }\n                })\n                juliaPanel.addKeyListener(object : KeyAdapter(){\n                    override fun keyReleased(e: KeyEvent?) {\n                        if (e != null) {\n                            if (e.isControlDown){\n\n                                ju.plane?.let {\n                                    if(stateList.size != 0){\n                                        ju.pointColor = SchemeChooser(stateList.last().colorScheme)\n                                        it.xMin = stateList.last().xMin\n                                        it.yMin = stateList.last().yMin\n                                        it.xMax = stateList.last().xMax\n                                        it.yMax = stateList.last().yMax\n                                        stateList.removeAt(stateList.lastIndex)\n                                        juliaPanel.repaint()\n                                    }\n                                }\n                            }\n                        }\n                    }\n                })\n                juliaPanel.addSelectedListener {rect ->\n                    ju.plane?.let {\n\n                        val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)\n                        stateList.add(someState)//добавление состояния в список состояний\n\n                        val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)\n                        val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)\n                        val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)\n                        val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)\n                        it.xMin = xMin\n                        it.yMin = yMin\n                        it.xMax = xMax\n                        it.yMax = yMax\n                        juliaPanel.repaint()\n                    }\n                }\n\n                juliaPanel.background = Color.WHITE\n                layout = GroupLayout(contentPane).apply {\n                    setVerticalGroup(\n                        createSequentialGroup()\n                            .addGap(8)\n                            .addComponent(juliaPanel)\n                            .addGap(8)\n                    )\n                    setHorizontalGroup(\n                        createSequentialGroup()\n                            .addGap(8)\n                            .addComponent(juliaPanel)\n                            .addGap(8)\n                    )\n                }\n                pack()\n\n                ju.plane = Plane(-2.0, 1.0, -1.0, 1.0, juliaPanel.width, juliaPanel.height)\n                ju.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3\n                newWindow.add(juliaPanel)\n            }\n        })\n        menubar.add(button)\n        jMenuBar = menubar\n\n\n    }\n\n    fun addState(state: State){\n        stateList.add(state)\n    }\n}\n\ndata class State(val fractal: Int, val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double, val colorScheme: Int, val pointJulia: Complex?) {\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+--- a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	
++++ b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	
+@@ -64,6 +64,7 @@
+                 }
+             }
+         })
++
+         mainPanel.addSelectedListener {rect ->
+             fp.plane?.let {
+ 
+@@ -108,6 +109,19 @@
+         val  aMenuItem = JMenuItem("Сохранить")
+         file.add(aMenuItem) // добавление новой ячейки в меню
+         val  bMenuItem = JMenuItem("Отменить действие")
++        bMenuItem.addActionListener{
++            fp.plane?.let {
++                if(stateList.size != 0){
++                    fp.pointColor = SchemeChooser(stateList.last().colorScheme)
++                    it.xMin = stateList.last().xMin
++                    it.yMin = stateList.last().yMin
++                    it.xMax = stateList.last().xMax
++                    it.yMax = stateList.last().yMax
++                    stateList.removeAt(stateList.lastIndex)
++                    mainPanel.repaint()
++                }
++            }
++        }
+         file.add(bMenuItem)
+         menubar.add(file)
+         jMenuBar = menubar
+@@ -126,9 +140,8 @@
+         val  fMenuItem = JMenuItem("начать")
+ 
+         val openMenuItem = JMenuItem("Открыть новое окно")
+-        openMenuItem.addActionListener { FractalExcursionMenu() }
++        openMenuItem.addActionListener { FractalExcursion(fp) }
+         file_ecs.add(openMenuItem)
+-        file_ecs.addActionListener { FractalExcursionMenu() }
+         file_ecs.add(fMenuItem)
+         menubar.add(file_ecs)
+         jMenuBar = menubar
+@@ -252,6 +265,10 @@
+     fun addState(state: State){
+         stateList.add(state)
+     }
++
++    fun getActualPanel() : DrawingPanel {
++        return mainPanel
++    }
+ }
+ 
+ data class State(val fractal: Int, val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double, val colorScheme: Int, val pointJulia: Complex?) {
+Index: .idea/libraries/apache_commons_math3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/apache_commons_math3.xml b/.idea/libraries/apache_commons_math3.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/libraries/apache_commons_math3.xml	
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="apache.commons.math3" type="repository">
++    <properties maven-id="org.apache.commons:commons-math3:3.6.1" />
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/lib/commons-math3-3.6.1.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file

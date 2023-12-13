@@ -14,5 +14,7 @@
     <orderEntry type="library" name="jcodec" level="project" />
     <orderEntry type="library" name="Converter" level="project" />
     <orderEntry type="library" name="jcodec.javase" level="project" />
+    <orderEntry type="library" name="apache.commons.math3" level="project" />
+    <orderEntry type="library" name="apache.commons.math31" level="project" />
   </component>
 </module>
