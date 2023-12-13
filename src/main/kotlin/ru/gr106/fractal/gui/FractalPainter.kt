@@ -7,7 +7,6 @@ import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.image.BufferedImage
-import javax.swing.JFrame
 import kotlin.concurrent.thread
 import kotlin.math.ln
 
