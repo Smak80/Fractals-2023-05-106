@@ -67,8 +67,12 @@ class FractalExcursion(val fp: FractalPainter) : JFrame("Экскурсия по
                 }
                 makeVideoButton -> {
                     // создание видео
-                    createVideo()
-                    println("Video created successfully.")
+                    if (frameListModel.size() >= 2) {
+                        createVideo()
+                        JOptionPane.showMessageDialog(this@FractalExcursion, "Видео было успешно создано!", "Экскурсия по фракталу", JOptionPane.INFORMATION_MESSAGE)
+                    } else {
+                        JOptionPane.showMessageDialog(this@FractalExcursion, "Для создания видеофайла необходимо 2 и более кадров!", "Error", JOptionPane.ERROR_MESSAGE)
+                    }
                 }
             }
         }
