@@ -1,0 +1,949 @@
+Index: .idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_01_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_01_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_01_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_01_[Changes]/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,77 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"e-Khakimov\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701779327182</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701779327182</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"масштабирование фракткала\" />\n    <MESSAGE value=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 9ca3cdcd2801f2dc7890b791fd2a8ad92d2fb387)
+-+++ b/.idea/workspace.xml	(date 1701802694917)
+-@@ -4,11 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата">
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment=".">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -31,6 +28,26 @@
+-       </map>
+-     </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-+  </component>
+-+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-+  "lastFilter": {
+-+    "state": "OPEN",
+-+    "assignee": "greebo63"
+-+  }
+-+}]]></component>
+-+  <component name="GithubPullRequestsUISettings">
+-+    <option name="recentNewPullRequestHead">
+-+      <RepoCoordinatesHolder>
+-+        <option name="owner" value="greebo63" />
+-+        <option name="repository" value="Fractals-2023-05-106" />
+-+      </RepoCoordinatesHolder>
+-+    </option>
+-+    <option name="selectedUrlAndAccountId">
+-+      <UrlAndAccount>
+-+        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
+-+        <option name="url" value="https://github.com/hunnimor/Fractals-2023-05-106.git" />
+-+      </UrlAndAccount>
+-+    </option>
+-   </component>
+-   <component name="MarkdownSettingsMigration">
+-     <option name="stateVersion" value="1" />
+-@@ -138,7 +155,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1701779327182</updated>
+-     </task>
+--    <option name="localTasksCounter" value="6" />
+-+    <task id="LOCAL-00006" summary=".">
+-+      <option name="closed" value="true" />
+-+      <created>1701797401214</created>
+-+      <option name="number" value="00006" />
+-+      <option name="presentableId" value="LOCAL-00006" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701797401214</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="7" />
+-     <servers />
+-   </component>
+-   <component name="Vcs.Log.Tabs.Properties">
+-@@ -158,6 +183,7 @@
+-     <MESSAGE value="Рисование выделительной рамки" />
+-     <MESSAGE value="масштабирование фракткала" />
+-     <MESSAGE value="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата" />
+--    <option name="LAST_COMMIT_MESSAGE" value="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата" />
+-+    <MESSAGE value="." />
+-+    <option name="LAST_COMMIT_MESSAGE" value="." />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]1/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]1/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,300 +0,0 @@
+-Index: src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport ru.smak.drawing.Converter\nimport ru.smak.drawing.Plane\nimport math.Mandelbrot\nimport java.awt.Color\nimport java.awt.Dimension\nimport java.awt.event.ComponentAdapter\nimport java.awt.event.ComponentEvent\nimport javax.swing.GroupLayout\nimport javax.swing.JFrame\nimport kotlin.math.*\n\nclass Window : JFrame() {\n\n    private val mainPanel: DrawingPanel\n    private val fp: FractalPainter\n\n    init{\n        fp = FractalPainter(Mandelbrot)\n        defaultCloseOperation = EXIT_ON_CLOSE\n        minimumSize = Dimension(600, 550)\n        mainPanel = DrawingPanel(fp)\n\n        mainPanel.addComponentListener(object : ComponentAdapter(){\n            override fun componentResized(e: ComponentEvent?) {\n                fp.plane?.width = mainPanel.width\n                fp.plane?.height = mainPanel.height\n                mainPanel.repaint()\n            }\n        })\n        mainPanel.addSelectedListener {rect ->\n            fp.plane?.let {\n                \n                val xMin = Converter.xScr2Crt(rect.x-rect.difX, it)\n                val yMax = Converter.yScr2Crt(rect.y-rect.difY, it)\n                val xMax = Converter.xScr2Crt(rect.x + rect.width - rect.difX, it)\n                val yMin = Converter.yScr2Crt(rect.y + rect.height - rect.difY, it)\n                println(\"xMin=$xMin xMax=$xMax yMin=$yMin yMax=$yMax\")\n                it.xMin = xMin\n                it.yMin = yMin\n                it.xMax = xMax\n                it.yMax = yMax\n                mainPanel.repaint()\n            }\n        }\n        mainPanel.background = Color.WHITE\n        layout = GroupLayout(contentPane).apply {\n            setVerticalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n            setHorizontalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n        }\n        pack()\n        fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)\n        fp.pointColor = {\n            if (it == 1f) Color.BLACK else\n            Color(\n                0.5f*(1-cos(16f*it*it)).absoluteValue,\n                sin(5f*it).absoluteValue,\n                log10(1f + 5*it).absoluteValue\n            )\n        }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(revision d03fe338bc93e4e182fc120bb7fc036a657ed6a3)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(date 1701803231744)
+-@@ -1,23 +1,27 @@
+- package ru.gr106.fractal.gui
+- 
+-+import math.*
+- import ru.smak.drawing.Converter
+- import ru.smak.drawing.Plane
+--import math.Mandelbrot
+- import java.awt.Color
+- import java.awt.Dimension
+- import java.awt.event.ComponentAdapter
+- import java.awt.event.ComponentEvent
+- import javax.swing.GroupLayout
+- import javax.swing.JFrame
+--import kotlin.math.*
+- 
+--class Window : JFrame() {
+-+class Window : JFrame(){
+- 
+-     private val mainPanel: DrawingPanel
+-     private val fp: FractalPainter
+- 
+-     init{
+--        fp = FractalPainter(Mandelbrot)
+-+        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+-+
+-+        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+-+
+-+        fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)
+-+
+-         defaultCloseOperation = EXIT_ON_CLOSE
+-         minimumSize = Dimension(600, 550)
+-         mainPanel = DrawingPanel(fp)
+-@@ -31,12 +35,10 @@
+-         })
+-         mainPanel.addSelectedListener {rect ->
+-             fp.plane?.let {
+--                
+--                val xMin = Converter.xScr2Crt(rect.x-rect.difX, it)
+--                val yMax = Converter.yScr2Crt(rect.y-rect.difY, it)
+--                val xMax = Converter.xScr2Crt(rect.x + rect.width - rect.difX, it)
+--                val yMin = Converter.yScr2Crt(rect.y + rect.height - rect.difY, it)
+--                println("xMin=$xMin xMax=$xMax yMin=$yMin yMax=$yMax")
+-+                val xMin = Converter.xScr2Crt(rect.x, it)
+-+                val yMax = Converter.yScr2Crt(rect.y, it)
+-+                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)
+-+                val yMin = Converter.yScr2Crt(rect.y + rect.height, it)
+-                 it.xMin = xMin
+-                 it.yMin = yMin
+-                 it.xMax = xMax
+-@@ -61,13 +63,6 @@
+-         }
+-         pack()
+-         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
+--        fp.pointColor = {
+--            if (it == 1f) Color.BLACK else
+--            Color(
+--                0.5f*(1-cos(16f*it*it)).absoluteValue,
+--                sin(5f*it).absoluteValue,
+--                log10(1f + 5*it).absoluteValue
+--            )
+--        }
+-+        fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3
+-     }
+- }
+-\ No newline at end of file
+-Index: src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport kotlin.math.max\nimport kotlin.math.min\n\nclass SelectionRect {\n    private var p1: Pair<Int,Int>? = null\n    private var p2: Pair<Int,Int>? = null\n\n    var difX: Int = 0\n    var difY: Int = 0\n\n    val isCreated: Boolean\n        get() = p2 != null\n    val x: Int\n        get() {\n            p1?.let {pt1 ->\n                p2?.let {pt2 ->\n                    return min(pt1.first,pt2.first)\n                }\n            }\n            return 0\n        }\n    val y: Int\n    get() {\n        p1?.let {pt1 ->\n            p2?.let {pt2 ->\n                return min(pt1.second,pt2.second)\n            }\n        }\n        return 0\n    }\n    val width: Int\n        get() {\n            p1?.let { pt1 ->\n                p2?.let { pt2 ->\n                    return max(pt1.first, pt2.first) - x\n                }\n            }\n            return 0\n        }\n    val height: Int\n        get() {\n            p1?.let { pt1 ->\n                p2?.let { pt2 ->\n                    return max(pt1.second, pt2.second) - y\n                }\n            }\n            return 0\n        }\n\n    fun addPoint(x:Int, y:Int){\n        p1?.let {\n            p2 = x to y\n        } ?: run {\n            p1 = x to y\n        }\n    }\n\n    //данная перегрузка создавалась для двигания фрактала, но в итоге не понадобилась\n    fun addPoint(x1: Int, y1: Int, x2: Int, y2: Int){\n        p1 = x1 to y1\n        p2 = x2 to y2\n    }\n\n    //обнуление координат нажатия мыши\n    fun resetPoints(){\n        p1 = 0 to 0\n        p2 = 0 to 0\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt b/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt	(revision d03fe338bc93e4e182fc120bb7fc036a657ed6a3)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt	(date 1701803231772)
+-@@ -68,4 +68,8 @@
+-         p1 = 0 to 0
+-         p2 = 0 to 0
+-     }
+-+
+-+    fun resetPoint(){
+-+
+-+    }
+- }
+-\ No newline at end of file
+-Index: src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport java.awt.Color\nimport java.awt.Graphics\nimport java.awt.event.MouseAdapter\nimport java.awt.event.MouseEvent\nimport java.awt.event.MouseMotionAdapter\nimport javax.swing.JPanel\n\nclass DrawingPanel(val p:Painter) : JPanel() {\n    private var rect = SelectionRect()\n    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()\n    private var mouseButtonPressed = -1 //показывает какая кнопка мыши сейчас нажата: -1 - никакая, 1 - левая, 3 - правая; данная переменная была добавлена потому что в mousedragged e.button обнуляется.\n    private var mouseButtonStartPointEndPoint = mutableListOf<Pair<Int, Int>>() //данный список хранит координаты нажатия и отпускания мыши(применяется при двигании фрактала)\n\n    fun addSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.add(l)\n    }\n\n    fun removeSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.remove(l)\n    }\n\n    init {\n\n        this.addMouseListener(object : MouseAdapter(){\n            override fun mousePressed(e: MouseEvent?) {\n                if(e?.button==1) {\n                    mouseButtonPressed = 1\n                    e.let {\n                        rect = SelectionRect().apply {\n                            addPoint(it.x, it.y)\n                            graphics.apply {\n                                setXORMode(Color.WHITE)\n                                drawRect(-10, -10, 1, 1)\n                                setPaintMode()\n                            }\n                        }\n                    }\n                } else if(e?.button==3){\n                    mouseButtonPressed = 3                              \n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(0, 0)\n                }\n            }\n\n            override fun mouseReleased(e: MouseEvent?) {\n                if (e?.button == 1) {\n                    e.let {\n                        if (rect.isCreated) drawRect()\n                        rect.addPoint(it.x, it.y)\n                        selectedListener.forEach { it(rect) }\n\n                        rect.resetPoints() //обнуляем координаты точек, тк они не обнуляются\n                        mouseButtonPressed = -1\n                    }\n                } else if (e?.button == 3){\n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(width,height)\n                    println(\"width=$width height=$height\")\n\n                    rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)\n                    rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)\n\n                    selectedListener.forEach { it(rect) } //двигаем сам экран\n\n                    mouseButtonPressed = -1\n\n                    mouseButtonStartPointEndPoint.removeAt(1) //чистим наш список, чтобы при следующем двигании у нас был новый вектор движения экрана\n                    mouseButtonStartPointEndPoint.removeAt(0)\n                }\n            }\n        })\n        this.addMouseMotionListener(object : MouseMotionAdapter(){\n            override fun mouseDragged(e: MouseEvent?) {\n                if (mouseButtonPressed == 1) {\n                    e?.let {\n                        if (rect.isCreated)\n                            drawRect()\n                        rect.addPoint(it.x, it.y)\n                        drawRect()\n                    }\n                }\n            }\n        })\n    }\n\n    private fun drawRect() {\n        graphics.apply{\n            setXORMode(Color.WHITE)\n            color = Color.BLACK\n            drawRect(rect.x, rect.y, rect.width, rect.height)\n            setPaintMode()\n        }\n    }\n\n    override fun paint(g: Graphics?) {\n        super.paint(g)\n        g?.let{ p.paint(it) }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(revision d03fe338bc93e4e182fc120bb7fc036a657ed6a3)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(date 1701803234360)
+-@@ -25,6 +25,7 @@
+- 
+-         this.addMouseListener(object : MouseAdapter(){
+-             override fun mousePressed(e: MouseEvent?) {
+-+                print(e?.button)
+-                 if(e?.button==1) {
+-                     mouseButtonPressed = 1
+-                     e.let {
+-@@ -47,17 +48,14 @@
+-             override fun mouseReleased(e: MouseEvent?) {
+-                 if (e?.button == 1) {
+-                     e.let {
+-+                        mouseButtonPressed = -1
+-                         if (rect.isCreated) drawRect()
+-                         rect.addPoint(it.x, it.y)
+-                         selectedListener.forEach { it(rect) }
+--
+--                        rect.resetPoints() //обнуляем координаты точек, тк они не обнуляются
+--                        mouseButtonPressed = -1
+-                     }
+-                 } else if (e?.button == 3){
+-                     mouseButtonStartPointEndPoint.add(e.x to e.y)
+-                     rect.addPoint(width,height)
+--                    println("width=$width height=$height")
+- 
+-                     rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)
+-                     rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"e-Khakimov\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\n  \"lastFilter\": {\n    \"state\": \"OPEN\",\n    \"assignee\": \"greebo63\"\n  }\n}]]></component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"recentNewPullRequestHead\">\n      <RepoCoordinatesHolder>\n        <option name=\"owner\" value=\"greebo63\" />\n        <option name=\"repository\" value=\"Fractals-2023-05-106\" />\n      </RepoCoordinatesHolder>\n    </option>\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"6e6d0a2c-27bd-42c7-843c-783ac64901ef\" />\n        <option name=\"url\" value=\"https://github.com/greebo63/Fractals-2023-05-106\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"Downloaded.Files.Path.Enabled\": \"false\",\n    \"Repository.Attach.Annotations\": \"false\",\n    \"Repository.Attach.JavaDocs\": \"false\",\n    \"Repository.Attach.Sources\": \"false\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"git-widget-placeholder\": \"e-Khakimov\",\n    \"last_opened_file_path\": \"C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar\",\n    \"project.structure.last.edited\": \"Libraries\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.48081535\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701779327182</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701779327182</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701795052184</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701795052184</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"масштабирование фракткала\" />\n    <MESSAGE value=\"добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата\" />\n    <MESSAGE value=\"смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"kotlin-line\">\n          <url>file://$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt</url>\n          <line>56</line>\n          <option name=\"timeStamp\" value=\"7\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision d03fe338bc93e4e182fc120bb7fc036a657ed6a3)
+-+++ b/.idea/workspace.xml	(date 1701803234704)
+-@@ -4,9 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин">
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -23,30 +22,17 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+--    <option name="RECENT_BRANCH_BY_REPOSITORY">
+--      <map>
+--        <entry key="$PROJECT_DIR$" value="e-Khakimov" />
+--      </map>
+--    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+-   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-   "lastFilter": {
+--    "state": "OPEN",
+--    "assignee": "greebo63"
+-   }
+- }]]></component>
+-   <component name="GithubPullRequestsUISettings">
+--    <option name="recentNewPullRequestHead">
+--      <RepoCoordinatesHolder>
+--        <option name="owner" value="greebo63" />
+--        <option name="repository" value="Fractals-2023-05-106" />
+--      </RepoCoordinatesHolder>
+--    </option>
+-     <option name="selectedUrlAndAccountId">
+-       <UrlAndAccount>
+--        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
+--        <option name="url" value="https://github.com/greebo63/Fractals-2023-05-106" />
+-+        <option name="accountId" value="9782cf15-e68f-429a-8968-b2abd7fbe6bf" />
+-+        <option name="url" value="https://github.com/beetlewie/Fractals-2023-05-106" />
+-       </UrlAndAccount>
+-     </option>
+-   </component>
+-@@ -64,23 +50,23 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "ASKED_ADD_EXTERNAL_FILES": "true",
+--    "Downloaded.Files.Path.Enabled": "false",
+--    "Repository.Attach.Annotations": "false",
+--    "Repository.Attach.JavaDocs": "false",
+--    "Repository.Attach.Sources": "false",
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+--    "git-widget-placeholder": "e-Khakimov",
+--    "last_opened_file_path": "C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar",
+--    "project.structure.last.edited": "Libraries",
+--    "project.structure.proportion": "0.15",
+--    "project.structure.side.proportion": "0.48081535"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,
+-+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-+    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="CreateKotlinClassDialog.RecentsKey">
+-       <recent name="ru.gr106.fractal.gui" />
+-@@ -99,10 +85,6 @@
+-     </configuration>
+-     <recent_temporary>
+-       <list>
+--        <item itemvalue="Kotlin.MainKt" />
+--        <item itemvalue="Kotlin.MainKt" />
+--        <item itemvalue="Kotlin.MainKt" />
+--        <item itemvalue="Kotlin.MainKt" />
+-         <item itemvalue="Kotlin.MainKt" />
+-       </list>
+-     </recent_temporary>
+-@@ -148,54 +130,24 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1699446790576</updated>
+-     </task>
+--    <task id="LOCAL-00005" summary="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата">
+-+    <task id="LOCAL-00005" summary="функции+цветовые схемы+жюлиа">
+-       <option name="closed" value="true" />
+--      <created>1701779327182</created>
+-+      <created>1701798447047</created>
+-       <option name="number" value="00005" />
+-       <option name="presentableId" value="LOCAL-00005" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1701779327182</updated>
+--    </task>
+--    <task id="LOCAL-00006" summary="смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин">
+--      <option name="closed" value="true" />
+--      <created>1701795052184</created>
+--      <option name="number" value="00006" />
+--      <option name="presentableId" value="LOCAL-00006" />
+--      <option name="project" value="LOCAL" />
+--      <updated>1701795052184</updated>
+-+      <updated>1701798447047</updated>
+-     </task>
+--    <option name="localTasksCounter" value="7" />
+-+    <option name="localTasksCounter" value="6" />
+-     <servers />
+-   </component>
+--  <component name="Vcs.Log.Tabs.Properties">
+--    <option name="TAB_STATES">
+--      <map>
+--        <entry key="MAIN">
+--          <value>
+--            <State />
+--          </value>
+--        </entry>
+--      </map>
+--    </option>
+--  </component>
+-   <component name="VcsManagerConfiguration">
+-     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-     <MESSAGE value="Фракталы. Начало" />
+-     <MESSAGE value="Рисование выделительной рамки" />
+-     <MESSAGE value="масштабирование фракткала" />
+--    <MESSAGE value="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата" />
+--    <MESSAGE value="смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин" />
+--    <option name="LAST_COMMIT_MESSAGE" value="смерджил свой мастер с отдельной веткой, тк мой мастер не пушился в мастерориджин" />
+--  </component>
+--  <component name="XDebuggerManager">
+--    <breakpoint-manager>
+--      <breakpoints>
+--        <line-breakpoint enabled="true" type="kotlin-line">
+--          <url>file://$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt</url>
+--          <line>56</line>
+--          <option name="timeStamp" value="7" />
+--        </line-breakpoint>
+--      </breakpoints>
+--    </breakpoint-manager>
+-+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+-+    <MESSAGE value="функции+цветовые схемы+жюлиа" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_23_57_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_23_57_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_23_57_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_23_57_[Changes]/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,134 +0,0 @@
+-Index: src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport math.*\nimport ru.smak.drawing.Converter\nimport ru.smak.drawing.Plane\nimport java.awt.Color\nimport java.awt.Dimension\nimport java.awt.event.ComponentAdapter\nimport java.awt.event.ComponentEvent\nimport javax.swing.GroupLayout\nimport javax.swing.JFrame\n\nclass Window : JFrame(){\n\n    private val mainPanel: DrawingPanel\n    private val fp: FractalPainter\n\n    init{\n        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции\n\n        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)\n\n        fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)\n\n        defaultCloseOperation = EXIT_ON_CLOSE\n        minimumSize = Dimension(600, 550)\n        mainPanel = DrawingPanel(fp)\n\n        mainPanel.addComponentListener(object : ComponentAdapter(){\n            override fun componentResized(e: ComponentEvent?) {\n                fp.plane?.width = mainPanel.width\n                fp.plane?.height = mainPanel.height\n                mainPanel.repaint()\n            }\n        })\n        mainPanel.addSelectedListener {rect ->\n            fp.plane?.let {\n                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)\n                val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)\n                val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)\n                val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)\n                it.xMin = xMin\n                it.yMin = yMin\n                it.xMax = xMax\n                it.yMax = yMax\n                mainPanel.repaint()\n            }\n        }\n        mainPanel.background = Color.WHITE\n        layout = GroupLayout(contentPane).apply {\n            setVerticalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n            setHorizontalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n        }\n        pack()\n        fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)\n        fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(revision 06c35e5490dd79a5de4c0df14066915d7dbfaf12)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(date 1701809837614)
+-@@ -15,10 +15,12 @@
+-     private val mainPanel: DrawingPanel
+-     private val fp: FractalPainter
+- 
+-+    private var actionList = mutableListOf<MutableList<Double>>()
+-+
+-     init{
+-         Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+- 
+--        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+-+        Julia.c = Complex(-0.5,0.75)// выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+- 
+-         fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)
+- 
+-@@ -65,4 +67,8 @@
+-         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
+-         fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3
+-     }
+-+
+-+    fun addAction(fractal: Int){
+-+
+-+    }
+- }
+-\ No newline at end of file
+-Index: src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport java.awt.Color\nimport java.awt.Graphics\nimport java.awt.event.MouseAdapter\nimport java.awt.event.MouseEvent\nimport java.awt.event.MouseMotionAdapter\nimport javax.swing.JPanel\n\nclass DrawingPanel(val p:Painter) : JPanel() {\n    private var rect = SelectionRect()\n    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()\n    private var mouseButtonPressed = -1 //показывает какая кнопка мыши сейчас нажата: -1 - никакая, 1 - левая, 3 - правая; данная переменная была добавлена потому что в mousedragged e.button обнуляется.\n    private var mouseButtonStartPointEndPoint = mutableListOf<Pair<Int, Int>>() //данный список хранит координаты нажатия и отпускания мыши(применяется при двигании фрактала)\n\n    fun addSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.add(l)\n    }\n\n    fun removeSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.remove(l)\n    }\n\n    init {\n\n        this.addMouseListener(object : MouseAdapter(){\n            override fun mousePressed(e: MouseEvent?) {\n                print(e?.button)\n                if(e?.button==1) {\n                    mouseButtonPressed = 1\n                    e.let {\n                        rect = SelectionRect().apply {\n                            addPoint(it.x, it.y)\n                            graphics.apply {\n                                setXORMode(Color.WHITE)\n                                drawRect(-10, -10, 1, 1)\n                                setPaintMode()\n                            }\n                        }\n                    }\n                } else if(e?.button==3){\n                    mouseButtonPressed = 3                              \n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(0, 0)\n                }\n            }\n\n            override fun mouseReleased(e: MouseEvent?) {\n                if (e?.button == 1) {\n                    e.let {\n                        if (rect.isCreated) drawRect()\n                        rect.addPoint(it.x, it.y)\n                        selectedListener.forEach { it(rect) }\n\n                        mouseButtonPressed = -1\n                        rect.resetPoints()\n                    }\n                } else if (e?.button == 3){\n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(width,height)\n\n                    rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)\n                    rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)\n\n                    selectedListener.forEach { it(rect) } //двигаем сам экран\n\n                    mouseButtonPressed = -1\n\n                    mouseButtonStartPointEndPoint.removeAt(1) //чистим наш список, чтобы при следующем двигании у нас был новый вектор движения экрана\n                    mouseButtonStartPointEndPoint.removeAt(0)\n                }\n            }\n        })\n        this.addMouseMotionListener(object : MouseMotionAdapter(){\n            override fun mouseDragged(e: MouseEvent?) {\n                if (mouseButtonPressed == 1) {\n                    e?.let {\n                        if (rect.isCreated)\n                            drawRect()\n                        rect.addPoint(it.x, it.y)\n                        drawRect()\n                    }\n                }\n            }\n        })\n    }\n\n    private fun drawRect() {\n        graphics.apply{\n            setXORMode(Color.WHITE)\n            color = Color.BLACK\n            drawRect(rect.x, rect.y, rect.width, rect.height)\n            setPaintMode()\n        }\n    }\n\n    override fun paint(g: Graphics?) {\n        super.paint(g)\n        g?.let{ p.paint(it) }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(revision 06c35e5490dd79a5de4c0df14066915d7dbfaf12)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(date 1701807942053)
+-@@ -25,7 +25,6 @@
+- 
+-         this.addMouseListener(object : MouseAdapter(){
+-             override fun mousePressed(e: MouseEvent?) {
+--                print(e?.button)
+-                 if(e?.button==1) {
+-                     mouseButtonPressed = 1
+-                     e.let {
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"масштабирование фракткала\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"9782cf15-e68f-429a-8968-b2abd7fbe6bf\" />\n        <option name=\"url\" value=\"https://github.com/beetlewie/Fractals-2023-05-106\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"функции+цветовые схемы+жюлиа\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701798447047</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701798447047</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"масштабирование фракткала\" />\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\n    <MESSAGE value=\"функции+цветовые схемы+жюлиа\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"функции+цветовые схемы+жюлиа\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 06c35e5490dd79a5de4c0df14066915d7dbfaf12)
+-+++ b/.idea/workspace.xml	(date 1701807942113)
+-@@ -4,8 +4,10 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment=".поправлен баг при сдвиге">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -22,6 +24,11 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="e-Khakimov" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+-   <component name="GitHubPullRequestSearchHistory">{
+-@@ -29,6 +36,12 @@
+-   }
+- }</component>
+-   <component name="GithubPullRequestsUISettings">
+-+    <option name="recentNewPullRequestHead">
+-+      <RepoCoordinatesHolder>
+-+        <option name="owner" value="greebo63" />
+-+        <option name="repository" value="Fractals-2023-05-106" />
+-+      </RepoCoordinatesHolder>
+-+    </option>
+-     <option name="selectedUrlAndAccountId">
+-       <UrlAndAccount>
+-         <option name="accountId" value="9782cf15-e68f-429a-8968-b2abd7fbe6bf" />
+-@@ -139,7 +152,23 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1701798447047</updated>
+-     </task>
+--    <option name="localTasksCounter" value="6" />
+-+    <task id="LOCAL-00006" summary=".поправлен баг при сдвиге">
+-+      <option name="closed" value="true" />
+-+      <created>1701803489421</created>
+-+      <option name="number" value="00006" />
+-+      <option name="presentableId" value="LOCAL-00006" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701803489421</updated>
+-+    </task>
+-+    <task id="LOCAL-00007" summary=".поправлен баг при сдвиге">
+-+      <option name="closed" value="true" />
+-+      <created>1701803493826</created>
+-+      <option name="number" value="00007" />
+-+      <option name="presentableId" value="LOCAL-00007" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701803493826</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="8" />
+-     <servers />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-@@ -149,6 +178,7 @@
+-     <MESSAGE value="масштабирование фракткала" />
+-     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+-     <MESSAGE value="функции+цветовые схемы+жюлиа" />
+--    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+-+    <MESSAGE value=".поправлен баг при сдвиге" />
+-+    <option name="LAST_COMMIT_MESSAGE" value=".поправлен баг при сдвиге" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_12_2023,_22_07_[Changes]/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,173 +0,0 @@
+-Index: src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport math.*\nimport ru.smak.drawing.Converter\nimport ru.smak.drawing.Plane\nimport java.awt.Color\nimport java.awt.Dimension\nimport java.awt.event.ComponentAdapter\nimport java.awt.event.ComponentEvent\nimport javax.swing.GroupLayout\nimport javax.swing.JFrame\n\nclass Window : JFrame(){\n\n    private val mainPanel: DrawingPanel\n    private val fp: FractalPainter\n\n    init{\n        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции\n\n        Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)\n\n        fp = if (Mandelbrot.funcNum==-1) FractalPainter(Julia) else FractalPainter(Mandelbrot)\n\n        defaultCloseOperation = EXIT_ON_CLOSE\n        minimumSize = Dimension(600, 550)\n        mainPanel = DrawingPanel(fp)\n\n        mainPanel.addComponentListener(object : ComponentAdapter(){\n            override fun componentResized(e: ComponentEvent?) {\n                fp.plane?.width = mainPanel.width\n                fp.plane?.height = mainPanel.height\n                mainPanel.repaint()\n            }\n        })\n        mainPanel.addSelectedListener {rect ->\n            fp.plane?.let {\n                val xMin = Converter.xScr2Crt(rect.x, it)\n                val yMax = Converter.yScr2Crt(rect.y, it)\n                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)\n                val yMin = Converter.yScr2Crt(rect.y + rect.height, it)\n                it.xMin = xMin\n                it.yMin = yMin\n                it.xMax = xMax\n                it.yMax = yMax\n                mainPanel.repaint()\n            }\n        }\n        mainPanel.background = Color.WHITE\n        layout = GroupLayout(contentPane).apply {\n            setVerticalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n            setHorizontalGroup(\n                createSequentialGroup()\n                    .addGap(8)\n                    .addComponent(mainPanel)\n                    .addGap(8)\n            )\n        }\n        pack()\n        fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)\n        fp.pointColor = SchemeChooser(1)    //выбор цветовой схемы - всего 3\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(revision e3d2090fd986e13b3b740b8dfaf4c78c07aa68d5)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/Window.kt	(date 1701803109667)
+-@@ -16,7 +16,7 @@
+-     private val fp: FractalPainter
+- 
+-     init{
+--        Mandelbrot.funcNum = -1 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+-+        Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
+- 
+-         Julia.c = Complex(-1.0, 0.0) // выбор точки Жюлиа; для теста: Julia.c = Complex(-0.2,0.75)
+- 
+-@@ -35,10 +35,10 @@
+-         })
+-         mainPanel.addSelectedListener {rect ->
+-             fp.plane?.let {
+--                val xMin = Converter.xScr2Crt(rect.x, it)
+--                val yMax = Converter.yScr2Crt(rect.y, it)
+--                val xMax = Converter.xScr2Crt(rect.x + rect.width, it)
+--                val yMin = Converter.yScr2Crt(rect.y + rect.height, it)
+-+                val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+-+                val yMax = Converter.yScr2Crt(rect.y - rect.difY, it)
+-+                val xMax = Converter.xScr2Crt(rect.x + rect.width - rect.difX, it)
+-+                val yMin = Converter.yScr2Crt(rect.y + rect.height - rect.difY, it)
+-                 it.xMin = xMin
+-                 it.yMin = yMin
+-                 it.xMax = xMax
+-Index: src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport kotlin.math.max\nimport kotlin.math.min\n\nclass SelectionRect {\n    private var p1: Pair<Int,Int>? = null\n    private var p2: Pair<Int,Int>? = null\n\n    var difX: Int = 0\n    var difY: Int = 0\n\n    val isCreated: Boolean\n        get() = p2 != null\n    val x: Int\n        get() {\n            p1?.let {pt1 ->\n                p2?.let {pt2 ->\n                    return min(pt1.first,pt2.first)\n                }\n            }\n            return 0\n        }\n    val y: Int\n    get() {\n        p1?.let {pt1 ->\n            p2?.let {pt2 ->\n                return min(pt1.second,pt2.second)\n            }\n        }\n        return 0\n    }\n    val width: Int\n        get() {\n            p1?.let { pt1 ->\n                p2?.let { pt2 ->\n                    return max(pt1.first, pt2.first) - x\n                }\n            }\n            return 0\n        }\n    val height: Int\n        get() {\n            p1?.let { pt1 ->\n                p2?.let { pt2 ->\n                    return max(pt1.second, pt2.second) - y\n                }\n            }\n            return 0\n        }\n\n    fun addPoint(x:Int, y:Int){\n        p1?.let {\n            p2 = x to y\n        } ?: run {\n            p1 = x to y\n        }\n    }\n\n    //данная перегрузка создавалась для двигания фрактала, но в итоге не понадобилась\n    fun addPoint(x1: Int, y1: Int, x2: Int, y2: Int){\n        p1 = x1 to y1\n        p2 = x2 to y2\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt b/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt	(revision e3d2090fd986e13b3b740b8dfaf4c78c07aa68d5)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/SelectionRect.kt	(date 1701803228860)
+-@@ -62,4 +62,8 @@
+-         p1 = x1 to y1
+-         p2 = x2 to y2
+-     }
+-+
+-+    fun resetPoint(){
+-+
+-+    }
+- }
+-\ No newline at end of file
+-Index: src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ru.gr106.fractal.gui\n\nimport java.awt.Color\nimport java.awt.Graphics\nimport java.awt.event.MouseAdapter\nimport java.awt.event.MouseEvent\nimport java.awt.event.MouseMotionAdapter\nimport javax.swing.JPanel\n\nclass DrawingPanel(val p:Painter) : JPanel() {\n    private var rect = SelectionRect()\n    private val selectedListener = mutableListOf<(SelectionRect)->Unit>()\n    private var mouseButtonPressed = -1 //показывает какая кнопка мыши сейчас нажата: -1 - никакая, 1 - левая, 3 - правая; данная переменная была добавлена потому что в mousedragged e.button обнуляется.\n    private var mouseButtonStartPointEndPoint = mutableListOf<Pair<Int, Int>>() //данный список хранит координаты нажатия и отпускания мыши(применяется при двигании фрактала)\n\n    fun addSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.add(l)\n    }\n\n    fun removeSelectedListener(l: (SelectionRect)->Unit) {\n        selectedListener.remove(l)\n    }\n\n    init {\n\n        this.addMouseListener(object : MouseAdapter(){\n            override fun mousePressed(e: MouseEvent?) {\n                print(e?.button)\n                if(e?.button==1) {\n                    mouseButtonPressed = 1\n                    e.let {\n                        rect = SelectionRect().apply {\n                            addPoint(it.x, it.y)\n                            graphics.apply {\n                                setXORMode(Color.WHITE)\n                                drawRect(-10, -10, 1, 1)\n                                setPaintMode()\n                            }\n                        }\n                    }\n                } else if(e?.button==3){\n                    mouseButtonPressed = 3                              \n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(0, 0)\n                }\n            }\n\n            override fun mouseReleased(e: MouseEvent?) {\n                if (e?.button == 1) {\n                    e.let {\n                        mouseButtonPressed = -1\n                        if (rect.isCreated) drawRect()\n                        rect.addPoint(it.x, it.y)\n                        selectedListener.forEach { it(rect) }\n                    }\n                } else if (e?.button == 3){\n                    mouseButtonStartPointEndPoint.add(e.x to e.y)\n                    rect.addPoint(width,height)\n\n                    rect.difX = mouseButtonStartPointEndPoint.get(1).first.minus(mouseButtonStartPointEndPoint.get(0).first)\n                    rect.difY = mouseButtonStartPointEndPoint.get(1).second.minus(mouseButtonStartPointEndPoint.get(0).second)\n\n                    selectedListener.forEach { it(rect) } //двигаем сам экран\n\n                    mouseButtonPressed = -1\n\n                    mouseButtonStartPointEndPoint.removeAt(1) //чистим наш список, чтобы при следующем двигании у нас был новый вектор движения экрана\n                    mouseButtonStartPointEndPoint.removeAt(0)\n                }\n            }\n        })\n        this.addMouseMotionListener(object : MouseMotionAdapter(){\n            override fun mouseDragged(e: MouseEvent?) {\n                if (mouseButtonPressed == 1) {\n                    e?.let {\n                        if (rect.isCreated)\n                            drawRect()\n                        rect.addPoint(it.x, it.y)\n                        drawRect()\n                    }\n                }\n            }\n        })\n    }\n\n    private fun drawRect() {\n        graphics.apply{\n            setXORMode(Color.WHITE)\n            color = Color.BLACK\n            drawRect(rect.x, rect.y, rect.width, rect.height)\n            setPaintMode()\n        }\n    }\n\n    override fun paint(g: Graphics?) {\n        super.paint(g)\n        g?.let{ p.paint(it) }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt
+---- a/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(revision e3d2090fd986e13b3b740b8dfaf4c78c07aa68d5)
+-+++ b/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt	(date 1701803225592)
+-@@ -52,6 +52,8 @@
+-                         if (rect.isCreated) drawRect()
+-                         rect.addPoint(it.x, it.y)
+-                         selectedListener.forEach { it(rect) }
+-+
+-+
+-                     }
+-                 } else if (e?.button == 3){
+-                     mouseButtonStartPointEndPoint.add(e.x to e.y)
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"масштабирование фракткала\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\n  \"lastFilter\": {\n  }\n}]]></component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"9782cf15-e68f-429a-8968-b2abd7fbe6bf\" />\n        <option name=\"url\" value=\"https://github.com/beetlewie/Fractals-2023-05-106\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"функции+цветовые схемы+жюлиа\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701798447047</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701798447047</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"масштабирование фракткала\" />\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\n    <MESSAGE value=\"функции+цветовые схемы+жюлиа\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"функции+цветовые схемы+жюлиа\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision e3d2090fd986e13b3b740b8dfaf4c78c07aa68d5)
+-+++ b/.idea/workspace.xml	(date 1701803109739)
+-@@ -4,8 +4,9 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -22,20 +23,13 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="e-Khakimov" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+--  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+--  "lastFilter": {
+--  }
+--}]]></component>
+--  <component name="GithubPullRequestsUISettings">
+--    <option name="selectedUrlAndAccountId">
+--      <UrlAndAccount>
+--        <option name="accountId" value="9782cf15-e68f-429a-8968-b2abd7fbe6bf" />
+--        <option name="url" value="https://github.com/beetlewie/Fractals-2023-05-106" />
+--      </UrlAndAccount>
+--    </option>
+--  </component>
+-   <component name="MarkdownSettingsMigration">
+-     <option name="stateVersion" value="1" />
+-   </component>
+-@@ -86,6 +80,10 @@
+-     <recent_temporary>
+-       <list>
+-         <item itemvalue="Kotlin.MainKt" />
+-+        <item itemvalue="Kotlin.MainKt" />
+-+        <item itemvalue="Kotlin.MainKt" />
+-+        <item itemvalue="Kotlin.MainKt" />
+-+        <item itemvalue="Kotlin.MainKt" />
+-       </list>
+-     </recent_temporary>
+-   </component>
+-@@ -130,24 +128,34 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1699446790576</updated>
+-     </task>
+--    <task id="LOCAL-00005" summary="функции+цветовые схемы+жюлиа">
+-+    <task id="LOCAL-00005" summary="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата">
+-       <option name="closed" value="true" />
+--      <created>1701798447047</created>
+-+      <created>1701779327182</created>
+-       <option name="number" value="00005" />
+-       <option name="presentableId" value="LOCAL-00005" />
+-       <option name="project" value="LOCAL" />
+--      <updated>1701798447047</updated>
+-+      <updated>1701779327182</updated>
+-     </task>
+-     <option name="localTasksCounter" value="6" />
+-     <servers />
+-+  </component>
+-+  <component name="Vcs.Log.Tabs.Properties">
+-+    <option name="TAB_STATES">
+-+      <map>
+-+        <entry key="MAIN">
+-+          <value>
+-+            <State />
+-+          </value>
+-+        </entry>
+-+      </map>
+-+    </option>
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-     <MESSAGE value="Фракталы. Начало" />
+-     <MESSAGE value="Рисование выделительной рамки" />
+-     <MESSAGE value="масштабирование фракткала" />
+--    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+--    <MESSAGE value="функции+цветовые схемы+жюлиа" />
+--    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+-+    <MESSAGE value="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="добавил mouseButtonPressed: с помощью него можно определить, какая кнопка мыши сейчас нажата" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023_20_38_[Changes]/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,61 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"масштабирование фракткала\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/kotlin/math/Julia.kt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SchemeChooser.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Kotlin File\" />\r\n        <option value=\"Kotlin Interface\" />\r\n        <option value=\"Kotlin Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\r\n      <recent name=\"ru.gr106.fractal.gui\" />\r\n    </key>\r\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\r\n      <recent name=\"drawing\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\r\n      <module name=\"Fractals-2023\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Kotlin.MainKt\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\r\n      <created>1698216800984</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1698216800984</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698841559932</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698841559932</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699427217411</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699427217411</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699444030305</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699444030305</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699446790576</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699446790576</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Фракталы. Начало\" />\r\n    <MESSAGE value=\"Рисование выделительной рамки\" />\r\n    <MESSAGE value=\"масштабирование фракткала\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"масштабирование фракткала\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision fd329e24dd03f3844241a58a356d6db84092a8f6)
+-+++ b/.idea/workspace.xml	(date 1701797833964)
+-@@ -4,14 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+--      <change afterPath="$PROJECT_DIR$/src/main/kotlin/math/Julia.kt" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/SchemeChooser.kt" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/math/Mandelbrot.kt" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+--    </list>
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="функции+цветовые схемы+жюлиа" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -22,6 +15,7 @@
+-       <list>
+-         <option value="Kotlin File" />
+-         <option value="Kotlin Interface" />
+-+        <option value="Kotlin Object" />
+-         <option value="Kotlin Class" />
+-       </list>
+-     </option>
+-@@ -123,7 +117,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1699446790576</updated>
+-     </task>
+--    <option name="localTasksCounter" value="5" />
+-+    <task id="LOCAL-00005" summary="функции+цветовые схемы+жюлиа">
+-+      <option name="closed" value="true" />
+-+      <created>1701797786518</created>
+-+      <option name="number" value="00005" />
+-+      <option name="presentableId" value="LOCAL-00005" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701797786518</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="6" />
+-     <servers />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-@@ -131,6 +133,7 @@
+-     <MESSAGE value="Фракталы. Начало" />
+-     <MESSAGE value="Рисование выделительной рамки" />
+-     <MESSAGE value="масштабирование фракткала" />
+--    <option name="LAST_COMMIT_MESSAGE" value="масштабирование фракткала" />
+-+    <MESSAGE value="функции+цветовые схемы+жюлиа" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_15_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_15_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_15_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Rebasing_at_05_12_2023,_22_15_[Changes]/shelved.patch	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ /dev/null	(revision 581676b021c0929715b85f548dff6bd38f212428)
+@@ -1,81 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"масштабирование фракткала\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin File\" />\n        <option value=\"Kotlin Interface\" />\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"9782cf15-e68f-429a-8968-b2abd7fbe6bf\" />\n        <option name=\"url\" value=\"https://github.com/beetlewie/Fractals-2023-05-106\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 0\n}</component>\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\n      <recent name=\"ru.gr106.fractal.gui\" />\n    </key>\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\n      <recent name=\"drawing\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\n      <module name=\"Fractals-2023\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Kotlin.MainKt\" />\n        <item itemvalue=\"Kotlin.MainKt\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\n      <created>1698216800984</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1698216800984</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1698841559932</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1698841559932</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699427217411</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699427217411</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699444030305</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699444030305</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699446790576</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699446790576</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"функции+цветовые схемы+жюлиа\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1701798447047</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701798447047</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Фракталы. Начало\" />\n    <MESSAGE value=\"Рисование выделительной рамки\" />\n    <MESSAGE value=\"масштабирование фракткала\" />\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\n    <MESSAGE value=\"функции+цветовые схемы+жюлиа\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"функции+цветовые схемы+жюлиа\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 3904de5dde73117ff73c56ef04f4b1b2d81dc1d1)
+-+++ b/.idea/workspace.xml	(date 1701803656540)
+-@@ -4,9 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="масштабирование фракткала">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--    </list>
+-+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment=".поправлен баг при сдвиге" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -22,6 +20,11 @@
+-     </option>
+-   </component>
+-   <component name="Git.Settings">
+-+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-+      <map>
+-+        <entry key="$PROJECT_DIR$" value="e-Khakimov" />
+-+      </map>
+-+    </option>
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-   </component>
+-   <component name="GitHubPullRequestSearchHistory">{
+-@@ -29,6 +32,12 @@
+-   }
+- }</component>
+-   <component name="GithubPullRequestsUISettings">
+-+    <option name="recentNewPullRequestHead">
+-+      <RepoCoordinatesHolder>
+-+        <option name="owner" value="greebo63" />
+-+        <option name="repository" value="Fractals-2023-05-106" />
+-+      </RepoCoordinatesHolder>
+-+    </option>
+-     <option name="selectedUrlAndAccountId">
+-       <UrlAndAccount>
+-         <option name="accountId" value="9782cf15-e68f-429a-8968-b2abd7fbe6bf" />
+-@@ -139,7 +148,23 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1701798447047</updated>
+-     </task>
+--    <option name="localTasksCounter" value="6" />
+-+    <task id="LOCAL-00006" summary=".поправлен баг при сдвиге">
+-+      <option name="closed" value="true" />
+-+      <created>1701803489421</created>
+-+      <option name="number" value="00006" />
+-+      <option name="presentableId" value="LOCAL-00006" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701803489421</updated>
+-+    </task>
+-+    <task id="LOCAL-00007" summary=".поправлен баг при сдвиге">
+-+      <option name="closed" value="true" />
+-+      <created>1701803493826</created>
+-+      <option name="number" value="00007" />
+-+      <option name="presentableId" value="LOCAL-00007" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1701803493826</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="8" />
+-     <servers />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-@@ -149,6 +174,7 @@
+-     <MESSAGE value="масштабирование фракткала" />
+-     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+-     <MESSAGE value="функции+цветовые схемы+жюлиа" />
+--    <option name="LAST_COMMIT_MESSAGE" value="функции+цветовые схемы+жюлиа" />
+-+    <MESSAGE value=".поправлен баг при сдвиге" />
+-+    <option name="LAST_COMMIT_MESSAGE" value=".поправлен баг при сдвиге" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"сделал плавный сдвиг, но сломал отмену сдвигов\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Kotlin File\" />\r\n        <option value=\"Kotlin Interface\" />\r\n        <option value=\"Kotlin Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"e-Khakimov\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"recentNewPullRequestHead\">\r\n      <RepoCoordinatesHolder>\r\n        <option name=\"owner\" value=\"greebo63\" />\r\n        <option name=\"repository\" value=\"Fractals-2023-05-106\" />\r\n      </RepoCoordinatesHolder>\r\n    </option>\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"6e6d0a2c-27bd-42c7-843c-783ac64901ef\" />\r\n        <option name=\"url\" value=\"https://github.com/hunnimor/Fractals-2023-05-106.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2XFFDD6GxV5sZrIMAjndJ4qIphW\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateKotlinClassDialog.RecentsKey\">\r\n      <recent name=\"ru.gr106.fractal.gui\" />\r\n    </key>\r\n    <key name=\"CopyKotlinDeclarationDialog.RECENTS_KEY\">\r\n      <recent name=\"drawing\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MainKt\" type=\"JetRunConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"ru.gr106.fractal.MainKt\" />\r\n      <module name=\"Fractals-2023\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Kotlin.MainKt\" />\r\n        <item itemvalue=\"Kotlin.MainKt\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"64fc321e-fd31-4862-89fb-6fba6a4b77ad\" name=\"Changes\" comment=\"\" />\r\n      <created>1698216800984</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1698216800984</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Фракталы. Начало\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698841559932</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698841559932</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Рисование выделительной рамки\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699427217411</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699427217411</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"масштабирование фракткала\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699444030305</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699444030305</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"масштабирование фракткала\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699446790576</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699446790576</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"функции+цветовые схемы+жюлиа\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701798447047</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701798447047</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\".поправлен баг при сдвиге\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701803489421</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701803489421</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\".поправлен баг при сдвиге\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701803493826</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701803493826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ДОбавил data class хранящий состояния панели\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701851729714</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701851729714</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"сделал отмену сдвига и масштабирования\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701854516266</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701854516266</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"сделал плавный сдвиг, но сломал отмену сдвигов\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701865148332</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701865148332</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Фракталы. Начало\" />\r\n    <MESSAGE value=\"Рисование выделительной рамки\" />\r\n    <MESSAGE value=\"масштабирование фракткала\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\r\n    <MESSAGE value=\"функции+цветовые схемы+жюлиа\" />\r\n    <MESSAGE value=\".поправлен баг при сдвиге\" />\r\n    <MESSAGE value=\"ДОбавил data class хранящий состояния панели\" />\r\n    <MESSAGE value=\"сделал отмену сдвига и масштабирования\" />\r\n    <MESSAGE value=\"сделал плавный сдвиг, но сломал отмену сдвигов\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"сделал плавный сдвиг, но сломал отмену сдвигов\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 581676b021c0929715b85f548dff6bd38f212428)
++++ b/.idea/workspace.xml	(date 1702022614226)
+@@ -4,10 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="сделал плавный сдвиг, но сломал отмену сдвигов">
++    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="мелкие правки">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/DrawingPanel.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,7 +42,7 @@
+     </option>
+     <option name="selectedUrlAndAccountId">
+       <UrlAndAccount>
+-        <option name="accountId" value="6e6d0a2c-27bd-42c7-843c-783ac64901ef" />
++        <option name="accountId" value="a486b2c2-e8c3-41d3-a00b-b7870f7a5a2b" />
+         <option name="url" value="https://github.com/hunnimor/Fractals-2023-05-106.git" />
+       </UrlAndAccount>
+     </option>
+@@ -67,6 +65,7 @@
+   &quot;keyToString&quot;: {
+     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+@@ -74,6 +73,8 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+     &quot;last_opened_file_path&quot;: &quot;C:/Smak/Programming/Idea/Fractals-2023/libs/Converter.jar&quot;,
+     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+@@ -103,6 +104,14 @@
+         <item itemvalue="Kotlin.MainKt" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-93b19daf" />
++        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-657b72ed" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -195,6 +204,17 @@
+     </task>
+     <option name="localTasksCounter" value="11" />
+     <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
