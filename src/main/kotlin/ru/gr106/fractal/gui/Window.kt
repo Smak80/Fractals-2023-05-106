@@ -108,28 +108,24 @@ class Window(f: AlgebraicFractal) : JFrame() {
                 var newYMax = yMax
                 var newYMin = yMin
 
+
+
                 val relationOXY = OXlength * 1.0 / OYlength
 
                 val relationWidthHeight = newWidth * 1.0 / newHeight
 
-                if (Math.abs(relationOXY - relationWidthHeight) > 1E-5){
-                    if (relationOXY < relationWidthHeight){
-//                        val equFactor = newHeight * 1.0 / OYlength
-//                        val proportion = OXlength * newWidth / (equFactor * OXlength)
-//                        dx = proportion - OXlength
-                        dx = relationWidthHeight - relationOXY
+                //if (Math.abs(relationOXY - relationWidthHeight) > 1E-5){
+                    if (relationOXY < relationWidthHeight) {
+                        dx = (OXlength / relationOXY * relationWidthHeight - OXlength) / 2
                         newXMin -= dx
                         newXMax += dx
                     }
-                    if (relationOXY > relationWidthHeight){
-//                        val equFactor = newWidth * 1.0 / OXlength
-//                        val proportion = OYlength * newHeight / (equFactor * OYlength)
-//                        dy = proportion - OYlength
-                        dy = relationOXY - relationWidthHeight
+                    if (relationOXY > relationWidthHeight) {
+                        dy = (OYlength / relationWidthHeight * relationOXY - OYlength) / 2
                         newYMin -= dy
                         newYMax += dy
                     }
-                }
+                //}
                 val xPair = Pair(newXMin, newXMax)
                 val yPair = Pair(newYMin, newYMax)
                 val mapOfCoord = mutableMapOf<Pair<Double, Double>, Pair<Double, Double>>()
@@ -150,20 +146,51 @@ class Window(f: AlgebraicFractal) : JFrame() {
         mainPanel.addSelectedListener { rect ->
             fp.plane?.let {
                 val _xMin = Converter.xScr2Crt(rect.x, it)
-                val _yMax = Converter.yScr2Crt(rect.y, it)
                 val _xMax = Converter.xScr2Crt(rect.x + rect.width, it)
                 val _yMin = Converter.yScr2Crt(rect.y + rect.height, it)
-                it.xMin = _xMin
-                it.yMin = _yMin
-                it.xMax = _xMax
-                it.yMax = _yMax
+                val _yMax = Converter.yScr2Crt(rect.y, it)
+                newHeight = mainPanel.height
+                newWidth = mainPanel.width
                 xMin = _xMin
                 xMax = _xMax
-                yMin =  _yMin
+                yMin = _yMin
                 yMax = _yMax
+
+                val OXlength = _xMax - _xMin
+                val OYlength = _yMax - _yMin
+
+                var newXMax = xMax
+                var newXMin = xMin
+                var newYMax = yMax
+                var newYMin = yMin
+
+                val relationOXY = OXlength * 1.0 / OYlength
+
+                val relationWidthHeight = newWidth * 1.0 / newHeight
+
+                if (relationOXY < relationWidthHeight) {
+                    dx = (OXlength / relationOXY * relationWidthHeight - OXlength) / 2
+                    newXMin -= dx
+                    newXMax += dx
+                }
+                if (relationOXY > relationWidthHeight) {
+                    dy = (OYlength / relationWidthHeight * relationOXY - OYlength) / 2
+                    newYMin -= dy
+                    newYMax += dy
+                }
+
+                xMax = newXMax
+                xMin = newXMin
+                yMax = newYMax
+                yMin = newYMin
+                it.xMin = newXMin
+                it.yMin = newYMin
+                it.xMax = newXMax
+                it.yMax = newYMax
+
                 val mapOfCoord = mutableMapOf<Pair<Double, Double>, Pair<Double, Double>>()
-                val pairX = Pair(_xMin, _xMax)
-                val pairY = Pair(_yMin, _yMax)
+                val pairX = Pair(newXMin, newXMax)
+                val pairY = Pair(newYMin, newYMax)
                 mapOfCoord.put(pairX, pairY)
                 cancelAction.push(mapOfCoord)
                 fp.previous_img = null
