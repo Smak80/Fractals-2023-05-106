@@ -169,6 +169,45 @@ class Window : JFrame(){
                 ju = FractalPainter(Julia)
                 juliaPanel = DrawingPanel(ju)
 
+                juliaPanel.addKeyListener(object : KeyAdapter(){
+                    override fun keyReleased(e: KeyEvent?) {
+                        if (e != null) {
+                            if (e.isControlDown){
+
+                                ju.plane?.let {
+                                    if(stateList.size != 0){
+                                        ju.pointColor = SchemeChooser(stateList.last().colorScheme)
+                                        it.xMin = stateList.last().xMin
+                                        it.yMin = stateList.last().yMin
+                                        it.xMax = stateList.last().xMax
+                                        it.yMax = stateList.last().yMax
+                                        stateList.removeAt(stateList.lastIndex)
+                                        juliaPanel.repaint()
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                })
+                juliaPanel.addSelectedListener {rect ->
+                    ju.plane?.let {
+
+                        val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                        stateList.add(someState)//добавление состояния в список состояний
+
+                        val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+                        val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
+                        val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
+                        val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
+                        it.xMin = xMin
+                        it.yMin = yMin
+                        it.xMax = xMax
+                        it.yMax = yMax
+                        juliaPanel.repaint()
+                    }
+                }
+
                 juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
 
                 juliaPanel.addComponentListener(object : ComponentAdapter(){
