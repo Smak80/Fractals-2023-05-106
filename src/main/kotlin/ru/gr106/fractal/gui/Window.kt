@@ -5,7 +5,12 @@ import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
 import java.awt.Dimension
+import java.awt.Toolkit
 import java.awt.event.*
+import java.beans.PropertyChangeListener
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.swing.*
 
 
@@ -20,6 +25,14 @@ class Window : JFrame(){
 
     private var stateList = mutableListOf<State>() //список состояний(для отмены действий)
     private var colorScheme = 1 //хранит в себе цветовую схему
+    private var newWidth: Int = 0
+    private var newHeight: Int = 0
+    private var dx: Double = 0.0
+    private var dy: Double = 0.0
+    private var yMin = -1.0
+    private var yMax = 1.0
+    private var xMin = -2.0
+    private var xMax = 1.0
 
     init{
         Mandelbrot.funcNum = 0 //выбор функции -1 - жюлиа, 0,1,2,3 - мандельброт+функции
@@ -40,24 +53,60 @@ class Window : JFrame(){
             override fun componentResized(e: ComponentEvent?) {
                 fp.plane?.width = mainPanel.width
                 fp.plane?.height = mainPanel.height
+                newHeight = mainPanel.height
+                newWidth = mainPanel.width
+
+                val OXlength = xMax - xMin
+                val OYlength = yMax - yMin
+
+                var newXMax = xMax
+                var newXMin = xMin
+                var newYMax = yMax
+                var newYMin = yMin
+
+                val relationOXY = OXlength * 1.0 / OYlength
+
+                val relationWidthHeight = newWidth * 1.0 / newHeight
+
+                if (Math.abs(relationOXY - relationWidthHeight) > 1E-5){
+                    if (relationOXY < relationWidthHeight){
+                        dx = relationWidthHeight - relationOXY
+                        newXMin -= dx
+                        newXMax += dx
+                    }
+                    if (relationOXY > relationWidthHeight){
+                        dy = relationOXY - relationWidthHeight
+                        newYMin -= dy
+                        newYMax += dy
+                    }
+                }
+                val xPair = Pair(newXMin, newXMax)
+                val yPair = Pair(newYMin, newYMax)
+                val mapOfCoord = mutableMapOf<Pair<Double, Double>, Pair<Double, Double>>()
+                mapOfCoord.put(xPair, yPair)
+                fp.plane?.xMax = newXMax
+                fp.plane?.xMin = newXMin
+                fp.plane?.yMin = newYMin
+                fp.plane?.yMax = newYMax
+                fp.plane?.height = mainPanel.height
+                fp.plane?.width = mainPanel.width
+
+                //fp.previousImage = null
                 mainPanel.repaint()
             }
         })
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
-                if (e != null) {
-                    if (e.isControlDown){
-
-                        fp.plane?.let {
-                            if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)
-                                it.xMin = stateList.last().xMin
-                                it.yMin = stateList.last().yMin
-                                it.xMax = stateList.last().xMax
-                                it.yMax = stateList.last().yMax
-                                stateList.removeAt(stateList.lastIndex)
-                                mainPanel.repaint()
-                            }
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        if(stateList.size != 0){
+                            fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                            it.xMin = stateList.last().xMin
+                            it.yMin = stateList.last().yMin
+                            it.xMax = stateList.last().xMax
+                            it.yMax = stateList.last().yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
                         }
 
                     }
@@ -82,6 +131,14 @@ class Window : JFrame(){
             }
         }
 
+        mainPanel.addSelectedListener{rect->
+            fp.plane?.let{
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
+            }
+        }
+
+
         mainPanel.background = Color.WHITE
         layout = GroupLayout(contentPane).apply {
             setVerticalGroup(
@@ -101,16 +158,37 @@ class Window : JFrame(){
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
     }
-    private fun createMenuBar() {
+
+
+
+    private fun createMenuBar() { // функция, реализующая меню
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  aMenuItem = JMenuItem("Сохранить")
+        val  aMenuItem = JMenuItem("Сохранить картинку")
         file.add(aMenuItem) // добавление новой ячейки в меню
+        aMenuItem.addActionListener{ _: ActionEvent -> } // сохранение картинки
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
+        bMenuItem.addActionListener{
+            fp.plane?.let {
+                if(stateList.size != 0){
+                    fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                    it.xMin = stateList.last().xMin
+                    it.yMin = stateList.last().yMin
+                    it.xMax = stateList.last().xMax
+                    it.yMax = stateList.last().yMax
+                    stateList.removeAt(stateList.lastIndex)
+                    mainPanel.repaint()
+                }
+            }
+        }
         menubar.add(file)
-        jMenuBar = menubar
+
+        val  fMenuItem = JMenuItem("Сохранить файл")
+        file.add(fMenuItem)
+        fMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
+
 
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
@@ -120,7 +198,7 @@ class Window : JFrame(){
         val  eMenuItem = JMenuItem("3")
         file_color.add(eMenuItem)
         menubar.add(file_color)
-        jMenuBar = menubar
+
 
         val file_ecs = JMenu("Экскурсия по фракталу")
         val  fMenuItem = JMenuItem("начать")
@@ -283,7 +361,32 @@ class Window : JFrame(){
 
 
     }
+    // реализация функции сохранения файла
+    private fun save() {
+        //val fileName = "имя_файла.расширение"
+        var file: SimpleDateFormat? = null
 
+        val fc = JFileChooser()
+        fc.setDialogTitle("Сохранить файл")
+
+
+        val frame = null
+        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+                file = SimpleDateFormat()
+                val path = fc.selectedFile.path
+                val name = fc.selectedFile.name
+                val date = file!!.format(Date())
+                val fullPath = "$path/$name$date"
+
+                println("Файл сохранен по адресу $fullPath")
+            } catch (e: IOException) { // обработка исключений
+                e.printStackTrace()
+            }
+        } else {
+            println("Сохранение отменено")
+        }
+    }
     fun addState(state: State){
         stateList.add(state)
     }
