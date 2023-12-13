@@ -3,8 +3,8 @@ package ru.gr106.fractal.gui
 import math.AlgebraicFractal
 import math.Complex
 import java.awt.Graphics
-import ru.smak.drawing.Converter
-import ru.smak.drawing.Plane
+import drawing.Converter
+import drawing.Plane
 import java.awt.Color
 import java.awt.image.BufferedImage
 import kotlin.concurrent.thread
