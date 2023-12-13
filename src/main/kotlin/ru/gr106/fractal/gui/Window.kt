@@ -111,14 +111,14 @@ class Window : JFrame(){
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  aMenuItem = JMenuItem("Сохранить")
+        val  aMenuItem = JMenuItem("Сохранить картинку") // сохранение картинки
         file.add(aMenuItem) // добавление новой ячейки в меню
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
         menubar.add(file)
         val  kMenuItem = JMenuItem("Сохранить файл")
         file.add(kMenuItem)
-        kMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
+        kMenuItem.addActionListener{ _: ActionEvent -> save() } 
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
         file_color.add(cMenuItem)
@@ -300,6 +300,32 @@ class Window : JFrame(){
         jMenuBar = menubar
 
 
+    }
+      // реализация функции сохранения файла
+    private fun save() {
+        //val fileName = "имя_файла.расширение"
+        var file: SimpleDateFormat? = null
+
+        val fc = JFileChooser()
+        fc.setDialogTitle("Сохранить файл")
+
+
+        val frame = null
+        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+                file = SimpleDateFormat()
+                val path = fc.selectedFile.path
+                val name = fc.selectedFile.name
+                val date = file!!.format(Date())
+                val fullPath = "$path/$name$date"
+
+                println("Файл сохранен по адресу $fullPath")
+            } catch (e: IOException) { // обработка исключений
+                e.printStackTrace()
+            }
+        } else {
+            println("Сохранение отменено")
+        }
     }
 
     fun addState(state: State){
