@@ -267,7 +267,7 @@ class Window : JFrame(){
 
                 //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
                 juliaPanel.addSelectedListener{rect->
-                    fp.plane?.let{
+                    ju.plane?.let{
                         val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
                         stateList.add(someState)//добавление состояния в список состояний
                     }
