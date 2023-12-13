@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Added choose fractal function">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_humble_video_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_humble_video_all.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="61c8b1f5-a455-4c98-9bc3-675604e1c42f" name="Changes" comment="Исправление бага">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
@@ -15,27 +13,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin File" />
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="savingJPG" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2XFFDD6GxV5sZrIMAjndJ4qIphW" />
+  <component name="ProjectId" id="2ZTY4oWfUyFlX2VGrbmw5f0KdoV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -43,37 +27,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Kotlin.MainKt.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/samoi/IdeaProjects/Fract",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48081535",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Прога\IdeaProjects\Fractals-2023-05-106(1)\src" />
-    </key>
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="ru.gr106.fractal.gui" />
-    </key>
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="drawing" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.gr106.fractal.MainKt" />
@@ -85,133 +45,41 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="" />
-      <created>1698216800984</created>
+      <changelist id="61c8b1f5-a455-4c98-9bc3-675604e1c42f" name="Changes" comment="Исправление багуль" />
+      <created>1702447351463</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698216800984</updated>
+      <updated>1702447351463</updated>
     </task>
-    <task id="LOCAL-00001" summary="Фракталы. Начало">
+    <task id="LOCAL-00001" summary="Синхронизация">
       <option name="closed" value="true" />
-      <created>1698841559932</created>
+      <created>1702448255015</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1698841559932</updated>
+      <updated>1702448255015</updated>
     </task>
-    <task id="LOCAL-00002" summary="Рисование выделительной рамки">
+    <task id="LOCAL-00002" summary="Исправление бага">
       <option name="closed" value="true" />
-      <created>1699427217411</created>
+      <created>1702450757092</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1699427217411</updated>
+      <updated>1702450757092</updated>
     </task>
-    <task id="LOCAL-00003" summary="масштабирование фракткала">
-      <option name="closed" value="true" />
-      <created>1699444030305</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1699444030305</updated>
-    </task>
-    <task id="LOCAL-00004" summary="масштабирование фракткала">
-      <option name="closed" value="true" />
-      <created>1699446790576</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699446790576</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Меню">
-      <option name="closed" value="true" />
-      <created>1700414269730</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700414269730</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Меню">
-      <option name="closed" value="true" />
-      <created>1700414416085</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700414416085</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Меню(исправлены некоторые ошибки)">
-      <option name="closed" value="true" />
-      <created>1700465360629</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700465360629</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Меню(добавлен пункт загрузки проекта)">
-      <option name="closed" value="true" />
-      <created>1701431849622</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1701431849622</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Сохранение в .jpg часть 1">
-      <option name="closed" value="true" />
-      <created>1701677095313</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1701677095313</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Сохранение в .jpg не финал">
-      <option name="closed" value="true" />
-      <created>1701716654532</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1701716654532</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Сохранение и загрузка фрактала в формате txt">
-      <option name="closed" value="true" />
-      <created>1701762211686</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1701762211686</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Проверка на &quot;дурака&quot; в сохранении фрактала">
-      <option name="closed" value="true" />
-      <created>1701786943883</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1701786943883</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Фракталы. Начало" />
-    <MESSAGE value="Рисование выделительной рамки" />
-    <MESSAGE value="масштабирование фракткала" />
-    <MESSAGE value="Меню" />
-    <MESSAGE value="Меню(исправлены некоторые ошибки)" />
-    <MESSAGE value="Меню(добавлен пункт загрузки проекта)" />
-    <MESSAGE value="Сохранение в .jpg часть 1" />
-    <MESSAGE value="Сохранение в .jpg не финал" />
-    <MESSAGE value="Сохранение и загрузка фрактала в формате txt" />
-    <MESSAGE value="Проверка на &quot;дурака&quot; в сохранении фрактала" />
-    <option name="LAST_COMMIT_MESSAGE" value="Проверка на &quot;дурака&quot; в сохранении фрактала" />
+    <MESSAGE value="Исправление багуль" />
+    <MESSAGE value="Синхронизация" />
+    <MESSAGE value="Исправление бага" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление бага" />
   </component>
 </project>
