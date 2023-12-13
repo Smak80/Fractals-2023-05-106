@@ -116,8 +116,9 @@ class Window : JFrame(){
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
         menubar.add(file)
-        jMenuBar = menubar
-
+        val  kMenuItem = JMenuItem("Сохранить файл")
+        file.add(kMenuItem)
+        kMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
         file_color.add(cMenuItem)
