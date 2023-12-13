@@ -110,7 +110,7 @@ class FractalExcursion(val fp: FractalPainter) : JFrame("Экскурсия по
 
     private fun createVideo() {
         val fps = 30
-        val time = videoLengthInput.text.toInt()
+        val time = videoLengthInput.text.toInt()+1
         println(time)
         val framesNumber = fps * time
         println(framesNumber)
