@@ -26,11 +26,12 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
         this.addMouseListener(object : MouseAdapter(){
             override fun mousePressed(e: MouseEvent?) {
+                requestFocus()
                 if(e?.button==1) {
 
                     rect.addPoint(0, 0)
                     rect.addPoint(width, height)
-                    selectedListener.get(0).let{it(rect)}//запоминает состояние фрактала
+                    selectedListener.get(1).let{it(rect)}//запоминает состояние фрактала
 
                     mouseButtonPressed = 1
 
@@ -51,7 +52,7 @@ class DrawingPanel(val p:Painter) : JPanel() {
 
                     rect.addPoint(0, 0)
                     rect.addPoint(width, height)
-                    selectedListener.get(0).let{it(rect)}//запоминает состояние фрактала
+                    selectedListener.get(1).let{it(rect)}//запоминает состояние фрактала
                 }
             }
 
