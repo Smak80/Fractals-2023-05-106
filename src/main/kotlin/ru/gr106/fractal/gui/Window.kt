@@ -8,6 +8,9 @@ import java.awt.Dimension
 import java.awt.Toolkit
 import java.awt.event.*
 import java.beans.PropertyChangeListener
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.swing.*
 
 
@@ -94,19 +97,16 @@ class Window : JFrame(){
         })
         mainPanel.addKeyListener(object : KeyAdapter(){
             override fun keyReleased(e: KeyEvent?) {
-                if (e != null) {
-                    if (e.isControlDown){
-
-                        fp.plane?.let {
-                            if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)
-                                it.xMin = stateList.last().xMin
-                                it.yMin = stateList.last().yMin
-                                it.xMax = stateList.last().xMax
-                                it.yMax = stateList.last().yMax
-                                stateList.removeAt(stateList.lastIndex)
-                                mainPanel.repaint()
-                            }
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        if(stateList.size != 0){
+                            fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                            it.xMin = stateList.last().xMin
+                            it.yMin = stateList.last().yMin
+                            it.xMax = stateList.last().xMax
+                            it.yMax = stateList.last().yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
                         }
 
                     }
@@ -158,12 +158,16 @@ class Window : JFrame(){
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
     }
-    private fun createMenuBar() {
+
+
+
+    private fun createMenuBar() { // функция, реализующая меню
 
         val menubar = JMenuBar()
         val file = JMenu("Файл")
-        val  aMenuItem = JMenuItem("Сохранить")
+        val  aMenuItem = JMenuItem("Сохранить картинку")
         file.add(aMenuItem) // добавление новой ячейки в меню
+        aMenuItem.addActionListener{ _: ActionEvent -> } // сохранение картинки
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
         bMenuItem.addActionListener{
@@ -180,7 +184,11 @@ class Window : JFrame(){
             }
         }
         menubar.add(file)
-        jMenuBar = menubar
+
+        val  fMenuItem = JMenuItem("Сохранить файл")
+        file.add(fMenuItem)
+        fMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
+
 
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
@@ -190,7 +198,7 @@ class Window : JFrame(){
         val  eMenuItem = JMenuItem("3")
         file_color.add(eMenuItem)
         menubar.add(file_color)
-        jMenuBar = menubar
+
 
         val file_ecs = JMenu("Экскурсия по фракталу")
         val  fMenuItem = JMenuItem("начать")
@@ -314,7 +322,32 @@ class Window : JFrame(){
 
 
     }
+    // реализация функции сохранения файла
+    private fun save() {
+        //val fileName = "имя_файла.расширение"
+        var file: SimpleDateFormat? = null
 
+        val fc = JFileChooser()
+        fc.setDialogTitle("Сохранить файл")
+
+
+        val frame = null
+        if (fc.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+                file = SimpleDateFormat()
+                val path = fc.selectedFile.path
+                val name = fc.selectedFile.name
+                val date = file!!.format(Date())
+                val fullPath = "$path/$name$date"
+
+                println("Файл сохранен по адресу $fullPath")
+            } catch (e: IOException) { // обработка исключений
+                e.printStackTrace()
+            }
+        } else {
+            println("Сохранение отменено")
+        }
+    }
     fun addState(state: State){
         stateList.add(state)
     }
