@@ -11,7 +11,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="jcodec" level="project" />
-    <orderEntry type="library" name="jcodec.javase" level="project" />
+    <orderEntry type="library" name="io.humble.video.all" level="project" />
   </component>
 </module>

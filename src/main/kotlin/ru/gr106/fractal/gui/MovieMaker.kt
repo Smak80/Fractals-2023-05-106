@@ -1,17 +1,17 @@
 package ru.gr106.fractal.gui
 
+import drawing.EncodeVideo
 import drawing.Plane
 import math.Exponent
 import math.Mandelbrot
 import math.splines.CubicMomentSpline
 import math.splines.LinearSpline
 import math.splines.Spline
-import org.jcodec.api.awt.AWTSequenceEncoder
-import org.jcodec.common.io.NIOUtils
-import org.jcodec.common.model.Rational
 import java.awt.image.BufferedImage
+import java.util.concurrent.LinkedBlockingQueue
 import javax.swing.ImageIcon
 import javax.swing.JLabel
+import kotlin.concurrent.thread
 import kotlin.math.abs
 import kotlin.math.ln
 import kotlin.time.TimeSource
@@ -315,37 +315,67 @@ object MovieMaker {
         val Xapprox = findApprox(xsizes.toTypedArray(), xcorner.toTypedArray())
         val Yapprox = findApprox(ysizes.toTypedArray(), ycorner.toTypedArray())
 
-        val out = NIOUtils.writableFileChannel(outputFileName)
-        val encoder = AWTSequenceEncoder(out, Rational.R(fps, 1))
+        val encoder = EncodeVideo(outputFileName, "mp4", width, height)
         val timeSource = TimeSource.Monotonic
         val mark1 = timeSource.markNow()
         printList(Xapprox.segmentT)
         printList(Yapprox.segmentT)
         //printList(segmentType)
         fp.maxIteration = 500
-        for (f in 0..frames) {
-            val t = f / (fps.toDouble())
-            // find segment where placed t
-            Xapprox.find(t)
-            Yapprox.find(t)
+        var work = true
+        val frameQueue = LinkedBlockingQueue<BufferedImage>()
+        val usedFrames = LinkedBlockingQueue<BufferedImage>()
+        val renderTh = thread {
+            for (f in 0..frames) {
+                val mk1 = timeSource.markNow()
+                val t = f / (fps.toDouble())
+                // find segment where placed t
+                Xapprox.find(t)
+                Yapprox.find(t)
 
-            val dx = Xapprox.size
-            val xx = Xapprox.corner
+                val dx = Xapprox.size
+                val xx = Xapprox.corner
 
-            val dy = Yapprox.size
-            val yy = Yapprox.corner
+                val dy = Yapprox.size
+                val yy = Yapprox.corner
 
-            val p = Plane(xx, xx + dx, yy, yy + dy, width, height)
-            fp.plane = p
-            val buff = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-            fp.previous_img = null
-            fp.paint(buff.graphics)
-            println("формирование кадра:F${f}")
-            encoder.encodeImage(buff)
+                val p = Plane(xx, xx + dx, yy, yy + dy, width, height)
+                fp.plane = p
+                fp.previous_img = null
+                val buff = if (usedFrames.isNotEmpty()) {
+                    usedFrames.poll()
+                } else {
+                    BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR)
+                }
+                fp.fullPaint(buff, 0, 0)
+                println("формирование кадра:F${f}")
+                val mk2 = timeSource.markNow()
+                println("render time: " + (mk2 - mk1))
+                frameQueue.add(buff)
+            }
+            work = false
         }
 
-        encoder.finish()
-        NIOUtils.closeQuietly(out)
+        var f = 0
+        val encoderTh = thread {
+            while (work || frameQueue.isNotEmpty()) {
+                if (frameQueue.isNotEmpty()) {
+                    val buff = frameQueue.poll()
+                    val mark11 = timeSource.markNow()
+                    encoder.encodeFrame(buff)
+                    val mark12 = timeSource.markNow()
+                    usedFrames.add(buff)
+                    println("encode frame:F${f}")
+                    println("encode time: " + (mark12 - mark11))
+                    f++
+                }
+            }
+        }
+
+        renderTh.join()
+        encoderTh.join()
+
+        encoder.close()
         val mark2 = timeSource.markNow()
         println("Время рендера: " + (mark2 - mark1))
         ////// RESET
