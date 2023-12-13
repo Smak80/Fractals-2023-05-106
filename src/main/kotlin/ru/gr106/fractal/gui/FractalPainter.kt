@@ -9,15 +9,15 @@ import java.awt.Color
 import java.awt.Image
 import java.awt.image.BufferedImage
 import kotlin.concurrent.thread
+import kotlin.math.absoluteValue
 import kotlin.math.ln
 
 class FractalPainter (val fractal: AlgebraicFractal) : Painter{
-
     var previous_img: BufferedImage? = null
     var dx:Int = 0
     var dy:Int = 0
     val procCount = Runtime.getRuntime().availableProcessors()
-
+    var DY : Boolean = false
     var plane: Plane? = null
     override val width: Int
         get() = plane?.width?:0
@@ -83,11 +83,19 @@ class FractalPainter (val fractal: AlgebraicFractal) : Painter{
     }
 
     override fun paint(g: Graphics) {
+
         var img = BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-        val x = 6/5*((plane?.xMax!! - plane?.xMin!!)*(plane?.yMax!! - plane?.yMin!!))+1
-        if(x< 5) maxIteration = 300
-        else if(x>3000000) maxIteration = 1000*(ln(x)-(1/(-x))).toInt()
-        else maxIteration = 300*(ln(x)-(1/(-x))).toInt()
+        if(DY) {
+            var x : Double = 1.0
+            plane?.let {
+                x = 6 / ((it.xMax - it.xMin).absoluteValue * (it.yMax - it.yMin).absoluteValue)
+            }
+            if (x < 4) maxIteration = 300
+            else if (x > 1000000000) maxIteration = 700 * ln(x).toInt()
+            else if (x > 10000000) maxIteration = 500 * ln(x).toInt()
+            else if (x > 100000) maxIteration = 300 * ln(x).toInt()
+            else maxIteration = 300 + 50*ln(x).toInt()
+        }else maxIteration = 300
 
         if (previous_img != null ) {
             img = fullPaint(img,dx,dy)

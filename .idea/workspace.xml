@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Added choose fractal function">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_humble_video_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_humble_video_all.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Проверка на &quot;дурака&quot; в сохранении фрактала">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/drawing/EncodeVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcodec.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcodec_javase.xml" beforeDir="false" />
+    <list default="true" id="64fc321e-fd31-4862-89fb-6fba6a4b77ad" name="Changes" comment="Исправление бага с maxIteration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fractals-2023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Fractals-2023.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/MovieMaker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/MovieMaker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/FractalPainter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +52,6 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
-    "Kotlin.MainKt.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -55,14 +59,29 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/samoi/IdeaProjects/Fract",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "C:/Users/samoi/IdeaProjects/Fractals-2023-05-106",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.48081535",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "project.structure.side.proportion": "0.48081535"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/samoi/IdeaProjects/Fract&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.48081535&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Прога\IdeaProjects\Fractals-2023-05-106(1)\src" />

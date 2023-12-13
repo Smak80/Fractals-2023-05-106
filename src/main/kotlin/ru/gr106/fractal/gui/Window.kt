@@ -16,6 +16,7 @@ import java.awt.event.ComponentEvent
 import java.awt.event.KeyEvent
 import java.awt.image.BufferedImage
 import java.io.File
+import java.io.FileNotFoundException
 import java.time.YearMonth
 import java.util.*
 import javax.imageio.ImageIO
@@ -439,19 +440,45 @@ class Window(f: AlgebraicFractal) : JFrame() {
 
     private fun loadFunc() {
         val fileChooser = JFileChooser()
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES)
-        val ok = fileChooser.showOpenDialog(null)
+        fileChooser.currentDirectory = File("C:\\")
+        fileChooser.fileFilter = FileNameExtensionFilter("Fractal (.txt)", "txt")
+        var ok = 1
+        try {
+            ok = fileChooser.showOpenDialog(null)
+        }catch(e : FileNotFoundException){
+            JOptionPane.showMessageDialog(null,
+                "Файл не найден" ,
+                "Ошибка",
+                JOptionPane.ERROR_MESSAGE);
+        }
         if (ok==0) {
             val path: String? = fileChooser.selectedFile.toString()
-            val parts = Scanner(File(path)).nextLine().split(" ")
-            fp.plane?.let { p ->
-                p.xMin = parts[0].toDouble()
-                p.xMax = parts[1].toDouble()
-                p.yMin = parts[2].toDouble()
-                p.yMax = parts[3].toDouble()
-                fp.pointColor = themes[parts[4]]!!
-                fp.previous_img= null
-                mainPanel.repaint()
+            if(path!!.length > 6 && path.toString().slice((path.length-4)..<(path.length)).equals(".txt")){
+                try {
+                    val parts = Scanner(File(path)).nextLine().split(" ")
+                    fp.plane?.let { p ->
+                        p.xMin = parts[0].toDouble()
+                        p.xMax = parts[1].toDouble()
+                        p.yMin = parts[2].toDouble()
+                        p.yMax = parts[3].toDouble()
+                        fp.pointColor = themes[parts[4]]!!
+                        fp.DY = parts[5].toBoolean()
+                        Mandelbrot.function = funcs[parts[6]]!!
+                        fp.previous_img = null
+                        mainPanel.repaint()
+                    }
+                }catch(e : FileNotFoundException){
+                    JOptionPane.showMessageDialog(null,
+                        "Файл не найден" ,
+                        "Ошибка",
+                        JOptionPane.ERROR_MESSAGE)
+                }
+
+            }else{
+                JOptionPane.showMessageDialog(null,
+                    "Неверный формат" ,
+                    "Ошибка",
+                    JOptionPane.ERROR_MESSAGE)
             }
         }
     }
@@ -557,11 +584,13 @@ class Window(f: AlgebraicFractal) : JFrame() {
 
     private fun saveFunc() {
         val fileChooser = JFileChooser()
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY)
+        fileChooser.currentDirectory = File("C:\\")
+        fileChooser.fileFilter = FileNameExtensionFilter("Fractal (.txt)", "txt")
         val ok = fileChooser.showSaveDialog(null)
         if (ok==0) {
             var path: String? = fileChooser.selectedFile.toString()
-            if(path!!.length >=4){
+            print(path)
+            if(path!!.length > 6){
                 if(!path.toString().slice((path.length-4)..<(path.length)).equals(".txt")){
                     if(path[path.length-1] == '.') path += "txt"
                     else path += ".txt"
@@ -571,8 +600,14 @@ class Window(f: AlgebraicFractal) : JFrame() {
                     val xMax = p.xMax.toString()+" "
                     val yMin = p.yMin.toString()+" "
                     val yMax = p.yMax.toString()+" "
-                    File(path).writeText(xMin+xMax+yMin+yMax+themes.filter { fp.pointColor == it.value }.keys.first())
+                    File(path).writeText(xMin+xMax+yMin+yMax+themes.filter { fp.pointColor == it.value }.keys.first()
+                            +" "+fp.DY+" "+funcs.filter { Mandelbrot.function == it.value }.keys.first())
                 }
+            }else{
+                JOptionPane.showMessageDialog(null,
+                    "Неверный формат" ,
+                    "Ошибка",
+                    JOptionPane.ERROR_MESSAGE)
             }
         }
     }
@@ -602,10 +637,10 @@ class Window(f: AlgebraicFractal) : JFrame() {
     }
 
     private fun DYTurnOn(){
-
+        fp.DY = true
     }
     private fun DYTurnOff(){
-
+        fp.DY = false
     }
 
 }
