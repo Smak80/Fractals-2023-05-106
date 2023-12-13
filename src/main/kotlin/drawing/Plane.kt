@@ -1,17 +1,13 @@
 package drawing
 
 class Plane (
-    xMin: Double,
-    xMax: Double,
-    yMin: Double,
-    yMax: Double,
+    private var _xMin: Double,
+    private var _xMax: Double,
+    private var _yMin: Double,
+    private var _yMax: Double,
     var width: Int,
     var height: Int
 ){
-    private var _xMin: Double = xMin
-    private var _xMax: Double = xMax
-    private var _yMin: Double = yMin
-    private var _yMax: Double = yMax
 
     var xMin: Double
         get() = _xMin - dx
@@ -47,10 +43,6 @@ class Plane (
     private val yLen: Double
         get() = _yMax - _yMin
 
-    val xSize: Double
-        get() = xMax - xMin
-    val ySize: Double
-        get() = yMax - yMin
     val xDen: Double
         get() = width/(xMax-xMin)
 
