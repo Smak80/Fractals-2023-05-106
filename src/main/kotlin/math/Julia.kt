@@ -7,7 +7,7 @@ import kotlin.math.sqrt
 
 object Julia : AlgebraicFractal {
     public final lateinit var c: Complex
-    override var maxIterations: Int = 500
+    override var maxIterations: Int = 200
     override fun isInSet(z: Complex): Float {
         c.let {
             var i = 0
