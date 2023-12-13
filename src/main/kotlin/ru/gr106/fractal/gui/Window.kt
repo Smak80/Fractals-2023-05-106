@@ -330,9 +330,9 @@ class Window(f: AlgebraicFractal) : JFrame() {
         undo.accelerator = KeyStroke.getKeyStroke(KeyEvent.VK_Z, toolkit.menuShortcutKeyMaskEx)
 
 
-        val redo = JMenuItem("Вперёд")
-        edit.add(redo)
-        redo.addActionListener { _: ActionEvent -> redoFunc() }
+//        val redo = JMenuItem("Вперёд")
+//        edit.add(redo)
+//        redo.addActionListener { _: ActionEvent -> redoFunc() }
 
         val theme = JMenu("Тема")
         edit.add(theme)
