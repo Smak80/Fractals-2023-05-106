@@ -1,6 +1,8 @@
 package ru.gr106.fractal.gui
 
-import math.*
+import math.Complex
+import math.Julia
+import math.Mandelbrot
 import ru.smak.drawing.Converter
 import ru.smak.drawing.Plane
 import java.awt.Color
@@ -36,6 +38,24 @@ class Window : JFrame(){
 
         mainPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
 
+        mainPanel.addKeyListener(object : KeyAdapter(){
+            override fun keyReleased(e: KeyEvent?) {
+                if (e != null && e.isControlDown) {
+                    fp.plane?.let {
+                        if(stateList.size != 0){
+                            fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                            it.xMin = stateList.last().xMin
+                            it.yMin = stateList.last().yMin
+                            it.xMax = stateList.last().xMax
+                            it.yMax = stateList.last().yMax
+                            stateList.removeAt(stateList.lastIndex)
+                            mainPanel.repaint()
+                        }
+                    }
+                }
+            }
+        })
+
         mainPanel.addComponentListener(object : ComponentAdapter(){
             override fun componentResized(e: ComponentEvent?) {
                 fp.plane?.width = mainPanel.width
@@ -43,33 +63,10 @@ class Window : JFrame(){
                 mainPanel.repaint()
             }
         })
-        mainPanel.addKeyListener(object : KeyAdapter(){
-            override fun keyReleased(e: KeyEvent?) {
-                if (e != null) {
-                    if (e.isControlDown){
 
-                        fp.plane?.let {
-                            if(stateList.size != 0){
-                                fp.pointColor = SchemeChooser(stateList.last().colorScheme)
-                                it.xMin = stateList.last().xMin
-                                it.yMin = stateList.last().yMin
-                                it.xMax = stateList.last().xMax
-                                it.yMax = stateList.last().yMax
-                                stateList.removeAt(stateList.lastIndex)
-                                mainPanel.repaint()
-                            }
-                        }
-
-                    }
-                }
-            }
-        })
+        //данная функция отрисовывает фрактал заново при сдвиге и масштабировании
         mainPanel.addSelectedListener {rect ->
             fp.plane?.let {
-
-                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
-                stateList.add(someState)//добавление состояния в список состояний
-
                 val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
                 val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
                 val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
@@ -79,6 +76,14 @@ class Window : JFrame(){
                 it.xMax = xMax
                 it.yMax = yMax
                 mainPanel.repaint()
+            }
+        }
+
+        //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
+        mainPanel.addSelectedListener{rect->
+            fp.plane?.let{
+                val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                stateList.add(someState)//добавление состояния в список состояний
             }
         }
 
@@ -100,6 +105,7 @@ class Window : JFrame(){
         pack()
         fp.plane = Plane(-2.0, 1.0, -1.0, 1.0, mainPanel.width, mainPanel.height)
         fp.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
+
     }
     private fun createMenuBar() {
 
@@ -110,8 +116,9 @@ class Window : JFrame(){
         val  bMenuItem = JMenuItem("Отменить действие")
         file.add(bMenuItem)
         menubar.add(file)
-        jMenuBar = menubar
-
+        val  kMenuItem = JMenuItem("Сохранить файл")
+        file.add(kMenuItem)
+        kMenuItem.addActionListener{ _: ActionEvent -> save() } // сохранение картинки
         val file_color= JMenu("Выбор цветовой схемы")
         val  cMenuItem = JMenuItem("1")
         file_color.add(cMenuItem)
@@ -142,6 +149,8 @@ class Window : JFrame(){
         coordy.add(fMenuItem)
         menubar.add(coordy)
         jMenuBar=menubar
+
+
 
         var re: Double
         var im: Double
@@ -174,7 +183,7 @@ class Window : JFrame(){
                 ju = FractalPainter(Julia)
                 juliaPanel = DrawingPanel(ju)
 
-                juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
 
                 juliaPanel.addComponentListener(object : ComponentAdapter(){
                     override fun componentResized(e: ComponentEvent?) {
@@ -183,11 +192,32 @@ class Window : JFrame(){
                         newWindow.repaint()
                     }
                 })
+
+                juliaPanel.inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), "pressed")
+
                 juliaPanel.addKeyListener(object : KeyAdapter(){
+                    override fun keyReleased(e: KeyEvent?) {
+                        if (e != null && e.isControlDown) {
+                            ju.plane?.let {
+                                if(stateList.size != 0){
+                                    fp.pointColor = SchemeChooser(stateList.last().colorScheme)
+                                    it.xMin = stateList.last().xMin
+                                    it.yMin = stateList.last().yMin
+                                    it.xMax = stateList.last().xMax
+                                    it.yMax = stateList.last().yMax
+                                    stateList.removeAt(stateList.lastIndex)
+                                    juliaPanel.repaint()
+                                }
+                            }
+                        }
+                    }
+                })
+
+
+                /*juliaPanel.addKeyListener(object : KeyAdapter(){
                     override fun keyReleased(e: KeyEvent?) {
                         if (e != null) {
                             if (e.isControlDown){
-
                                 ju.plane?.let {
                                     if(stateList.size != 0){
                                         ju.pointColor = SchemeChooser(stateList.last().colorScheme)
@@ -202,8 +232,8 @@ class Window : JFrame(){
                             }
                         }
                     }
-                })
-                juliaPanel.addSelectedListener {rect ->
+                })*/
+                /*juliaPanel.addSelectedListener {rect ->
                     ju.plane?.let {
 
                         val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
@@ -218,6 +248,28 @@ class Window : JFrame(){
                         it.xMax = xMax
                         it.yMax = yMax
                         juliaPanel.repaint()
+                    }
+                }*/
+
+                juliaPanel.addSelectedListener {rect ->
+                    ju.plane?.let {
+                        val xMin = Converter.xScr2Crt(rect.x - rect.difX, it)
+                        val yMax = Converter.yScr2Crt(rect.y- rect.difY, it)
+                        val xMax = Converter.xScr2Crt(rect.x + rect.width -  rect.difX, it)
+                        val yMin = Converter.yScr2Crt(rect.y + rect.height- rect.difY, it)
+                        it.xMin = xMin
+                        it.yMin = yMin
+                        it.xMax = xMax
+                        it.yMax = yMax
+                        juliaPanel.repaint()
+                    }
+                }
+
+                //данная функция сохраняет состояния, чтобы возвращаться к ним при ctrl+z
+                juliaPanel.addSelectedListener{rect->
+                    ju.plane?.let{
+                        val someState = State(Mandelbrot.funcNum, it.xMin, it.xMax, it.yMin, it.yMax, colorScheme, Julia.c)
+                        stateList.add(someState)//добавление состояния в список состояний
                     }
                 }
 
@@ -241,6 +293,7 @@ class Window : JFrame(){
                 ju.plane = Plane(-2.0, 1.0, -1.0, 1.0, juliaPanel.width, juliaPanel.height)
                 ju.pointColor = SchemeChooser(colorScheme)    //выбор цветовой схемы - всего 3
                 newWindow.add(juliaPanel)
+
             }
         })
         menubar.add(button)
