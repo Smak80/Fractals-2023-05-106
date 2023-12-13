@@ -1,14 +1,19 @@
 package math
 
+import kotlin.math.exp
+
 object Mandelbrot : AlgebraicFractal {
     val r = 2.0
-    override var maxIterations: Int = 500
+    var function: (Complex) -> Complex = {value:Complex -> value }
+    var r2 = r*r
+    override var maxIterations: Int = 300
+
     override fun isInSet(z: Complex): Float {
+
         var i = 0
         val z1 = Complex()
-        val r2 = r * r
         do{
-            z1 *= z1
+            z1 *= function(z1)
             z1 += z
         } while(++i < maxIterations && z1.abs2() < r2)
         return i / maxIterations.toFloat()

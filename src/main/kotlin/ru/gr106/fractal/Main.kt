@@ -1,9 +1,8 @@
 package ru.gr106.fractal
 
-import math.Complex
+import math.Mandelbrot
 import ru.gr106.fractal.gui.Window
-import org.jcodec.*
 
 fun main() {
-    Window().apply { isVisible = true }
+    Window(Mandelbrot).apply { isVisible = true }
 }
