@@ -454,17 +454,10 @@ class Window(f: AlgebraicFractal) : JFrame() {
         }
         if (ok==0) {
             cancelAction.clear()
-            fp.plane?.let {
-                val map = mutableMapOf<Pair<Double , Double> , Pair<Double , Double>>()
-                val pX = Pair(it.xMin , it.xMax)
-                val pY = Pair(it.yMin , it.yMax)
-                map.put(pX, pY)
-                cancelAction.push(map)
-            }
-            val path: String? = fileChooser.selectedFile.toString()
-            if(path!!.length > 6 && path.toString().slice((path.length-4)..<(path.length)).equals(".txt")){
+            val path = fileChooser.selectedFile
+            if(path != null && path.toString().length > 6 && path.toString().slice((path.toString().length-4)..<(path.toString().length)).equals(".txt")){
                 try {
-                    val parts = Scanner(File(path)).nextLine().split(" ")
+                    val parts = Scanner(File(path.toString())).nextLine().split(" ")
                     fp.plane?.let { p ->
                         p.xMin = parts[0].toDouble()
                         p.xMax = parts[1].toDouble()
@@ -474,6 +467,13 @@ class Window(f: AlgebraicFractal) : JFrame() {
                         fp.DY = parts[5].toBoolean()
                         Mandelbrot.function = funcs[parts[6]]!!
                         fp.previous_img = null
+                        fp.plane?.let {
+                            val map = mutableMapOf<Pair<Double , Double> , Pair<Double , Double>>()
+                            val pX = Pair(it.xMin , it.xMax)
+                            val pY = Pair(it.yMin , it.yMax)
+                            map.put(pX, pY)
+                            cancelAction.push(map)
+                        }
                         mainPanel.repaint()
                     }
                 }catch(e : FileNotFoundException){

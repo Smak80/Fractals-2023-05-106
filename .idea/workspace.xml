@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61c8b1f5-a455-4c98-9bc3-675604e1c42f" name="Changes" comment="Синхронизация">
+    <list default="true" id="61c8b1f5-a455-4c98-9bc3-675604e1c42f" name="Changes" comment="Исправление бага">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/gr106/fractal/gui/Window.kt" afterDir="false" />
     </list>
@@ -65,12 +65,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702448255015</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Исправление бага">
+      <option name="closed" value="true" />
+      <created>1702450757092</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702450757092</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Исправление багуль" />
     <MESSAGE value="Синхронизация" />
-    <option name="LAST_COMMIT_MESSAGE" value="Синхронизация" />
+    <MESSAGE value="Исправление бага" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление бага" />
   </component>
 </project>
